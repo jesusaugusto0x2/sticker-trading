@@ -1,0 +1,303 @@
+{
+  "name": "Venezuela",
+  "flag": "🇻🇪",
+  "code": "VE",
+  "dial_code": "+58",
+  "states": [
+    {
+      "id": 1,
+      "name": "Amazonas",
+      "code": "AM",
+      "cities": [
+        { "id": 1, "name": "Puerto Ayacucho" },
+        { "id": 2, "name": "San Fernando de Atabapo" },
+        { "id": 3, "name": "San Juan de Manapiare" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Anzoátegui",
+      "code": "AN",
+      "cities": [
+        { "id": 1, "name": "Barcelona" },
+        { "id": 2, "name": "Puerto La Cruz" },
+        { "id": 3, "name": "El Tigre" },
+        { "id": 4, "name": "Anaco" },
+        { "id": 5, "name": "Lechería" },
+        { "id": 6, "name": "Guanta" },
+        { "id": 7, "name": "Puerto Píritu" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Apure",
+      "code": "AP",
+      "cities": [
+        { "id": 1, "name": "San Fernando de Apure" },
+        { "id": 2, "name": "Guasdualito" },
+        { "id": 3, "name": "Biruaca" },
+        { "id": 4, "name": "San Juan de Payara" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Aragua",
+      "code": "AR",
+      "cities": [
+        { "id": 1, "name": "Maracay" },
+        { "id": 2, "name": "La Victoria" },
+        { "id": 3, "name": "Turmero" },
+        { "id": 4, "name": "Cagua" },
+        { "id": 5, "name": "Villa de Cura" },
+        { "id": 6, "name": "Colonia Tovar" },
+        { "id": 7, "name": "El Limón" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Barinas",
+      "code": "BA",
+      "cities": [
+        { "id": 1, "name": "Barinas" },
+        { "id": 2, "name": "Barinitas" },
+        { "id": 3, "name": "Socopó" },
+        { "id": 4, "name": "Ciudad Bolivia" },
+        { "id": 5, "name": "Obispos" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Bolívar",
+      "code": "BO",
+      "cities": [
+        { "id": 1, "name": "Ciudad Bolívar" },
+        { "id": 2, "name": "Ciudad Guayana" },
+        { "id": 3, "name": "Upata" },
+        { "id": 4, "name": "Caicara del Orinoco" },
+        { "id": 5, "name": "Santa Elena de Uairén" },
+        { "id": 6, "name": "Tumeremo" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Carabobo",
+      "code": "CA",
+      "cities": [
+        { "id": 1, "name": "Valencia" },
+        { "id": 2, "name": "Puerto Cabello" },
+        { "id": 3, "name": "Guacara" },
+        { "id": 4, "name": "Los Guayos" },
+        { "id": 5, "name": "Mariara" },
+        { "id": 6, "name": "San Diego" },
+        { "id": 7, "name": "Naguanagua" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cojedes",
+      "code": "CO",
+      "cities": [
+        { "id": 1, "name": "San Carlos" },
+        { "id": 2, "name": "Tinaquillo" },
+        { "id": 3, "name": "El Pao" },
+        { "id": 4, "name": "Tinaco" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Delta Amacuro",
+      "code": "DA",
+      "cities": [
+        { "id": 1, "name": "Tucupita" },
+        { "id": 2, "name": "Pedernales" },
+        { "id": 3, "name": "Curiapo" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Distrito Capital",
+      "code": "DC",
+      "cities": [
+        { "id": 1, "name": "Caracas" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Falcón",
+      "code": "FA",
+      "cities": [
+        { "id": 1, "name": "Coro" },
+        { "id": 2, "name": "Punto Fijo" },
+        { "id": 3, "name": "La Vela de Coro" },
+        { "id": 4, "name": "Tucacas" },
+        { "id": 5, "name": "Chichiriviche" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Guárico",
+      "code": "GU",
+      "cities": [
+        { "id": 1, "name": "San Juan de los Morros" },
+        { "id": 2, "name": "Calabozo" },
+        { "id": 3, "name": "Valle de la Pascua" },
+        { "id": 4, "name": "Altagracia de Orituco" },
+        { "id": 5, "name": "El Sombrero" }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Lara",
+      "code": "LA",
+      "cities": [
+        { "id": 1, "name": "Barquisimeto" },
+        { "id": 2, "name": "Carora" },
+        { "id": 3, "name": "El Tocuyo" },
+        { "id": 4, "name": "Quíbor" },
+        { "id": 5, "name": "Cabudare" },
+        { "id": 6, "name": "Chivacoa" }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Mérida",
+      "code": "ME",
+      "cities": [
+        { "id": 1, "name": "Mérida" },
+        { "id": 2, "name": "El Vigía" },
+        { "id": 3, "name": "Tovar" },
+        { "id": 4, "name": "Ejido" },
+        { "id": 5, "name": "Lagunillas" },
+        { "id": 6, "name": "Santa Bárbara" }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Miranda",
+      "code": "MI",
+      "cities": [
+        { "id": 1, "name": "Los Teques" },
+        { "id": 2, "name": "Guarenas" },
+        { "id": 3, "name": "Guatire" },
+        { "id": 4, "name": "Charallave" },
+        { "id": 5, "name": "Ocumare del Tuy" },
+        { "id": 6, "name": "Cúa" },
+        { "id": 7, "name": "Baruta" },
+        { "id": 8, "name": "Chacao" },
+        { "id": 9, "name": "Petare" }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Monagas",
+      "code": "MO",
+      "cities": [
+        { "id": 1, "name": "Maturín" },
+        { "id": 2, "name": "Punta de Mata" },
+        { "id": 3, "name": "Temblador" },
+        { "id": 4, "name": "Barrancas del Orinoco" }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Nueva Esparta",
+      "code": "NE",
+      "cities": [
+        { "id": 1, "name": "La Asunción" },
+        { "id": 2, "name": "Porlamar" },
+        { "id": 3, "name": "Pampatar" },
+        { "id": 4, "name": "Juan Griego" },
+        { "id": 5, "name": "El Valle del Espíritu Santo" }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Portuguesa",
+      "code": "PO",
+      "cities": [
+        { "id": 1, "name": "Guanare" },
+        { "id": 2, "name": "Acarigua" },
+        { "id": 3, "name": "Araure" },
+        { "id": 4, "name": "Píritu" },
+        { "id": 5, "name": "Biscucuy" }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Sucre",
+      "code": "SU",
+      "cities": [
+        { "id": 1, "name": "Cumaná" },
+        { "id": 2, "name": "Carúpano" },
+        { "id": 3, "name": "Güiria" },
+        { "id": 4, "name": "Cariaco" },
+        { "id": 5, "name": "Cumanacoa" }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Táchira",
+      "code": "TA",
+      "cities": [
+        { "id": 1, "name": "San Cristóbal" },
+        { "id": 2, "name": "La Fría" },
+        { "id": 3, "name": "Colón" },
+        { "id": 4, "name": "San Antonio del Táchira" },
+        { "id": 5, "name": "Palmira" },
+        { "id": 6, "name": "Michelena" },
+        { "id": 7, "name": "Ureña" },
+        { "id": 8, "name": "Junín" },
+        { "id": 9, "name": "Cárdenas" }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Trujillo",
+      "code": "TR",
+      "cities": [
+        { "id": 1, "name": "Trujillo" },
+        { "id": 2, "name": "Valera" },
+        { "id": 3, "name": "Boconó" },
+        { "id": 4, "name": "Pampán" },
+        { "id": 5, "name": "La Ceiba" }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Vargas",
+      "code": "VA",
+      "cities": [
+        { "id": 1, "name": "La Guaira" },
+        { "id": 2, "name": "Catia La Mar" },
+        { "id": 3, "name": "Maiquetía" },
+        { "id": 4, "name": "Naiguatá" }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Yaracuy",
+      "code": "YA",
+      "cities": [
+        { "id": 1, "name": "San Felipe" },
+        { "id": 2, "name": "Yaritagua" },
+        { "id": 3, "name": "Chivacoa" },
+        { "id": 4, "name": "Nirgua" },
+        { "id": 5, "name": "Bruzual" }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Zulia",
+      "code": "ZU",
+      "cities": [
+        { "id": 1, "name": "Maracaibo" },
+        { "id": 2, "name": "Cabimas" },
+        { "id": 3, "name": "Ciudad Ojeda" },
+        { "id": 4, "name": "San Francisco" },
+        { "id": 5, "name": "Machiques" },
+        { "id": 6, "name": "Lagunillas" },
+        { "id": 7, "name": "Valmore Rodríguez" }
+      ]
+    }
+  ]
+}
