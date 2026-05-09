@@ -77,6 +77,18 @@ img, svg {
   --color-surface:  #FFFFFF;   /* cards / elevated surfaces      */
   --color-muted:    #F0EDE5;   /* subtle backdrops               */
 
+  /* ── Colors · Semantic states ───────────────────────────── */
+  --color-success:    #00B86B;   /* same as brand green            */
+  --color-warning:    #FFB020;   /* amber warning                  */
+  --color-danger:     #E5484D;   /* red error — different from coral */
+  --color-info:       #3E7BFA;   /* blue info                      */
+
+  /* ── Colors · State backgrounds (subtle) ────────────────── */
+  --color-success-bg: #00B86B1A;
+  --color-warning-bg: #FFB0201A;
+  --color-danger-bg:  #E5484D1A;
+  --color-info-bg:    #3E7BFA1A;
+
   /* ── Colors · External brands ───────────────────────────── */
   --color-whatsapp:    #25D366;
   --color-instagram-1: #FEDA75;

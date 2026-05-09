@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui';
+import { Button, Input } from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -351,6 +351,99 @@ export default function ComponentDocsPage() {
             Full width secondary
           </Button>
         </div>
+      </section>
+
+      {/* ── Input ───────────────────────────────────────────── */}
+      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Input</h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        search and password icons are internal — all others go via leftIcon.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          Types
+        </h2>
+
+        <Row label="text">
+          <Input
+            type="text"
+            label="Full name"
+            placeholder="Jesus Varela"
+            leftIcon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            }
+          />
+        </Row>
+
+        <Row label="email">
+          <Input
+            type="email"
+            label="Email"
+            placeholder="jesus@example.com"
+            leftIcon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            }
+          />
+        </Row>
+
+        <Row label="password (toggle built-in)">
+          <Input
+            type="password"
+            label="Password"
+            placeholder="••••••••"
+            leftIcon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            }
+          />
+        </Row>
+
+        <Row label="search (icon built-in)">
+          <Input type="search" label="Search" />
+        </Row>
+
+        <Row label="tel">
+          <Input
+            type="tel"
+            label="Phone"
+            placeholder="+54 11 1234-5678"
+            leftIcon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
+              </svg>
+            }
+          />
+        </Row>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          States
+        </h2>
+
+        <Row label="error">
+          <Input
+            type="email"
+            label="Email"
+            defaultValue="notanemail"
+            state="error"
+            errorMessage="Enter a valid email address."
+          />
+        </Row>
+
+        <Row label="disabled">
+          <Input
+            type="text"
+            label="Username"
+            defaultValue="jesus_varela"
+            state="disabled"
+          />
+        </Row>
       </section>
     </div>
   );
