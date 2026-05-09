@@ -1,0 +1,168 @@
+/* ─── Base ──────────────────────────────────────────────────── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  min-height: var(--hit-min);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+/* ─── Variants ──────────────────────────────────────────────── */
+.primary {
+  background: var(--color-ink);
+  color: #ffffff;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+}
+
+.primary:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+}
+
+.secondary:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.secondary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-ink-55);
+  border: var(--border-muted);
+  box-shadow: none;
+}
+
+.ghost:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.ghost:active:not(:disabled) {
+  opacity: 0.5;
+}
+
+.danger {
+  background: rgba(255, 90, 54, 0.06);
+  color: var(--color-coral);
+  border: 1.5px solid rgba(255, 90, 54, 0.3);
+  box-shadow: none;
+}
+
+.danger:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.danger:active:not(:disabled) {
+  opacity: 0.5;
+}
+
+/* icon-only is always 44×44, ignores size classes */
+.icon-only {
+  width: 44px;
+  height: 44px;
+  min-height: unset;
+  padding: 0;
+  background: transparent;
+  color: var(--color-ink);
+  border: var(--border-thick);
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.icon-only:active:not(:disabled) {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+/* ─── Color modifiers (only primary & secondary use these) ──── */
+.primary.colorGreen {
+  background: var(--color-green);
+}
+
+.secondary.colorGreen {
+  color: var(--color-green);
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────── */
+.sm {
+  height: 36px;
+  min-height: var(--hit-min);
+  font-size: var(--text-md);
+  padding: 0 var(--space-12);
+}
+
+.md {
+  height: 48px;
+  font-size: var(--text-lg);
+  padding: 0 var(--space-16);
+}
+
+.lg {
+  height: 56px;
+  font-size: var(--text-xl);
+  padding: 0 var(--space-20);
+}
+
+/* ─── Modifiers ─────────────────────────────────────────────── */
+.fullWidth {
+  width: 100%;
+}
+
+.disabled,
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Icon wrapper ──────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ─── Loading spinner ───────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-full);
+  animation: spin var(--duration-slow) linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

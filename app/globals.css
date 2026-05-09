@@ -1,26 +1,306 @@
-@import "tailwindcss";
+/* ============================================================
+   STICKER TRADING — Global Styles & Design Tokens
+   ------------------------------------------------------------
+   Import once in /app/layout.tsx:
+       import './globals.css'
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+   Use anywhere in CSS Modules:
+       background: var(--color-green);
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+
+  /* ── Colors · Brand ──────────────────────────────────────── */
+  --color-green:    #00B86B;   /* primary action / CTAs          */
+  --color-coral:    #FF5A36;   /* faltantes / warnings           */
+  --color-yellow:   #FFD23F;   /* HOT tag / highlights           */
+  --color-purple:   #7B61FF;   /* matches accent                 */
+
+  /* ── Colors · Neutrals ───────────────────────────────────── */
+  --color-ink:      #0F1419;   /* primary text & borders         */
+  --color-ink-70:   #0F1419B3;
+  --color-ink-55:   #0F14198C;
+  --color-ink-40:   #0F141966;
+  --color-ink-25:   #0F141940;
+  --color-ink-15:   #0F141926;
+  --color-ink-10:   #0F14191A;
+  --color-ink-08:   #0F141914;
+
+  --color-bg:       #FAFAF7;   /* warm off-white app background  */
+  --color-surface:  #FFFFFF;   /* cards / elevated surfaces      */
+  --color-muted:    #F0EDE5;   /* subtle backdrops               */
+
+  /* ── Colors · External brands ───────────────────────────── */
+  --color-whatsapp:    #25D366;
+  --color-instagram-1: #FEDA75;
+  --color-instagram-2: #FA7E1E;
+  --color-instagram-3: #D62976;
+  --color-instagram-4: #962FBF;
+
+  /* ── Colors · Country flag pairs ────────────────────────── */
+  --flag-arg-1: #74ACDF;  --flag-arg-2: #FFFFFF;
+  --flag-bra-1: #FFDF00;  --flag-bra-2: #009C3B;
+  --flag-mex-1: #006847;  --flag-mex-2: #CE1126;
+  --flag-usa-1: #3C3B6E;  --flag-usa-2: #B22234;
+  --flag-can-1: #D52B1E;  --flag-can-2: #FFFFFF;
+  --flag-col-1: #FCD116;  --flag-col-2: #003893;
+  --flag-uru-1: #7CB9E8;  --flag-uru-2: #FFFFFF;
+  --flag-chl-1: #0039A6;  --flag-chl-2: #D52B1E;
+  --flag-esp-1: #AA151B;  --flag-esp-2: #F1BF00;
+  --flag-fra-1: #0055A4;  --flag-fra-2: #EF4135;
+  --flag-ger-1: #000000;  --flag-ger-2: #DD0000;
+  --flag-por-1: #046A38;  --flag-por-2: #DA291C;
+  --flag-ita-1: #0066CC;  --flag-ita-2: #FFFFFF;
+  --flag-eng-1: #FFFFFF;  --flag-eng-2: #CE1124;
+  --flag-jpn-1: #BC002D;  --flag-jpn-2: #FFFFFF;
+  --flag-kor-1: #003478;  --flag-kor-2: #C60C30;
+  --flag-mar-1: #C1272D;  --flag-mar-2: #006233;
+  --flag-ned-1: #FF6B00;  --flag-ned-2: #21468B;
+
+  /* ── Typography · Families ───────────────────────────────── */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+
+  /* ── Typography · Scale ──────────────────────────────────── */
+  --text-2xs:  10px;  /* nav labels, micro caps              */
+  --text-xs:   11px;  /* eyebrows, captions                  */
+  --text-sm:   12px;  /* labels, secondary info              */
+  --text-md:   13px;  /* chips, tags                         */
+  --text-base: 14px;  /* body text                           */
+  --text-lg:   15px;  /* inputs, prominent body              */
+  --text-xl:   17px;  /* row titles                          */
+  --text-2xl:  20px;  /* section titles                      */
+  --text-3xl:  26px;  /* big numbers (stats)                 */
+  --text-4xl:  32px;  /* page titles                         */
+  --text-5xl:  44px;  /* hero display                        */
+
+  /* ── Typography · Weights ────────────────────────────────── */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+  --weight-black:     900;
+
+  /* ── Typography · Tracking ───────────────────────────────── */
+  --tracking-tight:   -0.04em;  /* big display numbers          */
+  --tracking-snug:    -0.03em;  /* h1 headings                  */
+  --tracking-mild:    -0.01em;  /* row titles                   */
+  --tracking-normal:   0;
+  --tracking-wide:     0.04em;  /* nav labels                   */
+  --tracking-wider:    0.06em;  /* eyebrows                     */
+  --tracking-widest:   0.08em;  /* uppercase chips              */
+
+  /* ── Spacing (4px base) ──────────────────────────────────── */
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-3:  6px;
+  --space-4:  8px;
+  --space-5:  10px;
+  --space-6:  12px;
+  --space-7:  14px;
+  --space-8:  16px;
+  --space-9:  18px;
+  --space-10: 20px;
+  --space-12: 24px;
+  --space-14: 28px;
+  --space-16: 32px;
+  --space-20: 40px;
+  --space-24: 48px;
+
+  /* ── Border Radius ───────────────────────────────────────── */
+  --radius-xs:   6px;
+  --radius-sm:   8px;
+  --radius-md:   10px;
+  --radius-lg:   12px;
+  --radius-xl:   14px;
+  --radius-2xl:  16px;
+  --radius-3xl:  18px;
+  --radius-4xl:  20px;
+  --radius-full: 9999px;
+
+  /* ── Borders ─────────────────────────────────────────────── */
+  --border-hair:  1px solid var(--color-ink);
+  --border-thin:  1.5px solid var(--color-ink);
+  --border-thick: 2px solid var(--color-ink);
+  --border-muted: 1px solid var(--color-ink-10);
+
+  /* ── Shadows · Neo-brutalist (brand signature) ───────────── */
+  --shadow-sm:        2px 2px 0 var(--color-ink);
+  --shadow-md:        3px 3px 0 var(--color-ink);
+  --shadow-lg:        4px 4px 0 var(--color-ink);
+  --shadow-green-sm:  2px 2px 0 var(--color-green);
+  --shadow-green-md:  3px 3px 0 var(--color-green);
+  --shadow-green-lg:  4px 4px 0 var(--color-green);
+
+  /* ── Shadows · Soft (modals, overlays) ───────────────────── */
+  --shadow-soft-sm: 0 1px 3px rgba(0,0,0,0.07), 0 3px 10px rgba(0,0,0,0.06);
+  --shadow-soft-md: 0 4px 12px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-soft-lg: 0 12px 32px rgba(0,0,0,0.12), 0 24px 48px rgba(0,0,0,0.08);
+
+  /* ── Component sizes ─────────────────────────────────────── */
+  --hit-min:       44px;   /* iOS minimum touch target         */
+  --hit-cozy:      48px;   /* comfortable touch target         */
+  --hit-comfy:     56px;   /* large touch target               */
+
+  --checkbox-size: 28px;
+  --flag-sm:       28px;
+  --flag-md:       36px;
+  --flag-lg:       48px;
+  --avatar-md:     48px;
+  --avatar-lg:     64px;
+  --icon-btn:      36px;
+  --bottom-nav:    64px;   /* height of bottom nav bar         */
+  --top-bar:       56px;   /* height of top bar                */
+
+  /* ── Motion ──────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-snap:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:  120ms;
+  --duration-base:  200ms;
+  --duration-slow:  300ms;
+
+  /* ── Z-index ─────────────────────────────────────────────── */
+  --z-base:       1;
+  --z-sticky:     5;
+  --z-bottom-nav: 10;
+  --z-overlay:    50;
+  --z-modal:      80;
+  --z-toast:      100;
+
+  /* ── Gradients ───────────────────────────────────────────── */
+  --gradient-progress:  linear-gradient(90deg, var(--color-green), var(--color-yellow));
+  --gradient-avatar:    linear-gradient(135deg, var(--color-green), var(--color-coral));
+  --gradient-instagram: linear-gradient(135deg, var(--color-instagram-1), var(--color-instagram-2) 25%, var(--color-instagram-3) 60%, var(--color-instagram-4) 90%);
+  --gradient-bg:        radial-gradient(ellipse at top, #f0ede5 0%, #e6e1d3 100%);
+}
+
+/* ─── Utility Classes ───────────────────────────────────────── */
+
+/* Typography */
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-snug);
+}
+
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-extrabold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-ink-55);
+}
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-md);
+}
+
+.card-soft {
+  background: var(--color-surface);
+  border: var(--border-muted);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-soft-sm);
+}
+
+/* Buttons */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  min-height: var(--hit-cozy);
+  padding: 0 var(--space-16);
+  background: var(--color-ink);
+  color: white;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  border-radius: var(--radius-full);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn-green {
+  background: var(--color-green);
+  color: white;
+  box-shadow: var(--shadow-green-md);
+}
+
+.btn-green:active {
+  box-shadow: none;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-15) transparent;
+}
+
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: var(--color-ink-15); border-radius: var(--radius-full); }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* Safe area for mobile bottom nav */
+.page-content {
+  padding-bottom: calc(var(--bottom-nav) + env(safe-area-inset-bottom));
 }
