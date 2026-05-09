@@ -1,0 +1,111 @@
+/* ─── Wrapper (the clickable label) ─────────────────────────── */
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--hit-min);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ─── Native input — hidden but accessible ───────────────────── */
+.nativeInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* ─── Visual box ─────────────────────────────────────────────── */
+.box {
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  transition:
+    background var(--duration-base) var(--ease-snap),
+    border-color var(--duration-base) var(--ease-snap),
+    transform var(--duration-base) var(--ease-snap);
+}
+
+/* ─── Check icon — hidden by default ────────────────────────── */
+.check {
+  opacity: 0;
+  transform: scale(0.3);
+  transition:
+    opacity var(--duration-base) var(--ease-snap),
+    transform var(--duration-base) var(--ease-snap);
+}
+
+/* ─── Checked state · green ──────────────────────────────────── */
+.accentGreen .nativeInput:checked + .box {
+  background: var(--color-green);
+  border-color: transparent;
+  transform: scale(1.08);
+}
+
+/* settle back after the snap overshoot */
+.accentGreen .nativeInput:checked + .box:not(:active) {
+  transform: scale(1);
+}
+
+/* ─── Checked state · coral ──────────────────────────────────── */
+.accentCoral .nativeInput:checked + .box {
+  background: var(--color-coral);
+  border-color: transparent;
+  transform: scale(1.08);
+}
+
+.accentCoral .nativeInput:checked + .box:not(:active) {
+  transform: scale(1);
+}
+
+/* ─── Check icon visible when checked ───────────────────────── */
+.nativeInput:checked + .box .check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Focus ring (keyboard navigation) ──────────────────────── */
+.nativeInput:focus-visible + .box {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Label text ─────────────────────────────────────────────── */
+.labelText {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+}
+
+/* ─── Card variant ───────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-8) var(--space-12);
+}
+
+/* self-contained label for card — no min-height, card padding handles spacing */
+.wrapperInCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ─── Disabled ───────────────────────────────────────────────── */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

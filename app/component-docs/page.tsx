@@ -1,4 +1,4 @@
-import { Button, Input } from '@/components/ui';
+import { Button, Input, Checkbox } from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -443,6 +443,79 @@ export default function ComponentDocsPage() {
             defaultValue="jesus_varela"
             state="disabled"
           />
+        </Row>
+      </section>
+
+      {/* ── Checkbox ─────────────────────────────────────────── */}
+      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Checkbox</h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        accent drives the fill color — the component knows nothing about repes or faltan.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          Accents &amp; states
+        </h2>
+
+        <Row label="unchecked (default)">
+          <Checkbox label="Sticker 42" />
+          <Checkbox label="Sticker 43" />
+          <Checkbox label="Sticker 44" />
+        </Row>
+
+        <Row label="checked · accent=&quot;green&quot; (repes)">
+          <Checkbox label="Sticker 42" accent="green" defaultChecked />
+          <Checkbox label="Sticker 43" accent="green" defaultChecked />
+          <Checkbox label="No label" accent="green" defaultChecked />
+        </Row>
+
+        <Row label="checked · accent=&quot;coral&quot; (faltan)">
+          <Checkbox label="Sticker 07" accent="coral" defaultChecked />
+          <Checkbox label="Sticker 08" accent="coral" defaultChecked />
+          <Checkbox label="No label" accent="coral" defaultChecked />
+        </Row>
+
+        <Row label="disabled unchecked">
+          <Checkbox label="Sticker 99" disabled />
+        </Row>
+
+        <Row label="disabled checked">
+          <Checkbox label="Sticker 99" accent="green" defaultChecked disabled />
+          <Checkbox label="Sticker 99" accent="coral" defaultChecked disabled />
+        </Row>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          variant=&quot;card&quot;
+        </h2>
+
+        <Row label="unchecked">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+            <Checkbox variant="card" label="Sticker 42" />
+            <Checkbox variant="card" label="Sticker 43" />
+          </div>
+        </Row>
+
+        <Row label="checked · accent=&quot;green&quot;">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+            <Checkbox variant="card" accent="green" label="Sticker 42" defaultChecked />
+            <Checkbox variant="card" accent="green" label="Sticker 43" defaultChecked />
+          </div>
+        </Row>
+
+        <Row label="checked · accent=&quot;coral&quot;">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+            <Checkbox variant="card" accent="coral" label="Sticker 07" defaultChecked />
+            <Checkbox variant="card" accent="coral" label="Sticker 08" defaultChecked />
+          </div>
+        </Row>
+
+        <Row label="disabled">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+            <Checkbox variant="card" label="Sticker 42" disabled />
+            <Checkbox variant="card" accent="green" label="Sticker 43" defaultChecked disabled />
+          </div>
         </Row>
       </section>
     </div>
