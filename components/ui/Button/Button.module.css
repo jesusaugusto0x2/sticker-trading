@@ -161,6 +161,10 @@
   animation: spin var(--duration-slow) linear infinite;
 }
 
+.link {
+  display: inline-flex;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

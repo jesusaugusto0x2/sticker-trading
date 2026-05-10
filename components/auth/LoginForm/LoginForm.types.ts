@@ -1,6 +1,11 @@
+export interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 export interface LoginFormProps {
   onGoogleLogin: () => void;
-  onEmailLogin: (email: string, password: string) => void;
+  onEmailLogin: (data: LoginFormData) => void;
   isLoading: boolean;
   error: string | null;
 }

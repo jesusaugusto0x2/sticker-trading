@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useId } from 'react';
+import { forwardRef, useState, useId } from 'react';
 import styles from './Input.module.css';
 import { Typography } from '../Typography/Typography';
 import type { InputProps } from './Input.types';
@@ -66,18 +66,21 @@ function EyeOffIcon() {
   );
 }
 
-export function Input({
-  type = 'text',
-  state = 'default',
-  label,
-  leftIcon,
-  rightIcon,
-  errorMessage,
-  fullWidth = true,
-  id,
-  placeholder,
-  ...props
-}: InputProps) {
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  {
+    type = 'text',
+    state = 'default',
+    label,
+    leftIcon,
+    rightIcon,
+    errorMessage,
+    fullWidth = true,
+    id,
+    placeholder,
+    ...props
+  },
+  ref,
+) {
   const [showPassword, setShowPassword] = useState(false);
   const generatedId = useId();
   const inputId = id ?? generatedId;
@@ -113,6 +116,7 @@ export function Input({
         ) : null}
 
         <input
+          ref={ref}
           {...props}
           id={inputId}
           type={resolvedType}
@@ -147,4 +151,4 @@ export function Input({
       )}
     </div>
   );
-}
+});

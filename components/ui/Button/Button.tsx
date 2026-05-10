@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Button.module.css';
 import type { ButtonProps } from './Button.types';
 
@@ -19,6 +20,7 @@ export function Button({
   children,
   disabled,
   className,
+  href,
   ...props
 }: ButtonProps) {
   const isDisabled = disabled || loading;
@@ -32,12 +34,33 @@ export function Button({
     styles[size],
     fullWidth ? styles.fullWidth : '',
     isDisabled ? styles.disabled : '',
+    href ? styles.link : '',
     className ?? '',
   ]
     .filter(Boolean)
     .join(' ');
 
   const iconOnly = variant === 'icon-only';
+
+  const content = loading ? (
+    <span className={styles.spinner} aria-hidden="true" />
+  ) : iconOnly ? (
+    children
+  ) : (
+    <>
+      {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
+      {children}
+      {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classNames}>
+        {content}
+      </Link>
+    );
+  }
 
   return (
     <button
@@ -47,17 +70,7 @@ export function Button({
       aria-label={iconOnly ? props['aria-label'] : undefined}
       className={classNames}
     >
-      {loading ? (
-        <span className={styles.spinner} aria-hidden="true" />
-      ) : iconOnly ? (
-        children
-      ) : (
-        <>
-          {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-          {children}
-          {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
-        </>
-      )}
+      {content}
     </button>
   );
 }

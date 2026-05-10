@@ -251,8 +251,8 @@ svg {
   --weight-black: 900;
 
   /* ── Typography · Tracking ───────────────────────────────── */
-  --tracking-tight:   -0.04em; /* display                      */
-  --tracking-snug:    -0.03em; /* h1                           */
+  --tracking-tight: -0.04em; /* display                      */
+  --tracking-snug: -0.03em; /* h1                           */
   --tracking-heading: -0.02em; /* h2                           */
   --tracking-mild: -0.01em; /* row titles                   */
   --tracking-normal: 0;
