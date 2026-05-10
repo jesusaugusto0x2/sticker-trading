@@ -8,7 +8,7 @@
        background: var(--color-green);
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+/* fonts are loaded via next/font/google in app/layout.tsx */
 
 /* ─── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after {
@@ -117,8 +117,7 @@ img, svg {
   --flag-ned-1: #FF6B00;  --flag-ned-2: #21468B;
 
   /* ── Typography · Families ───────────────────────────────── */
-  --font-display: 'Archivo', system-ui, sans-serif;
-  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+  /* --font-display and --font-body are injected by next/font via html className */
 
   /* ── Typography · Scale ──────────────────────────────────── */
   --text-2xs:  10px;  /* nav labels, micro caps              */
@@ -132,6 +131,12 @@ img, svg {
   --text-3xl:  26px;  /* big numbers (stats)                 */
   --text-4xl:  32px;  /* page titles                         */
   --text-5xl:  44px;  /* hero display                        */
+
+  /* ── Typography extended scale ──────────────────────────── */
+  --text-title:    18px;  /* between xl (17) and 2xl (20)    */
+  --text-heading:  28px;  /* between 3xl (26) and 4xl (32)   */
+  --text-hero:     40px;  /* between 4xl (32) and 5xl (44)   */
+  --text-6xl:      56px;  /* display / hero headline         */
 
   /* ── Typography · Weights ────────────────────────────────── */
   --weight-regular:   400;

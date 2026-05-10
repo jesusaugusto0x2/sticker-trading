@@ -77,14 +77,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ─── Label text ─────────────────────────────────────────────── */
-.labelText {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-medium);
-  color: var(--color-ink);
-}
-
 /* ─── Card variant ───────────────────────────────────────────── */
 .card {
   display: inline-flex;

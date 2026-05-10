@@ -2,6 +2,7 @@
 
 import { useId } from 'react';
 import styles from './Toggle.module.css';
+import { Typography } from '../Typography/Typography';
 import type { ToggleProps } from './Toggle.types';
 
 export type { ToggleProps, ToggleVariant } from './Toggle.types';
@@ -43,7 +44,7 @@ export function Toggle({
       >
         <label htmlFor={id} className={styles.wrapperInCard}>
           {track}
-          {label && <span className={styles.labelText}>{label}</span>}
+          {label && <Typography variant="body-lg" as="span">{label}</Typography>}
         </label>
       </div>
     );
@@ -57,7 +58,7 @@ export function Toggle({
         .join(' ')}
     >
       {track}
-      {label && <span className={styles.labelText}>{label}</span>}
+      {label && <Typography variant="body-lg" as="span">{label}</Typography>}
     </label>
   );
 }

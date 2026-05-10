@@ -9,12 +9,6 @@
   width: 100%;
 }
 
-/* ─── Label ─────────────────────────────────────────────────── */
-.label {
-  display: block;
-  margin-bottom: var(--space-2);
-}
-
 /* ─── Input box (the visible bordered container) ────────────── */
 .inputWrapper {
   display: flex;
@@ -92,9 +86,3 @@
   color: var(--color-ink);
 }
 
-/* ─── Error message ─────────────────────────────────────────── */
-.errorMessage {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-danger);
-}

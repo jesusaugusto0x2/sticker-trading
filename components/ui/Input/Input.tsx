@@ -2,6 +2,7 @@
 
 import { useState, useId } from 'react';
 import styles from './Input.module.css';
+import { Typography } from '../Typography/Typography';
 import type { InputProps } from './Input.types';
 
 export type { InputProps, InputType, InputState } from './Input.types';
@@ -98,9 +99,9 @@ export function Input({
   return (
     <div className={wrapperClass}>
       {label && (
-        <label htmlFor={inputId} className={`eyebrow ${styles.label}`}>
+        <Typography variant="label" color="muted" as="label" htmlFor={inputId}>
           {label}
-        </label>
+        </Typography>
       )}
       <div className={inputWrapperClass}>
         {type === 'search' ? (
@@ -140,9 +141,9 @@ export function Input({
       </div>
 
       {state === 'error' && errorMessage && (
-        <p id={errorId} className={styles.errorMessage}>
+        <Typography variant="caption" color="danger" as="p" id={errorId}>
           {errorMessage}
-        </p>
+        </Typography>
       )}
     </div>
   );

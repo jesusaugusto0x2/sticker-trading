@@ -2,6 +2,7 @@
 
 import { useId } from 'react';
 import styles from './Checkbox.module.css';
+import { Typography } from '../Typography/Typography';
 import type { CheckboxProps } from './Checkbox.types';
 
 export type {
@@ -70,7 +71,11 @@ export function Checkbox({
       <span className={styles.box} aria-hidden="true">
         <CheckIcon />
       </span>
-      {label && <span className={styles.labelText}>{label}</span>}
+      {label && (
+        <Typography variant="body-lg" as="span">
+          {label}
+        </Typography>
+      )}
     </label>
   );
 

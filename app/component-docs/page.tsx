@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Checkbox, SegmentedControl, Toggle } from '@/components/ui';
+import { Button, Input, Checkbox, SegmentedControl, Toggle, Typography } from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -601,6 +601,75 @@ export default function ComponentDocsPage() {
 
         <Row label="disabled">
           <Toggle variant="card" checked={false} onChange={() => {}} label="Disabled" disabled />
+        </Row>
+      </section>
+
+      {/* ── Typography ───────────────────────────────────────── */}
+      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Typography</h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        Archivo for display/headings — Inter for body/labels.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 0, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          Variants
+        </h2>
+
+        {(
+          [
+            { variant: 'display',  spec: 'Archivo 900 · 56px · -0.04em',  sample: 'Display' },
+            { variant: 'h1',       spec: 'Archivo 900 · 40px · -0.03em',  sample: 'Heading 1' },
+            { variant: 'h2',       spec: 'Archivo 800 · 28px · -0.02em',  sample: 'Heading 2' },
+            { variant: 'title',    spec: 'Archivo 800 · 18px · -0.01em',  sample: 'Title' },
+            { variant: 'body-lg',  spec: 'Inter 600 · 15px · normal',     sample: 'Body large — the quick brown fox jumps over the lazy dog' },
+            { variant: 'body-sm',  spec: 'Inter 600 · 13px · normal',     sample: 'Body small — the quick brown fox jumps over the lazy dog' },
+            { variant: 'label',    spec: 'Inter 800 · 11px · 0.08em · uppercase', sample: 'Label text' },
+            { variant: 'caption',  spec: 'Inter 600 · 11px · normal',     sample: 'Caption text' },
+          ] as const
+        ).map(({ variant, spec, sample }) => (
+          <div
+            key={variant}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '220px 1fr',
+              alignItems: 'center',
+              gap: 24,
+              padding: '20px 0',
+              borderBottom: '1px solid #0F14191A',
+            }}
+          >
+            <div>
+              <p style={{ fontSize: 12, fontWeight: 700, color: '#0F1419', marginBottom: 2 }}>{variant}</p>
+              <p style={{ fontSize: 11, color: '#0F14198C' }}>{spec}</p>
+            </div>
+            <Typography variant={variant}>{sample}</Typography>
+          </div>
+        ))}
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          Colors
+        </h2>
+        <Row label="all colors · variant=&quot;body-lg&quot;">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <Typography variant="body-lg" color="default">color=&quot;default&quot; — texto principal</Typography>
+            <Typography variant="body-lg" color="muted">color=&quot;muted&quot; — texto secundario</Typography>
+            <Typography variant="body-lg" color="green">color=&quot;green&quot; — éxito / positivo</Typography>
+            <Typography variant="body-lg" color="coral">color=&quot;coral&quot; — advertencia / faltantes</Typography>
+            <Typography variant="body-lg" color="danger">color=&quot;danger&quot; — error</Typography>
+            <span style={{ background: '#0F1419', padding: '4px 8px', borderRadius: 8, display: 'inline-block' }}>
+              <Typography variant="body-lg" color="white">color=&quot;white&quot; — sobre fondo oscuro</Typography>
+            </span>
+          </div>
+        </Row>
+
+        <Row label="truncate">
+          <div style={{ width: 280 }}>
+            <Typography variant="body-lg" truncate>
+              Este texto es muy largo y debería cortarse con ellipsis cuando no entra en una línea
+            </Typography>
+          </div>
         </Row>
       </section>
     </div>
