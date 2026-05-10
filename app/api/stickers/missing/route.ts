@@ -12,7 +12,7 @@ export async function GET() {
   }
 
   const { data, error } = await supabase
-    .from('user_repeated_stickers')
+    .from('user_missing_stickers')
     .select('sticker_id')
     .eq('user_id', user.id);
 
@@ -44,18 +44,17 @@ export async function PATCH(request: Request) {
     .map((c) => ({
       user_id: user.id,
       sticker_id: c.stickerId,
-      quantity: 1,
     }));
 
   const toRemove = changes.filter((c) => !c.checked).map((c) => c.stickerId);
 
   const [addResult, removeResult] = await Promise.all([
     toAdd.length > 0
-      ? supabase.from('user_repeated_stickers').upsert(toAdd)
+      ? supabase.from('user_missing_stickers').upsert(toAdd)
       : null,
     toRemove.length > 0
       ? supabase
-          .from('user_repeated_stickers')
+          .from('user_missing_stickers')
           .delete()
           .eq('user_id', user.id)
           .in('sticker_id', toRemove)

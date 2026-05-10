@@ -15,8 +15,12 @@ export function StickerSection({
   accent,
   flagColors,
 }: StickerSectionProps) {
+  const accentStyle = {
+    '--accent-color': accent === 'coral' ? 'var(--color-coral)' : 'var(--color-green)',
+  } as React.CSSProperties;
+
   return (
-    <div className={styles.section}>
+    <div className={styles.section} style={accentStyle}>
       <div className={styles.header}>
         <span className={styles.title}>{title}</span>
         <button type="button" className={styles.clearBtn} onClick={onClear}>

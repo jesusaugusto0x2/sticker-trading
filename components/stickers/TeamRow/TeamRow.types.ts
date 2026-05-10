@@ -7,4 +7,5 @@ export interface TeamRowProps {
   accent: 'green' | 'coral';
   isExpanded: boolean;
   onToggleExpand: (teamCode: string) => void;
+  playerSectionTitle?: string;
 }

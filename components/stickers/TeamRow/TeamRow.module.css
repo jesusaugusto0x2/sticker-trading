@@ -11,8 +11,8 @@
 }
 
 .rowExpanded {
-  box-shadow: var(--shadow-green-md);
-  border-color: var(--color-green);
+  box-shadow: var(--accent-shadow-md);
+  border-color: var(--accent-color);
   grid-column: 1 / -1;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .counterActive {
-  color: var(--color-green);
+  color: var(--accent-color);
 }
 
 /* ─── Right side ─────────────────────────────────────────────── */
@@ -92,7 +92,7 @@
 }
 
 .dotFilled {
-  background: var(--color-green);
+  background: var(--accent-color);
 }
 
 .chevron {

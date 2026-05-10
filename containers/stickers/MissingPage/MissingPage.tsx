@@ -7,7 +7,7 @@ import { useCurrentUser, useDebounce, useDebouncedToggle } from '@/hooks';
 import { Input, Typography } from '@/components/ui';
 import { TeamRow } from '@/components/stickers/TeamRow/TeamRow';
 import type { Team } from '@/lib/schemas/sticker';
-import styles from './RepeatedPage.module.css';
+import styles from './MissingPage.module.css';
 
 const introTeam: Team = {
   code: 'intro',
@@ -18,7 +18,7 @@ const introTeam: Team = {
 
 const allTeams = stickersData.teams as Team[];
 
-export function RepeatedPage() {
+export function MissingPage() {
   const [checkedIds, setCheckedIds] = useState<Set<string>>(new Set());
   const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -27,7 +27,7 @@ export function RepeatedPage() {
   const debouncedSearch = useDebounce(search, 300);
 
   const debouncedToggle = useDebouncedToggle(async (changes) => {
-    await fetch('/api/stickers/repeated', {
+    await fetch('/api/stickers/missing', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ changes }),
@@ -37,7 +37,7 @@ export function RepeatedPage() {
   useEffect(() => {
     if (!user) return;
 
-    fetch('/api/stickers/repeated')
+    fetch('/api/stickers/missing')
       .then((res) => res.json())
       .then(({ stickerIds }) => {
         setCheckedIds(new Set(stickerIds ?? []));
@@ -58,7 +58,7 @@ export function RepeatedPage() {
   };
 
   const filteredTeams = allTeams.filter((team) =>
-    team.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
+    team.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   if (loading) return null;
@@ -66,13 +66,13 @@ export function RepeatedPage() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <Typography variant="h1">Mis repetidas</Typography>
+        <Typography variant="h1">Mis faltantes</Typography>
         <div className={styles.counter}>
           <span className={styles.counterNumber}>{checkedIds.size}</span>
-          <span className={styles.counterLabel}>repetidos en total</span>
+          <span className={styles.counterLabel}>pendientes en total</span>
         </div>
         <Typography variant="body-sm" color="muted">
-          Marca solo las que tienes de más.
+          Desmarca las que ya pegaste.
         </Typography>
       </div>
 
@@ -92,9 +92,10 @@ export function RepeatedPage() {
           team={introTeam}
           checkedIds={checkedIds}
           onToggle={handleToggle}
-          accent="green"
+          accent="coral"
           isExpanded={expandedTeam === 'intro'}
           onToggleExpand={handleToggleExpand}
+          playerSectionTitle="DESMARCA LO QUE YA TIENES"
         />
         {filteredTeams.map((team) => (
           <TeamRow
@@ -102,9 +103,10 @@ export function RepeatedPage() {
             team={team}
             checkedIds={checkedIds}
             onToggle={handleToggle}
-            accent="green"
+            accent="coral"
             isExpanded={expandedTeam === team.code}
             onToggleExpand={handleToggleExpand}
+            playerSectionTitle="DESMARCA LO QUE YA TIENES"
           />
         ))}
       </div>

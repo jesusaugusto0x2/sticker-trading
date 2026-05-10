@@ -15,11 +15,11 @@
 }
 
 .desktopCardChecked {
-  background: color-mix(in srgb, var(--color-green) 8%, transparent);
+  background: color-mix(in srgb, var(--accent-color) 8%, transparent);
 }
 
 .desktopCardChecked:hover {
-  background: color-mix(in srgb, var(--color-green) 12%, transparent);
+  background: color-mix(in srgb, var(--accent-color) 12%, transparent);
 }
 
 /* ─── Number badge ───────────────────────────────────────────── */

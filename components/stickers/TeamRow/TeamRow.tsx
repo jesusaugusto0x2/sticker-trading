@@ -12,6 +12,17 @@ const TOTAL_DOTS = 5;
 
 const FOIL_GRADIENT = 'linear-gradient(135deg, #C9A84C, #F5E6A3)';
 
+const ACCENT_VARS: Record<'green' | 'coral', React.CSSProperties> = {
+  green: {
+    '--accent-color': 'var(--color-green)',
+    '--accent-shadow-md': 'var(--shadow-green-md)',
+  } as React.CSSProperties,
+  coral: {
+    '--accent-color': 'var(--color-coral)',
+    '--accent-shadow-md': 'var(--shadow-coral-md)',
+  } as React.CSSProperties,
+};
+
 export function TeamRow({
   team,
   checkedIds,
@@ -19,6 +30,7 @@ export function TeamRow({
   accent,
   isExpanded,
   onToggleExpand,
+  playerSectionTitle = 'MARCA TUS REPETIDOS',
 }: TeamRowProps) {
   const total = team.stickers.length;
   const checkedCount = team.stickers.filter((s) => checkedIds.has(s.id)).length;
@@ -46,7 +58,7 @@ export function TeamRow({
     .join(' ');
 
   return (
-    <div className={rowClass}>
+    <div className={rowClass} style={ACCENT_VARS[accent]}>
       <div
         className={styles.header}
         onClick={() => onToggleExpand(team.code)}
@@ -112,7 +124,7 @@ export function TeamRow({
             )}
             {playerStickers.length > 0 && (
               <StickerSection
-                title="MARCA TUS REPETIDOS"
+                title={playerSectionTitle}
                 stickers={playerStickers}
                 checkedIds={checkedIds}
                 onToggle={onToggle}
