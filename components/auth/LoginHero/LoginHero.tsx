@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './LoginHero.module.css';
 import { Badge, Typography } from '@/components/ui';
 import { StickerCard } from '@/components/stickers';

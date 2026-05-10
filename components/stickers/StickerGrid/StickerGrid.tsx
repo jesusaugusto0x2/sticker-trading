@@ -1,3 +1,5 @@
+'use client';
+
 import { StickerCard } from '@/components/stickers/StickerCard/StickerCard';
 import styles from './StickerGrid.module.css';
 
