@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Checkbox, SegmentedControl } from '@/components/ui';
+import { Button, Input, Checkbox, SegmentedControl, Toggle } from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -117,6 +117,9 @@ const TAB_OPTIONS = [
 
 export default function ComponentDocsPage() {
   const [tab, setTab] = useState('repes');
+  const [toggleA, setToggleA] = useState(true);
+  const [toggleB, setToggleB] = useState(false);
+  const [toggleCard, setToggleCard] = useState(true);
 
   return (
     <div
@@ -560,6 +563,44 @@ export default function ComponentDocsPage() {
               disabled
             />
           </div>
+        </Row>
+      </section>
+
+      {/* ── Toggle ───────────────────────────────────────────── */}
+      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Toggle</h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        controlled — state lives in the parent. thumb animates with ease-snap overshoot.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          variant=&quot;plain&quot;
+        </h2>
+
+        <Row label="checked">
+          <Toggle checked={toggleA} onChange={setToggleA} label="Notificaciones" />
+        </Row>
+
+        <Row label="unchecked">
+          <Toggle checked={toggleB} onChange={setToggleB} label="Modo oscuro" />
+        </Row>
+
+        <Row label="disabled checked">
+          <Toggle checked={true} onChange={() => {}} label="Sin acceso" disabled />
+        </Row>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          variant=&quot;card&quot;
+        </h2>
+
+        <Row label="checked">
+          <Toggle variant="card" checked={toggleCard} onChange={setToggleCard} label="Activado" />
+        </Row>
+
+        <Row label="disabled">
+          <Toggle variant="card" checked={false} onChange={() => {}} label="Disabled" disabled />
         </Row>
       </section>
     </div>

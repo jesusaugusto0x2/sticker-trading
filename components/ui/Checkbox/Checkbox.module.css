@@ -87,10 +87,12 @@
 
 /* ─── Card variant ───────────────────────────────────────────── */
 .card {
+  display: inline-flex;
+  align-self: flex-start;
   background: var(--color-surface);
-  border: var(--border-thin);
+  border: var(--border-muted);
   border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-soft-sm);
   padding: var(--space-8) var(--space-12);
 }
 

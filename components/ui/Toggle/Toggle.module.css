@@ -1,0 +1,90 @@
+/* ─── Plain wrapper ──────────────────────────────────────────── */
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--hit-min);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ─── Card variant ───────────────────────────────────────────── */
+.card {
+  display: inline-flex;
+  align-self: flex-start;
+  background: var(--color-surface);
+  border: var(--border-muted);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-soft-sm);
+  padding: var(--space-8) var(--space-12);
+}
+
+.wrapperInCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ─── Native input — hidden, accessible ─────────────────────── */
+.nativeInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* ─── Track ──────────────────────────────────────────────────── */
+.track {
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background: var(--color-ink-15);
+  transition: background var(--duration-base) var(--ease-snap);
+}
+
+.nativeInput:checked + .track {
+  background: var(--color-green);
+}
+
+/* ─── Thumb ──────────────────────────────────────────────────── */
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft-sm);
+  transition: transform var(--duration-base) var(--ease-snap);
+}
+
+/* checked: 52 - 24 - 3 (right padding) - 3 (initial left) = 22px */
+.nativeInput:checked + .track .thumb {
+  transform: translateX(22px);
+}
+
+/* ─── Focus ring (keyboard navigation) ──────────────────────── */
+.nativeInput:focus-visible + .track {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Label text ─────────────────────────────────────────────── */
+.labelText {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+}
+
+/* ─── Disabled ───────────────────────────────────────────────── */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
