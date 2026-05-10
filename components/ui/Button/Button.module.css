@@ -22,7 +22,7 @@
 /* ─── Variants ──────────────────────────────────────────────── */
 .primary {
   background: var(--color-ink);
-  color: #ffffff;
+  color: var(--color-white);
   border: var(--border-thick);
   box-shadow: var(--shadow-md);
 }
@@ -84,10 +84,10 @@
   opacity: 0.5;
 }
 
-/* icon-only is always 44×44, ignores size classes */
+/* icon-only is always hit-min × hit-min, ignores size classes */
 .icon-only {
-  width: 44px;
-  height: 44px;
+  width: var(--hit-min);
+  height: var(--hit-min);
   min-height: unset;
   padding: 0;
   background: transparent;
@@ -99,7 +99,7 @@
 
 .icon-only:active:not(:disabled) {
   background: var(--color-ink);
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 /* ─── Color modifiers (only primary & secondary use these) ──── */
@@ -113,20 +113,20 @@
 
 /* ─── Sizes ─────────────────────────────────────────────────── */
 .sm {
-  height: 36px;
+  height: var(--icon-btn);
   min-height: var(--hit-min);
   font-size: var(--text-md);
   padding: 0 var(--space-12);
 }
 
 .md {
-  height: 48px;
+  height: var(--hit-cozy);
   font-size: var(--text-lg);
   padding: 0 var(--space-16);
 }
 
 .lg {
-  height: 56px;
+  height: var(--hit-comfy);
   font-size: var(--text-xl);
   padding: 0 var(--space-20);
 }

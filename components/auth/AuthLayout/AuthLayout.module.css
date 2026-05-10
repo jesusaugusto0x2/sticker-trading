@@ -1,0 +1,19 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100dvh;
+}
+
+.hero {
+  display: block;
+}
+
+@media (--bp-md) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    display: none;
+  }
+}

@@ -1,7 +1,12 @@
 import styles from './Button.module.css';
 import type { ButtonProps } from './Button.types';
 
-export type { ButtonProps, ButtonVariant, ButtonColor, ButtonSize } from './Button.types';
+export type {
+  ButtonProps,
+  ButtonVariant,
+  ButtonColor,
+  ButtonSize,
+} from './Button.types';
 
 export function Button({
   variant = 'primary',

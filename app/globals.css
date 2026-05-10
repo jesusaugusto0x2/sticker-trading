@@ -10,6 +10,12 @@
 
 /* fonts are loaded via next/font/google in app/layout.tsx */
 
+/* ─── Breakpoints ────────────────────────────────────────────── */
+@custom-media --bp-sm (max-width: 480px);
+@custom-media --bp-md (max-width: 768px);
+@custom-media --bp-lg (max-width: 1024px);
+@custom-media --bp-xl (max-width: 1280px);
+
 /* ─── Reset ─────────────────────────────────────────────────── */
 *,
 *::before,
@@ -80,6 +86,7 @@ svg {
 
   --color-bg: #fafaf7; /* warm off-white app background  */
   --color-surface: #ffffff; /* cards / elevated surfaces      */
+  --color-white: #ffffff; /* pure white — text on dark bg   */
   --color-muted: #f0ede5; /* subtle backdrops               */
 
   /* ── Colors · Semantic states ───────────────────────────── */
@@ -244,8 +251,9 @@ svg {
   --weight-black: 900;
 
   /* ── Typography · Tracking ───────────────────────────────── */
-  --tracking-tight: -0.04em; /* big display numbers          */
-  --tracking-snug: -0.03em; /* h1 headings                  */
+  --tracking-tight:   -0.04em; /* display                      */
+  --tracking-snug:    -0.03em; /* h1                           */
+  --tracking-heading: -0.02em; /* h2                           */
   --tracking-mild: -0.01em; /* row titles                   */
   --tracking-normal: 0;
   --tracking-wide: 0.04em; /* nav labels                   */

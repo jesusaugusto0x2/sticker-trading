@@ -3,7 +3,7 @@
   font-family: var(--font-display);
   font-size: var(--text-6xl);
   font-weight: var(--weight-black);
-  letter-spacing: -0.04em;
+  letter-spacing: var(--tracking-tight);
   line-height: 1;
 }
 
@@ -11,7 +11,7 @@
   font-family: var(--font-display);
   font-size: var(--text-hero);
   font-weight: var(--weight-black);
-  letter-spacing: -0.03em;
+  letter-spacing: var(--tracking-snug);
   line-height: 1.05;
 }
 
@@ -19,7 +19,7 @@
   font-family: var(--font-display);
   font-size: var(--text-heading);
   font-weight: var(--weight-extrabold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-heading);
   line-height: 1.1;
 }
 
@@ -27,7 +27,7 @@
   font-family: var(--font-display);
   font-size: var(--text-title);
   font-weight: var(--weight-extrabold);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-mild);
   line-height: 1.2;
 }
 
@@ -81,7 +81,7 @@
   color: var(--color-danger);
 }
 .colorWhite {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 /* ─── Truncate ───────────────────────────────────────────────── */
