@@ -1,4 +1,7 @@
-import { Button, Input, Checkbox } from '@/components/ui';
+'use client';
+
+import { useState } from 'react';
+import { Button, Input, Checkbox, SegmentedControl } from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -106,7 +109,15 @@ function Row({
   );
 }
 
+const TAB_OPTIONS = [
+  { label: 'Repes', value: 'repes' },
+  { label: 'Faltan', value: 'faltan' },
+  { label: 'Matches', value: 'matches' },
+];
+
 export default function ComponentDocsPage() {
+  const [tab, setTab] = useState('repes');
+
   return (
     <div
       style={{
@@ -515,6 +526,39 @@ export default function ComponentDocsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
             <Checkbox variant="card" label="Sticker 42" disabled />
             <Checkbox variant="card" accent="green" label="Sticker 43" defaultChecked disabled />
+          </div>
+        </Row>
+      </section>
+
+      {/* ── SegmentedControl ─────────────────────────────────── */}
+      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>SegmentedControl</h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        fully controlled — state lives in the parent.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+          Interactive
+        </h2>
+
+        <Row label="3 options · active: {tab}">
+          <div style={{ width: '100%', maxWidth: 400 }}>
+            <SegmentedControl
+              options={TAB_OPTIONS}
+              value={tab}
+              onChange={setTab}
+            />
+          </div>
+        </Row>
+
+        <Row label="disabled">
+          <div style={{ width: '100%', maxWidth: 400 }}>
+            <SegmentedControl
+              options={TAB_OPTIONS}
+              value="faltan"
+              onChange={() => {}}
+              disabled
+            />
           </div>
         </Row>
       </section>
