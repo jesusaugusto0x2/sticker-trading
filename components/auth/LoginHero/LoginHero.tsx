@@ -1,34 +1,6 @@
 import styles from './LoginHero.module.css';
-import { Typography } from '@/components/ui';
-
-function StickerCard({
-  initials,
-  number,
-  name,
-  team,
-  gradientClass,
-  positionClass,
-}: {
-  initials: string;
-  number: string;
-  name: string;
-  team: string;
-  gradientClass: string;
-  positionClass: string;
-}) {
-  return (
-    <div className={`${styles.card} ${positionClass}`}>
-      <div className={`${styles.cardGradient} ${gradientClass}`}>
-        <p className={styles.cardInitials}>{initials}</p>
-      </div>
-      <div className={styles.cardBody}>
-        <p className={styles.cardNumber}>{number}</p>
-        <p className={styles.cardName}>{name}</p>
-        <p className={styles.cardTeam}>{team}</p>
-      </div>
-    </div>
-  );
-}
+import { Badge, Typography } from '@/components/ui';
+import { StickerCard } from '@/components/stickers';
 
 export function LoginHero() {
   return (
@@ -38,10 +10,7 @@ export function LoginHero() {
           <div className={styles.logoIcon}>R</div>
           <span className={styles.logoText}>repes26</span>
         </div>
-        <div className={styles.badge}>
-          <span className={styles.badgeDot} />
-          MUNDIAL 2026 · BETA
-        </div>
+        <Badge variant="ink" dot>MUNDIAL 2026 · BETA</Badge>
       </header>
 
       <div className={styles.body}>
@@ -60,24 +29,24 @@ export function LoginHero() {
             number="#42"
             name="L. Messi"
             team="Argentina"
-            gradientClass={styles.gradientArg}
-            positionClass={styles.cardOne}
+            countryCode="arg"
+            className={styles.cardOne}
           />
           <StickerCard
             initials="VJ"
             number="#87"
             name="V. Jr."
             team="Brasil"
-            gradientClass={styles.gradientBra}
-            positionClass={styles.cardTwo}
+            countryCode="bra"
+            className={styles.cardTwo}
           />
           <StickerCard
             initials="HR"
             number="#113"
             name="H. Reyes"
             team="México"
-            gradientClass={styles.gradientMex}
-            positionClass={styles.cardThree}
+            countryCode="mex"
+            className={styles.cardThree}
           />
         </div>
       </div>

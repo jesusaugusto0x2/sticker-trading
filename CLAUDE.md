@@ -82,13 +82,28 @@ ComponentName/
 
 All in `components/ui/`:
 
+- `Badge` → variants: default, ink, green, yellow, coral | prop: dot (animated green pulse)
 - `Button` → variants: primary, secondary, ghost, danger, icon-only | colors: default, green
-- `Input` → types: text, email, password, search, tel | states: default, error, disabled
+- `Card` → accents: default, green, coral, yellow, purple | paddings: none, sm, md, lg | borders: solid (default), dashed
 - `Checkbox` → accents: green, coral | variants: plain, card
-- `Toggle` → variants: plain, card
+- `Input` → types: text, email, password, search, tel | states: default, error, disabled
 - `SegmentedControl` → controlled, stateless
+- `Toggle` → variants: plain, card
 - `Typography` → variants: display, h1, h2, title, body-lg, body-sm, label, caption
-- `Card` → accents: default, green, coral, yellow, purple | paddings: none, sm, md, lg
+
+## Auth Components available
+
+All in `components/auth/`:
+
+- `AuthLayout` → reusable two-column layout (hero + children); hero col hidden on mobile via `--bp-md`
+- `LoginHero` → decorative left panel for the login page
+- `LoginForm` → login form (email + Google); receives handlers as props, no Supabase calls
+
+## Sticker Components available
+
+All in `components/stickers/`:
+
+- `StickerCard` → countryCode drives gradient automatically from `--flag-{code}-1/2` tokens; props: initials, number, name, team, countryCode, className
 
 ## Brand icons available
 
@@ -117,13 +132,14 @@ All in `assets/icons/`:
 - Mobile-first, CSS only, no JavaScript for resolution detection
 - `app/(auth)/` pages → single column on mobile, two columns on desktop
 - `app/(app)/` pages → bottom nav on mobile, sidebar on desktop
-- Breakpoint: 768px
+- Use `@media (--bp-md)` syntax — requires `postcss-custom-media` (already configured)
+- Breakpoints defined in `globals.css`: `--bp-sm` (480px), `--bp-md` (768px), `--bp-lg` (1024px), `--bp-xl` (1280px)
 
 ## Design tokens
 
 All defined in `app/globals.css` as CSS custom properties:
 
-- Colors: `--color-green`, `--color-coral`, `--color-yellow`, `--color-purple`, `--color-ink`, `--color-surface`, `--color-bg`, `--color-muted`
+- Colors: `--color-green`, `--color-coral`, `--color-yellow`, `--color-purple`, `--color-ink`, `--color-surface`, `--color-bg`, `--color-muted`, `--color-white` (text on dark backgrounds)
 - Semantic states: `--color-success`, `--color-warning`, `--color-danger`, `--color-info`
 - Typography: `--font-display` (Archivo), `--font-body` (Inter)
 - Spacing: `--space-1` through `--space-24`

@@ -35,3 +35,10 @@
 .accentPurple {
   box-shadow: var(--shadow-purple-md);
 }
+
+/* ─── Border modifier ────────────────────────────────────────── */
+/* must come after accent classes so box-shadow: none takes precedence */
+.borderDashed {
+  border: 1.5px dashed var(--color-ink-25);
+  box-shadow: none;
+}

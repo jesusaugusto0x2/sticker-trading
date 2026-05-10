@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
-import { Button, Input, Typography } from '@/components/ui';
+import { Badge, Button, Card, Input, Typography } from '@/components/ui';
 import { GoogleIcon } from '@/assets/icons';
 import styles from './LoginForm.module.css';
 import type { LoginFormProps } from './LoginForm.types';
@@ -26,12 +26,7 @@ export function LoginForm({
 
   return (
     <div className={styles.form}>
-      <div className={styles.badge}>
-        <span className={styles.badgeDot} />
-        <Typography variant="label" color="muted">
-          Bienvenido de vuelta
-        </Typography>
-      </div>
+      <Badge dot className={styles.badgeMargin}>Bienvenido de vuelta</Badge>
 
       <h1 className={styles.headline}>
         Inicia <span className={styles.headlineAccent}>sesión</span>
@@ -102,7 +97,7 @@ export function LoginForm({
         </div>
       </form>
 
-      <div className={styles.registerCard}>
+      <Card border="dashed" padding="md" className={styles.registerCard}>
         <Typography variant="body-lg" color="muted">
           ¿Primera vez por aquí? Crea tu cuenta en menos de un minuto.
         </Typography>
@@ -111,7 +106,7 @@ export function LoginForm({
             Registrarme
           </Button>
         </Link>
-      </div>
+      </Card>
 
       <footer className={styles.footer}>
         <Typography variant="caption" color="muted">
