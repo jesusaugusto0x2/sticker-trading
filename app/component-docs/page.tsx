@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { AppleIcon, GoogleIcon, InstagramIcon, WhatsAppIcon } from '@/assets/icons';
 import {
   Button,
   Card,
@@ -1102,6 +1103,95 @@ export default function ComponentDocsPage() {
               entra en una línea
             </Typography>
           </div>
+        </Row>
+      </section>
+
+      {/* ── Icons ────────────────────────────────────────────── */}
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Icons
+      </h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        Brand icons — Google uses fixed brand colors; Apple, Instagram and
+        WhatsApp accept a color prop (default: currentColor).
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
+          Sizes
+        </h2>
+
+        <Row label="GoogleIcon · 16 / 24 / 32">
+          <GoogleIcon size={16} />
+          <GoogleIcon size={24} />
+          <GoogleIcon size={32} />
+        </Row>
+
+        <Row label="AppleIcon · 16 / 24 / 32">
+          <AppleIcon size={16} />
+          <AppleIcon size={24} />
+          <AppleIcon size={32} />
+        </Row>
+
+        <Row label="InstagramIcon · 16 / 24 / 32">
+          <InstagramIcon size={16} />
+          <InstagramIcon size={24} />
+          <InstagramIcon size={32} />
+        </Row>
+
+        <Row label="WhatsAppIcon · 16 / 24 / 32">
+          <WhatsAppIcon size={16} />
+          <WhatsAppIcon size={24} />
+          <WhatsAppIcon size={32} />
+        </Row>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
+          Color prop
+        </h2>
+
+        <Row label="AppleIcon · default / ink / green / coral">
+          <AppleIcon size={24} />
+          <AppleIcon size={24} color="#0F1419" />
+          <AppleIcon size={24} color="#00B86B" />
+          <AppleIcon size={24} color="#FF5A36" />
+        </Row>
+
+        <Row label="InstagramIcon · default / ink / green / coral">
+          <InstagramIcon size={24} />
+          <InstagramIcon size={24} color="#0F1419" />
+          <InstagramIcon size={24} color="#00B86B" />
+          <InstagramIcon size={24} color="#FF5A36" />
+        </Row>
+
+        <Row label="WhatsAppIcon · default / ink / green / brand">
+          <WhatsAppIcon size={24} />
+          <WhatsAppIcon size={24} color="#0F1419" />
+          <WhatsAppIcon size={24} color="#00B86B" />
+          <WhatsAppIcon size={24} color="#25D366" />
         </Row>
       </section>
     </div>
