@@ -13,9 +13,13 @@ export function OnboardingPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => setUser(user));
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+      setLoadingUser(false);
+    });
   }, []);
 
   const handleSubmit = async (data: OnboardingInput) => {
@@ -48,7 +52,8 @@ export function OnboardingPage() {
     setIsLoading(false);
   };
 
-  if (!user) return null;
+  if (loadingUser) return null;
+  if (!user) return null; // no session — redirect handled by middleware
 
   return (
     <AuthLayout>

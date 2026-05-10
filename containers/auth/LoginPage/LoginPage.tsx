@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { AuthLayout } from '@/components/auth/AuthLayout/AuthLayout';
 import { LoginForm } from '@/components/auth/LoginForm/LoginForm';
 import { LoginInput } from '@/lib/schemas/auth';
 
 export function LoginPage() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,12 +24,21 @@ export function LoginPage() {
   const handleEmailLogin = async ({ email, password }: LoginInput) => {
     setIsLoading(true);
     setError(null);
-    const { error: authError } = await supabase.auth.signInWithPassword({
+
+    const { data, error: authError } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
-    if (authError) setError(authError.message);
+
+    console.log('Login response:', { data, authError });
+
+    if (authError) {
+      setError(authError.message);
+      return;
+    }
+
     setIsLoading(false);
+    router.push('/repes');
   };
 
   return (

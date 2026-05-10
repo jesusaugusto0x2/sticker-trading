@@ -9,11 +9,25 @@ import { Badge, Button, Input, Select, Typography } from '@/components/ui';
 import { InstagramIcon } from '@/assets/icons';
 import venezuelaData from '@/lib/data/venezuela.json';
 import styles from './OnboardingForm.module.css';
-import type { OnboardingFormProps, OnboardingInput } from './OnboardingForm.types';
+import type {
+  OnboardingFormProps,
+  OnboardingInput,
+} from './OnboardingForm.types';
 
-export type { OnboardingFormProps, OnboardingInput } from './OnboardingForm.types';
+export type {
+  OnboardingFormProps,
+  OnboardingInput,
+} from './OnboardingForm.types';
 
-const countryOptions = [{ value: venezuelaData.name, label: `${venezuelaData.flag} ${venezuelaData.name}` }];
+const countryOptions = [
+  {
+    value: venezuelaData.name,
+    label: `${venezuelaData.flag} ${venezuelaData.name}`,
+  },
+];
+const prefixOptions = [
+  { value: venezuelaData.dial_code, label: venezuelaData.dial_code },
+];
 
 export function OnboardingForm({
   onSubmit,
@@ -29,20 +43,26 @@ export function OnboardingForm({
     formState: { errors },
   } = useForm<OnboardingInput>({
     resolver: zodResolver(onboardingInputSchema),
-    defaultValues: { nombre: defaultName },
+    defaultValues: {
+      nombre: defaultName,
+      phone_prefix: venezuelaData.dial_code,
+    },
   });
 
   const selectedCountryName = watch('country_name');
   const selectedStateName = watch('state_name');
 
-  const selectedCountry = venezuelaData.name === selectedCountryName ? venezuelaData : null;
+  const selectedCountry =
+    venezuelaData.name === selectedCountryName ? venezuelaData : null;
 
   const stateOptions = (selectedCountry?.states ?? []).map((s) => ({
     value: s.name,
     label: s.name,
   }));
 
-  const selectedState = selectedCountry?.states.find((s) => s.name === selectedStateName);
+  const selectedState = selectedCountry?.states.find(
+    (s) => s.name === selectedStateName
+  );
 
   const cityOptions = (selectedState?.cities ?? []).map((c) => ({
     value: c.name,
@@ -87,7 +107,8 @@ export function OnboardingForm({
             {...countryRegister}
             onChange={(e) => {
               countryRegister.onChange(e);
-              const country = e.target.value === venezuelaData.name ? venezuelaData : null;
+              const country =
+                e.target.value === venezuelaData.name ? venezuelaData : null;
               setValue('country_code', country?.code.toLowerCase() ?? '');
               setValue('phone_prefix', country?.dial_code ?? '');
               setValue('state_name', '');
@@ -121,14 +142,16 @@ export function OnboardingForm({
             {...register('city_name')}
           />
 
-          <div>
-            <div className={styles.compactRow}>
-              <Input
-                placeholder="+58"
+          <div className={styles.phoneGroup}>
+            <div className={styles.prefixWrapper}>
+              <Select
+                label="Prefijo telf."
+                options={prefixOptions}
                 state={errors.phone_prefix ? 'error' : 'default'}
-                className={styles.codeInput}
                 {...register('phone_prefix')}
               />
+            </div>
+            <div className={styles.phoneWrapper}>
               <Input
                 label="WhatsApp"
                 placeholder="4141234567"

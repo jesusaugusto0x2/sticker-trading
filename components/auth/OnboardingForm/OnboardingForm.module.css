@@ -43,15 +43,21 @@
   margin-bottom: var(--space-8);
 }
 
-/* ─── Compact rows (country, phone) ─────────────────────────── */
-.compactRow {
+/* ─── Phone compound ─────────────────────────────────────────── */
+.phoneGroup {
   display: flex;
   gap: var(--space-2);
+  align-items: flex-start;
 }
 
-.codeInput {
-  width: 72px;
+.prefixWrapper {
+  width: 118px;
   flex-shrink: 0;
+}
+
+.phoneWrapper {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ─── Submit ─────────────────────────────────────────────────── */

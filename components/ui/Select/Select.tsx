@@ -71,6 +71,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 
           <select
             ref={ref}
+            defaultValue={placeholder ? '' : undefined}
             {...props}
             id={selectId}
             disabled={isDisabled}
@@ -79,7 +80,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               state === 'error' && errorMessage ? errorId : undefined
             }
             className={styles.select}
-            defaultValue=""
           >
             {placeholder && (
               <option value="" disabled>
