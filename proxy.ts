@@ -31,7 +31,7 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL('/onboarding', request.url));
   }
 
-  if (profileComplete && pathname === '/onboarding') {
+  if (profileComplete && (pathname === '/onboarding' || pathname === '/' || isPublic)) {
     return NextResponse.redirect(new URL('/repes', request.url));
   }
 
