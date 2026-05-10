@@ -1,7 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Checkbox, SegmentedControl, Toggle, Typography } from '@/components/ui';
+import {
+  Button,
+  Card,
+  Input,
+  Checkbox,
+  SegmentedControl,
+  Toggle,
+  Typography,
+} from '@/components/ui';
 
 function BellIcon() {
   return (
@@ -368,13 +376,30 @@ export default function ComponentDocsPage() {
       </section>
 
       {/* ── Input ───────────────────────────────────────────── */}
-      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Input</h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Input
+      </h1>
       <p style={{ color: '#0F14198C', marginBottom: 48 }}>
         search and password icons are internal — all others go via leftIcon.
       </p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           Types
         </h2>
 
@@ -384,8 +409,18 @@ export default function ComponentDocsPage() {
             label="Full name"
             placeholder="Jesus Varela"
             leftIcon={
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
               </svg>
             }
           />
@@ -397,8 +432,18 @@ export default function ComponentDocsPage() {
             label="Email"
             placeholder="jesus@example.com"
             leftIcon={
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
             }
           />
@@ -410,8 +455,18 @@ export default function ComponentDocsPage() {
             label="Password"
             placeholder="••••••••"
             leftIcon={
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="18" height="11" x="3" y="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
             }
           />
@@ -427,7 +482,16 @@ export default function ComponentDocsPage() {
             label="Phone"
             placeholder="+54 11 1234-5678"
             leftIcon={
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
               </svg>
             }
@@ -436,7 +500,15 @@ export default function ComponentDocsPage() {
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           States
         </h2>
 
@@ -461,13 +533,31 @@ export default function ComponentDocsPage() {
       </section>
 
       {/* ── Checkbox ─────────────────────────────────────────── */}
-      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Checkbox</h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Checkbox
+      </h1>
       <p style={{ color: '#0F14198C', marginBottom: 48 }}>
-        accent drives the fill color — the component knows nothing about repes or faltan.
+        accent drives the fill color — the component knows nothing about repes
+        or faltan.
       </p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           Accents &amp; states
         </h2>
 
@@ -477,13 +567,13 @@ export default function ComponentDocsPage() {
           <Checkbox label="Sticker 44" />
         </Row>
 
-        <Row label="checked · accent=&quot;green&quot; (repes)">
+        <Row label='checked · accent="green" (repes)'>
           <Checkbox label="Sticker 42" accent="green" defaultChecked />
           <Checkbox label="Sticker 43" accent="green" defaultChecked />
           <Checkbox label="No label" accent="green" defaultChecked />
         </Row>
 
-        <Row label="checked · accent=&quot;coral&quot; (faltan)">
+        <Row label='checked · accent="coral" (faltan)'>
           <Checkbox label="Sticker 07" accent="coral" defaultChecked />
           <Checkbox label="Sticker 08" accent="coral" defaultChecked />
           <Checkbox label="No label" accent="coral" defaultChecked />
@@ -500,47 +590,130 @@ export default function ComponentDocsPage() {
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           variant=&quot;card&quot;
         </h2>
 
         <Row label="unchecked">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              width: '100%',
+              maxWidth: 320,
+            }}
+          >
             <Checkbox variant="card" label="Sticker 42" />
             <Checkbox variant="card" label="Sticker 43" />
           </div>
         </Row>
 
-        <Row label="checked · accent=&quot;green&quot;">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
-            <Checkbox variant="card" accent="green" label="Sticker 42" defaultChecked />
-            <Checkbox variant="card" accent="green" label="Sticker 43" defaultChecked />
+        <Row label='checked · accent="green"'>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              width: '100%',
+              maxWidth: 320,
+            }}
+          >
+            <Checkbox
+              variant="card"
+              accent="green"
+              label="Sticker 42"
+              defaultChecked
+            />
+            <Checkbox
+              variant="card"
+              accent="green"
+              label="Sticker 43"
+              defaultChecked
+            />
           </div>
         </Row>
 
-        <Row label="checked · accent=&quot;coral&quot;">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
-            <Checkbox variant="card" accent="coral" label="Sticker 07" defaultChecked />
-            <Checkbox variant="card" accent="coral" label="Sticker 08" defaultChecked />
+        <Row label='checked · accent="coral"'>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              width: '100%',
+              maxWidth: 320,
+            }}
+          >
+            <Checkbox
+              variant="card"
+              accent="coral"
+              label="Sticker 07"
+              defaultChecked
+            />
+            <Checkbox
+              variant="card"
+              accent="coral"
+              label="Sticker 08"
+              defaultChecked
+            />
           </div>
         </Row>
 
         <Row label="disabled">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', maxWidth: 320 }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              width: '100%',
+              maxWidth: 320,
+            }}
+          >
             <Checkbox variant="card" label="Sticker 42" disabled />
-            <Checkbox variant="card" accent="green" label="Sticker 43" defaultChecked disabled />
+            <Checkbox
+              variant="card"
+              accent="green"
+              label="Sticker 43"
+              defaultChecked
+              disabled
+            />
           </div>
         </Row>
       </section>
 
       {/* ── SegmentedControl ─────────────────────────────────── */}
-      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>SegmentedControl</h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        SegmentedControl
+      </h1>
       <p style={{ color: '#0F14198C', marginBottom: 48 }}>
         fully controlled — state lives in the parent.
       </p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           Interactive
         </h2>
 
@@ -567,18 +740,40 @@ export default function ComponentDocsPage() {
       </section>
 
       {/* ── Toggle ───────────────────────────────────────────── */}
-      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Toggle</h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Toggle
+      </h1>
       <p style={{ color: '#0F14198C', marginBottom: 48 }}>
-        controlled — state lives in the parent. thumb animates with ease-snap overshoot.
+        controlled — state lives in the parent. thumb animates with ease-snap
+        overshoot.
       </p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           variant=&quot;plain&quot;
         </h2>
 
         <Row label="checked">
-          <Toggle checked={toggleA} onChange={setToggleA} label="Notificaciones" />
+          <Toggle
+            checked={toggleA}
+            onChange={setToggleA}
+            label="Notificaciones"
+          />
         </Row>
 
         <Row label="unchecked">
@@ -586,45 +781,120 @@ export default function ComponentDocsPage() {
         </Row>
 
         <Row label="disabled checked">
-          <Toggle checked={true} onChange={() => {}} label="Sin acceso" disabled />
+          <Toggle
+            checked={true}
+            onChange={() => {}}
+            label="Sin acceso"
+            disabled
+          />
         </Row>
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           variant=&quot;card&quot;
         </h2>
 
         <Row label="checked">
-          <Toggle variant="card" checked={toggleCard} onChange={setToggleCard} label="Activado" />
+          <Toggle
+            variant="card"
+            checked={toggleCard}
+            onChange={setToggleCard}
+            label="Activado"
+          />
         </Row>
 
         <Row label="disabled">
-          <Toggle variant="card" checked={false} onChange={() => {}} label="Disabled" disabled />
+          <Toggle
+            variant="card"
+            checked={false}
+            onChange={() => {}}
+            label="Disabled"
+            disabled
+          />
         </Row>
       </section>
 
       {/* ── Typography ───────────────────────────────────────── */}
-      <h1 style={{ fontSize: 32, fontWeight: 900, marginBottom: 8, marginTop: 64 }}>Typography</h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Typography
+      </h1>
       <p style={{ color: '#0F14198C', marginBottom: 48 }}>
         Archivo for display/headings — Inter for body/labels.
       </p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 0, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 0,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           Variants
         </h2>
 
         {(
           [
-            { variant: 'display',  spec: 'Archivo 900 · 56px · -0.04em',  sample: 'Display' },
-            { variant: 'h1',       spec: 'Archivo 900 · 40px · -0.03em',  sample: 'Heading 1' },
-            { variant: 'h2',       spec: 'Archivo 800 · 28px · -0.02em',  sample: 'Heading 2' },
-            { variant: 'title',    spec: 'Archivo 800 · 18px · -0.01em',  sample: 'Title' },
-            { variant: 'body-lg',  spec: 'Inter 600 · 15px · normal',     sample: 'Body large — the quick brown fox jumps over the lazy dog' },
-            { variant: 'body-sm',  spec: 'Inter 600 · 13px · normal',     sample: 'Body small — the quick brown fox jumps over the lazy dog' },
-            { variant: 'label',    spec: 'Inter 800 · 11px · 0.08em · uppercase', sample: 'Label text' },
-            { variant: 'caption',  spec: 'Inter 600 · 11px · normal',     sample: 'Caption text' },
+            {
+              variant: 'display',
+              spec: 'Archivo 900 · 56px · -0.04em',
+              sample: 'Display',
+            },
+            {
+              variant: 'h1',
+              spec: 'Archivo 900 · 40px · -0.03em',
+              sample: 'Heading 1',
+            },
+            {
+              variant: 'h2',
+              spec: 'Archivo 800 · 28px · -0.02em',
+              sample: 'Heading 2',
+            },
+            {
+              variant: 'title',
+              spec: 'Archivo 800 · 18px · -0.01em',
+              sample: 'Title',
+            },
+            {
+              variant: 'body-lg',
+              spec: 'Inter 600 · 15px · normal',
+              sample:
+                'Body large — the quick brown fox jumps over the lazy dog',
+            },
+            {
+              variant: 'body-sm',
+              spec: 'Inter 600 · 13px · normal',
+              sample:
+                'Body small — the quick brown fox jumps over the lazy dog',
+            },
+            {
+              variant: 'label',
+              spec: 'Inter 800 · 11px · 0.08em · uppercase',
+              sample: 'Label text',
+            },
+            {
+              variant: 'caption',
+              spec: 'Inter 600 · 11px · normal',
+              sample: 'Caption text',
+            },
           ] as const
         ).map(({ variant, spec, sample }) => (
           <div
@@ -639,7 +909,16 @@ export default function ComponentDocsPage() {
             }}
           >
             <div>
-              <p style={{ fontSize: 12, fontWeight: 700, color: '#0F1419', marginBottom: 2 }}>{variant}</p>
+              <p
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: '#0F1419',
+                  marginBottom: 2,
+                }}
+              >
+                {variant}
+              </p>
               <p style={{ fontSize: 11, color: '#0F14198C' }}>{spec}</p>
             </div>
             <Typography variant={variant}>{sample}</Typography>
@@ -647,19 +926,172 @@ export default function ComponentDocsPage() {
         ))}
       </section>
 
+      {/* ── Card ─────────────────────────────────────────────── */}
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Card
+      </h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        accent drives the shadow color — border is always ink.
+      </p>
+
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 24, paddingBottom: 8, borderBottom: '1.5px solid #0F1419' }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
+          Accents
+        </h2>
+
+        <Row label="default">
+          <Card accent="default">
+            <Typography variant="body-sm" color="muted">
+              accent=&quot;default&quot;
+            </Typography>
+            <Typography variant="title">Shadow ink</Typography>
+          </Card>
+        </Row>
+
+        <Row label="green">
+          <Card accent="green">
+            <Typography variant="body-sm" color="muted">
+              accent=&quot;green&quot;
+            </Typography>
+            <Typography variant="title">Shadow green</Typography>
+          </Card>
+        </Row>
+
+        <Row label="coral">
+          <Card accent="coral">
+            <Typography variant="body-sm" color="muted">
+              accent=&quot;coral&quot;
+            </Typography>
+            <Typography variant="title">Shadow coral</Typography>
+          </Card>
+        </Row>
+
+        <Row label="yellow">
+          <Card accent="yellow">
+            <Typography variant="body-sm" color="muted">
+              accent=&quot;yellow&quot;
+            </Typography>
+            <Typography variant="title">Shadow yellow</Typography>
+          </Card>
+        </Row>
+
+        <Row label="purple">
+          <Card accent="purple">
+            <Typography variant="body-sm" color="muted">
+              accent=&quot;purple&quot;
+            </Typography>
+            <Typography variant="title">Shadow purple</Typography>
+          </Card>
+        </Row>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
+          Padding
+        </h2>
+
+        <Row label="none">
+          <Card padding="none">
+            <div style={{ background: '#0F14190A', padding: '12px 16px' }}>
+              <Typography variant="body-sm" color="muted">
+                padding=&quot;none&quot; — content controls its own spacing
+              </Typography>
+            </div>
+          </Card>
+        </Row>
+
+        <Row label="sm · 16px">
+          <Card padding="sm">
+            <Typography variant="body-sm" color="muted">
+              padding=&quot;sm&quot;
+            </Typography>
+            <Typography variant="title">Small padding</Typography>
+          </Card>
+        </Row>
+
+        <Row label="md · 24px (default)">
+          <Card padding="md">
+            <Typography variant="body-sm" color="muted">
+              padding=&quot;md&quot;
+            </Typography>
+            <Typography variant="title">Medium padding</Typography>
+          </Card>
+        </Row>
+
+        <Row label="lg · 32px">
+          <Card padding="lg">
+            <Typography variant="body-sm" color="muted">
+              padding=&quot;lg&quot;
+            </Typography>
+            <Typography variant="title">Large padding</Typography>
+          </Card>
+        </Row>
+      </section>
+
+      {/* ── Typography ───────────────────────────────────────── */}
+      <section style={{ marginBottom: 48 }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 24,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
           Colors
         </h2>
-        <Row label="all colors · variant=&quot;body-lg&quot;">
+        <Row label='all colors · variant="body-lg"'>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <Typography variant="body-lg" color="default">color=&quot;default&quot; — texto principal</Typography>
-            <Typography variant="body-lg" color="muted">color=&quot;muted&quot; — texto secundario</Typography>
-            <Typography variant="body-lg" color="green">color=&quot;green&quot; — éxito / positivo</Typography>
-            <Typography variant="body-lg" color="coral">color=&quot;coral&quot; — advertencia / faltantes</Typography>
-            <Typography variant="body-lg" color="danger">color=&quot;danger&quot; — error</Typography>
-            <span style={{ background: '#0F1419', padding: '4px 8px', borderRadius: 8, display: 'inline-block' }}>
-              <Typography variant="body-lg" color="white">color=&quot;white&quot; — sobre fondo oscuro</Typography>
+            <Typography variant="body-lg" color="default">
+              color=&quot;default&quot; — texto principal
+            </Typography>
+            <Typography variant="body-lg" color="muted">
+              color=&quot;muted&quot; — texto secundario
+            </Typography>
+            <Typography variant="body-lg" color="green">
+              color=&quot;green&quot; — éxito / positivo
+            </Typography>
+            <Typography variant="body-lg" color="coral">
+              color=&quot;coral&quot; — advertencia / faltantes
+            </Typography>
+            <Typography variant="body-lg" color="danger">
+              color=&quot;danger&quot; — error
+            </Typography>
+            <span
+              style={{
+                background: '#0F1419',
+                padding: '4px 8px',
+                borderRadius: 8,
+                display: 'inline-block',
+              }}
+            >
+              <Typography variant="body-lg" color="white">
+                color=&quot;white&quot; — sobre fondo oscuro
+              </Typography>
             </span>
           </div>
         </Row>
@@ -667,7 +1099,8 @@ export default function ComponentDocsPage() {
         <Row label="truncate">
           <div style={{ width: 280 }}>
             <Typography variant="body-lg" truncate>
-              Este texto es muy largo y debería cortarse con ellipsis cuando no entra en una línea
+              Este texto es muy largo y debería cortarse con ellipsis cuando no
+              entra en una línea
             </Typography>
           </div>
         </Row>

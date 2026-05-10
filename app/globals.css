@@ -196,6 +196,12 @@ img, svg {
   --shadow-green-sm:  2px 2px 0 var(--color-green);
   --shadow-green-md:  3px 3px 0 var(--color-green);
   --shadow-green-lg:  4px 4px 0 var(--color-green);
+  --shadow-coral-md:  3px 3px 0 var(--color-coral);
+  --shadow-coral-lg:  4px 4px 0 var(--color-coral);
+  --shadow-yellow-md: 3px 3px 0 var(--color-yellow);
+  --shadow-yellow-lg: 4px 4px 0 var(--color-yellow);
+  --shadow-purple-md: 3px 3px 0 var(--color-purple);
+  --shadow-purple-lg: 4px 4px 0 var(--color-purple);
 
   /* ── Shadows · Soft (modals, overlays) ───────────────────── */
   --shadow-soft-sm: 0 1px 3px rgba(0,0,0,0.07), 0 3px 10px rgba(0,0,0,0.06);

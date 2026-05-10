@@ -1,0 +1,37 @@
+/* ─── Base ───────────────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-3xl);
+}
+
+/* ─── Padding ────────────────────────────────────────────────── */
+.paddingNone {
+  padding: 0;
+}
+.paddingSm {
+  padding: var(--space-8);
+}
+.paddingMd {
+  padding: var(--space-12);
+}
+.paddingLg {
+  padding: var(--space-16);
+}
+
+/* ─── Accent shadows ─────────────────────────────────────────── */
+.accentDefault {
+  box-shadow: var(--shadow-md);
+}
+.accentGreen {
+  box-shadow: var(--shadow-green-md);
+}
+.accentCoral {
+  box-shadow: var(--shadow-coral-md);
+}
+.accentYellow {
+  box-shadow: var(--shadow-yellow-md);
+}
+.accentPurple {
+  box-shadow: var(--shadow-purple-md);
+}
