@@ -88,6 +88,7 @@ All in `components/ui/`:
 - `Card` → accents: default, green, coral, yellow, purple | paddings: none, sm, md, lg | borders: solid (default), dashed
 - `Checkbox` → accents: green, coral | variants: plain, card
 - `Input` → types: text, email, password, search, tel | states: default, error, disabled
+- `Select` → native select styled to match Input | props: options, label, placeholder, leftIcon, state, errorMessage | states: default, error, disabled
 - `SegmentedControl` → controlled, stateless
 - `Toggle` → variants: plain, card
 - `Typography` → variants: display, h1, h2, title, body-lg, body-sm, label, caption
@@ -96,9 +97,10 @@ All in `components/ui/`:
 
 All in `components/auth/`:
 
-- `AuthLayout` → reusable two-column layout (hero + children); hero col hidden on mobile via `--bp-md`
-- `LoginHero` → decorative left panel for the login page
+- `AuthLayout` → two-column grid layout; embeds `LoginHero` on the left, renders `children` on the right; left col hidden on mobile via `--bp-md`
+- `LoginHero` → decorative left panel (used internally by `AuthLayout`)
 - `LoginForm` → login form (email + Google); receives handlers as props, no Supabase calls
+- `OnboardingForm` → profile completion form; all fields match `profiles` table 1-to-1; 2-col grid on desktop, 1-col on mobile
 
 ## Sticker Components available
 

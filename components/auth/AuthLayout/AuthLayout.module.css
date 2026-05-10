@@ -4,10 +4,6 @@
   min-height: 100dvh;
 }
 
-.hero {
-  display: block;
-}
-
 @media (--bp-md) {
   .layout {
     grid-template-columns: 1fr;

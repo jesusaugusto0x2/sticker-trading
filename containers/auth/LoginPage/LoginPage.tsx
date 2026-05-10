@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { AuthLayout } from '@/components/auth/AuthLayout/AuthLayout';
-import { LoginHero } from '@/components/auth/LoginHero/LoginHero';
 import { LoginForm } from '@/components/auth/LoginForm/LoginForm';
 import { LoginInput } from '@/lib/schemas/auth';
 
@@ -32,7 +31,7 @@ export function LoginPage() {
   };
 
   return (
-    <AuthLayout hero={<LoginHero />}>
+    <AuthLayout>
       <LoginForm
         onGoogleLogin={handleGoogleLogin}
         onEmailLogin={handleEmailLogin}

@@ -3,8 +3,8 @@ import { z } from 'zod';
 export const onboardingInputSchema = z
   .object({
     nombre: z.string().min(2, 'Mínimo 2 caracteres').max(50),
-    country_code: z.string().min(1, 'Selecciona un país'),
-    country_name: z.string().min(1),
+    country_name: z.string().min(1, 'Selecciona un país'),
+    country_code: z.string().optional(),
     state_name: z.string().min(1, 'Selecciona un estado'),
     city_name: z.string().min(1, 'Selecciona una ciudad'),
     phone_prefix: z.string().optional(),

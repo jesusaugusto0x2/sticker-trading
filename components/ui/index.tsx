@@ -4,5 +4,6 @@ export * from './Card/Card';
 export * from './Checkbox/Checkbox';
 export * from './Input/Input';
 export * from './SegmentedControl/SegmentedControl';
+export * from './Select/Select';
 export * from './Toggle/Toggle';
 export * from './Typography/Typography';

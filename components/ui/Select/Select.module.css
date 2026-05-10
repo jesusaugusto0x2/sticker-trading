@@ -1,0 +1,82 @@
+/* ─── Outer wrapper ─────────────────────────────────────────── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ─── Select box ─────────────────────────────────────────────── */
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-2xl);
+  min-height: var(--hit-comfy);
+  padding: 0 var(--space-12);
+  transition:
+    border var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.selectWrapper:focus-within {
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+/* ─── States ─────────────────────────────────────────────────── */
+.stateError {
+  border: 1.5px solid var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.stateDisabled {
+  background: var(--color-muted);
+  pointer-events: none;
+}
+
+/* ─── Native select ──────────────────────────────────────────── */
+.select {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select:invalid,
+.select option[value=''] {
+  color: var(--color-ink-40);
+}
+
+.stateDisabled .select {
+  color: var(--color-ink-40);
+  cursor: not-allowed;
+}
+
+/* ─── Icon wrapper ──────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-ink-55);
+}
+
+/* ─── Chevron ────────────────────────────────────────────────── */
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-ink-55);
+  pointer-events: none;
+}
