@@ -53,9 +53,6 @@
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
   color: var(--color-ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .stickerCode {
