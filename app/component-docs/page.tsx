@@ -823,109 +823,6 @@ export default function ComponentDocsPage() {
         </Row>
       </section>
 
-      {/* ── Typography ───────────────────────────────────────── */}
-      <h1
-        style={{
-          fontSize: 32,
-          fontWeight: 900,
-          marginBottom: 8,
-          marginTop: 64,
-        }}
-      >
-        Typography
-      </h1>
-      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
-        Archivo for display/headings — Inter for body/labels.
-      </p>
-
-      <section style={{ marginBottom: 48 }}>
-        <h2
-          style={{
-            fontSize: 17,
-            fontWeight: 700,
-            marginBottom: 0,
-            paddingBottom: 8,
-            borderBottom: '1.5px solid #0F1419',
-          }}
-        >
-          Variants
-        </h2>
-
-        {(
-          [
-            {
-              variant: 'display',
-              spec: 'Archivo 900 · 56px · -0.04em',
-              sample: 'Display',
-            },
-            {
-              variant: 'h1',
-              spec: 'Archivo 900 · 40px · -0.03em',
-              sample: 'Heading 1',
-            },
-            {
-              variant: 'h2',
-              spec: 'Archivo 800 · 28px · -0.02em',
-              sample: 'Heading 2',
-            },
-            {
-              variant: 'title',
-              spec: 'Archivo 800 · 18px · -0.01em',
-              sample: 'Title',
-            },
-            {
-              variant: 'body-lg',
-              spec: 'Inter 600 · 15px · normal',
-              sample:
-                'Body large — the quick brown fox jumps over the lazy dog',
-            },
-            {
-              variant: 'body-sm',
-              spec: 'Inter 600 · 13px · normal',
-              sample:
-                'Body small — the quick brown fox jumps over the lazy dog',
-            },
-            {
-              variant: 'label',
-              spec: 'Inter 800 · 11px · 0.08em · uppercase',
-              sample: 'Label text',
-            },
-            {
-              variant: 'caption',
-              spec: 'Inter 600 · 11px · normal',
-              sample: 'Caption text',
-            },
-          ] as const
-        ).map(({ variant, spec, sample }) => (
-          <div
-            key={variant}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '220px 1fr',
-              alignItems: 'center',
-              gap: 24,
-              padding: '20px 0',
-              borderBottom: '1px solid #0F14191A',
-            }}
-          >
-            <div>
-              <p
-                style={{
-                  fontSize: 12,
-                  fontWeight: 700,
-                  color: '#0F1419',
-                  marginBottom: 2,
-                }}
-              >
-                {variant}
-              </p>
-              <p style={{ fontSize: 11, color: '#0F14198C' }}>{spec}</p>
-            </div>
-            <Typography variant={variant}>{sample}</Typography>
-          </div>
-        ))}
-      </section>
-
       {/* ── Card ─────────────────────────────────────────────── */}
       <h1
         style={{
@@ -1052,6 +949,108 @@ export default function ComponentDocsPage() {
       </section>
 
       {/* ── Typography ───────────────────────────────────────── */}
+      <h1
+        style={{
+          fontSize: 32,
+          fontWeight: 900,
+          marginBottom: 8,
+          marginTop: 64,
+        }}
+      >
+        Typography
+      </h1>
+      <p style={{ color: '#0F14198C', marginBottom: 48 }}>
+        Archivo for display/headings — Inter for body/labels.
+      </p>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2
+          style={{
+            fontSize: 17,
+            fontWeight: 700,
+            marginBottom: 0,
+            paddingBottom: 8,
+            borderBottom: '1.5px solid #0F1419',
+          }}
+        >
+          Variants
+        </h2>
+
+        {(
+          [
+            {
+              variant: 'display',
+              spec: 'Archivo 900 · 56px · -0.04em',
+              sample: 'Display',
+            },
+            {
+              variant: 'h1',
+              spec: 'Archivo 900 · 40px · -0.03em',
+              sample: 'Heading 1',
+            },
+            {
+              variant: 'h2',
+              spec: 'Archivo 800 · 28px · -0.02em',
+              sample: 'Heading 2',
+            },
+            {
+              variant: 'title',
+              spec: 'Archivo 800 · 18px · -0.01em',
+              sample: 'Title',
+            },
+            {
+              variant: 'body-lg',
+              spec: 'Inter 600 · 15px · normal',
+              sample:
+                'Body large — the quick brown fox jumps over the lazy dog',
+            },
+            {
+              variant: 'body-sm',
+              spec: 'Inter 600 · 13px · normal',
+              sample:
+                'Body small — the quick brown fox jumps over the lazy dog',
+            },
+            {
+              variant: 'label',
+              spec: 'Inter 800 · 11px · 0.08em · uppercase',
+              sample: 'Label text',
+            },
+            {
+              variant: 'caption',
+              spec: 'Inter 600 · 11px · normal',
+              sample: 'Caption text',
+            },
+          ] as const
+        ).map(({ variant, spec, sample }) => (
+          <div
+            key={variant}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '220px 1fr',
+              alignItems: 'center',
+              gap: 24,
+              padding: '20px 0',
+              borderBottom: '1px solid #0F14191A',
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: '#0F1419',
+                  marginBottom: 2,
+                }}
+              >
+                {variant}
+              </p>
+              <p style={{ fontSize: 11, color: '#0F14198C' }}>{spec}</p>
+            </div>
+            <Typography variant={variant}>{sample}</Typography>
+          </div>
+        ))}
+      </section>
+
       <section style={{ marginBottom: 48 }}>
         <h2
           style={{
