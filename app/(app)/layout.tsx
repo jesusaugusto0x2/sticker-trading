@@ -1,3 +1,5 @@
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+import { AppLayout } from '@/components/layout/AppLayout/AppLayout';
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <AppLayout>{children}</AppLayout>;
 }

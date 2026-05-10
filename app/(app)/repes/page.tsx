@@ -1,5 +1,5 @@
-import { RepesPage } from '@/containers/stickers/RepesPage/RepesPage';
+import { RepeatedPage } from '@/containers/stickers/RepeatedPage/RepeatedPage';
 
 export default function Page() {
-  return <RepesPage />;
+  return <RepeatedPage />;
 }

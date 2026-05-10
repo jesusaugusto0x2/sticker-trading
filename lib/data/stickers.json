@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total_stickers": 900,
-    "total_teams": 44,
+    "total_stickers": 980,
+    "total_teams": 48,
     "intro_stickers": 20,
     "source": "checklistinsider.com / diamondcardsonline.com"
   },
@@ -8676,13 +8676,427 @@
       ]
     },
     {
+      "code": "COD",
+      "name": "Congo DR",
+      "flag_colors": ["#007FFF", "#FFCD00", "#CE1126"],
+      "stickers": [
+        {
+          "id": "COD1",
+          "album_order": 841,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Team Logo",
+          "slot": 1,
+          "type": "team_logo",
+          "foil": true
+        },
+        {
+          "id": "COD2",
+          "album_order": 842,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Lionel Mpasi",
+          "slot": 2,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD3",
+          "album_order": 843,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Aaron Wan-Bissaka",
+          "slot": 3,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD4",
+          "album_order": 844,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Axel Tuanzebe",
+          "slot": 4,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD5",
+          "album_order": 845,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Arthur Masuaku",
+          "slot": 5,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD6",
+          "album_order": 846,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Chancel Mbemba",
+          "slot": 6,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD7",
+          "album_order": 847,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Joris Kayembe",
+          "slot": 7,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD8",
+          "album_order": 848,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Charles Pickel",
+          "slot": 8,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD9",
+          "album_order": 849,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Ngal'ayel Mukau",
+          "slot": 9,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD10",
+          "album_order": 850,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Edo Kayembe",
+          "slot": 10,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD11",
+          "album_order": 851,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Samuel Moutoussamy",
+          "slot": 11,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD12",
+          "album_order": 852,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Noah Sadiki",
+          "slot": 12,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD13",
+          "album_order": 853,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Team Photo",
+          "slot": 13,
+          "type": "team_photo",
+          "foil": false
+        },
+        {
+          "id": "COD14",
+          "album_order": 854,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Théo Bongonda",
+          "slot": 14,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD15",
+          "album_order": 855,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Meschak Elia",
+          "slot": 15,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD16",
+          "album_order": 856,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Yoane Wissa",
+          "slot": 16,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD17",
+          "album_order": 857,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Brian Cipenga",
+          "slot": 17,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD18",
+          "album_order": 858,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Fiston Mayele",
+          "slot": 18,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD19",
+          "album_order": 859,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Cédric Bakambu",
+          "slot": 19,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "COD20",
+          "album_order": 860,
+          "team_code": "COD",
+          "team_name": "Congo DR",
+          "name": "Nathanaël Mbuku",
+          "slot": 20,
+          "type": "player",
+          "foil": false
+        }
+      ]
+    },
+    {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "flag_colors": ["#1EB53A", "#FFFFFF", "#CE1126"],
+      "stickers": [
+        {
+          "id": "UZB1",
+          "album_order": 861,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Team Logo",
+          "slot": 1,
+          "type": "team_logo",
+          "foil": true
+        },
+        {
+          "id": "UZB2",
+          "album_order": 862,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Utkir Yusupov",
+          "slot": 2,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB3",
+          "album_order": 863,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Farrukh Savfiev",
+          "slot": 3,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB4",
+          "album_order": 864,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Sherzod Nasrullaev",
+          "slot": 4,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB5",
+          "album_order": 865,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Umar Eshmurodov",
+          "slot": 5,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB6",
+          "album_order": 866,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Husniddin Aliqulov",
+          "slot": 6,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB7",
+          "album_order": 867,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Rustamjon Ashurmatov",
+          "slot": 7,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB8",
+          "album_order": 868,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Khojiakbar Alijonov",
+          "slot": 8,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB9",
+          "album_order": 869,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Abdukodir Khusanov",
+          "slot": 9,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB10",
+          "album_order": 870,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Odiljon Hamrobekov",
+          "slot": 10,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB11",
+          "album_order": 871,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Otabek Shukurov",
+          "slot": 11,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB12",
+          "album_order": 872,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Jamshid Iskanderov",
+          "slot": 12,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB13",
+          "album_order": 873,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Team Photo",
+          "slot": 13,
+          "type": "team_photo",
+          "foil": false
+        },
+        {
+          "id": "UZB14",
+          "album_order": 874,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Azizbek Turgunboev",
+          "slot": 14,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB15",
+          "album_order": 875,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Khojimat Erkinov",
+          "slot": 15,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB16",
+          "album_order": 876,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Eldor Shomurodov",
+          "slot": 16,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB17",
+          "album_order": 877,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Oston Urunov",
+          "slot": 17,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB18",
+          "album_order": 878,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Jaloliddin Masharipov",
+          "slot": 18,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB19",
+          "album_order": 879,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Igor Sergeev",
+          "slot": 19,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "UZB20",
+          "album_order": 880,
+          "team_code": "UZB",
+          "team_name": "Uzbekistan",
+          "name": "Abbosbek Fayzullaev",
+          "slot": 20,
+          "type": "player",
+          "foil": false
+        }
+      ]
+    },
+    {
       "code": "COL",
       "name": "Colombia",
       "flag_colors": ["#FCD116", "#003087", "#CE1126"],
       "stickers": [
         {
           "id": "COL1",
-          "album_order": 841,
+          "album_order": 881,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Team Logo",
@@ -8692,7 +9106,7 @@
         },
         {
           "id": "COL2",
-          "album_order": 842,
+          "album_order": 882,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Camilo Vargas",
@@ -8702,7 +9116,7 @@
         },
         {
           "id": "COL3",
-          "album_order": 843,
+          "album_order": 883,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "David Ospina",
@@ -8712,7 +9126,7 @@
         },
         {
           "id": "COL4",
-          "album_order": 844,
+          "album_order": 884,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Daniel Munoz",
@@ -8722,7 +9136,7 @@
         },
         {
           "id": "COL5",
-          "album_order": 845,
+          "album_order": 885,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Davinson Sanchez",
@@ -8732,7 +9146,7 @@
         },
         {
           "id": "COL6",
-          "album_order": 846,
+          "album_order": 886,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Jhon Lucumi",
@@ -8742,7 +9156,7 @@
         },
         {
           "id": "COL7",
-          "album_order": 847,
+          "album_order": 887,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Johan Mojica",
@@ -8752,7 +9166,7 @@
         },
         {
           "id": "COL8",
-          "album_order": 848,
+          "album_order": 888,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Carlos Cuesta",
@@ -8762,17 +9176,17 @@
         },
         {
           "id": "COL9",
-          "album_order": 849,
+          "album_order": 889,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Wilmar Barrios",
+          "name": "Santiago Arias",
           "slot": 9,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL10",
-          "album_order": 850,
+          "album_order": 890,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Jefferson Lerma",
@@ -8782,27 +9196,27 @@
         },
         {
           "id": "COL11",
-          "album_order": 851,
+          "album_order": 891,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Richard Rios",
+          "name": "Kevin Castaño",
           "slot": 11,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL12",
-          "album_order": 852,
+          "album_order": 892,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Juan Camilo Portilla",
+          "name": "Richard Rios",
           "slot": 12,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL13",
-          "album_order": 853,
+          "album_order": 893,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Team Photo",
@@ -8812,37 +9226,37 @@
         },
         {
           "id": "COL14",
-          "album_order": 854,
+          "album_order": 894,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Juan Fernando Quintero",
+          "name": "James Rodriguez",
           "slot": 14,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL15",
-          "album_order": 855,
+          "album_order": 895,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "James Rodriguez",
+          "name": "Juan Fernando Quintero",
           "slot": 15,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL16",
-          "album_order": 856,
+          "album_order": 896,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Luis Diaz",
+          "name": "Jorge Carrascal",
           "slot": 16,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL17",
-          "album_order": 857,
+          "album_order": 897,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Jhon Arias",
@@ -8852,7 +9266,7 @@
         },
         {
           "id": "COL18",
-          "album_order": 858,
+          "album_order": 898,
           "team_code": "COL",
           "team_name": "Colombia",
           "name": "Jhon Cordoba",
@@ -8862,227 +9276,20 @@
         },
         {
           "id": "COL19",
-          "album_order": 859,
+          "album_order": 899,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Falcao",
+          "name": "Luis Suarez",
           "slot": 19,
           "type": "player",
           "foil": false
         },
         {
           "id": "COL20",
-          "album_order": 860,
+          "album_order": 900,
           "team_code": "COL",
           "team_name": "Colombia",
-          "name": "Borja",
-          "slot": 20,
-          "type": "player",
-          "foil": false
-        }
-      ]
-    },
-    {
-      "code": "VEN",
-      "name": "Venezuela",
-      "flag_colors": ["#CF142B", "#00247D", "#009E60"],
-      "stickers": [
-        {
-          "id": "VEN1",
-          "album_order": 861,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Team Logo",
-          "slot": 1,
-          "type": "team_logo",
-          "foil": true
-        },
-        {
-          "id": "VEN2",
-          "album_order": 862,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Rafael Romo",
-          "slot": 2,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN3",
-          "album_order": 863,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Wuilker Farinez",
-          "slot": 3,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN4",
-          "album_order": 864,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Nahuel Ferraresi",
-          "slot": 4,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN5",
-          "album_order": 865,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Yordan Osorio",
-          "slot": 5,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN6",
-          "album_order": 866,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Jon Aramburu",
-          "slot": 6,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN7",
-          "album_order": 867,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Miguel Navarro",
-          "slot": 7,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN8",
-          "album_order": 868,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Wilker Angel",
-          "slot": 8,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN9",
-          "album_order": 869,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Yeferson Soteldo",
-          "slot": 9,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN10",
-          "album_order": 870,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Yangel Herrera",
-          "slot": 10,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN11",
-          "album_order": 871,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Samuel Sosa",
-          "slot": 11,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN12",
-          "album_order": 872,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Josua Mejia",
-          "slot": 12,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN13",
-          "album_order": 873,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Team Photo",
-          "slot": 13,
-          "type": "team_photo",
-          "foil": false
-        },
-        {
-          "id": "VEN14",
-          "album_order": 874,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Edson Castillo",
-          "slot": 14,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN15",
-          "album_order": 875,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Jefferson Savarino",
-          "slot": 15,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN16",
-          "album_order": 876,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Darwin Machis",
-          "slot": 16,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN17",
-          "album_order": 877,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Salomon Rondon",
-          "slot": 17,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN18",
-          "album_order": 878,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Eric Ramirez",
-          "slot": 18,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN19",
-          "album_order": 879,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Jan Hurtado",
-          "slot": 19,
-          "type": "player",
-          "foil": false
-        },
-        {
-          "id": "VEN20",
-          "album_order": 880,
-          "team_code": "VEN",
-          "team_name": "Venezuela",
-          "name": "Adalberto Penaranda",
+          "name": "Luis Diaz",
           "slot": 20,
           "type": "player",
           "foil": false
@@ -9096,7 +9303,7 @@
       "stickers": [
         {
           "id": "ENG1",
-          "album_order": 881,
+          "album_order": 901,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Team Logo",
@@ -9106,7 +9313,7 @@
         },
         {
           "id": "ENG2",
-          "album_order": 882,
+          "album_order": 902,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Jordan Pickford",
@@ -9116,7 +9323,7 @@
         },
         {
           "id": "ENG3",
-          "album_order": 883,
+          "album_order": 903,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Kyle Walker",
@@ -9126,7 +9333,7 @@
         },
         {
           "id": "ENG4",
-          "album_order": 884,
+          "album_order": 904,
           "team_code": "ENG",
           "team_name": "England",
           "name": "John Stones",
@@ -9136,7 +9343,7 @@
         },
         {
           "id": "ENG5",
-          "album_order": 885,
+          "album_order": 905,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Marc Guehi",
@@ -9146,7 +9353,7 @@
         },
         {
           "id": "ENG6",
-          "album_order": 886,
+          "album_order": 906,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Trent Alexander-Arnold",
@@ -9156,67 +9363,67 @@
         },
         {
           "id": "ENG7",
-          "album_order": 887,
+          "album_order": 907,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Levi Colwill",
+          "name": "Reece James",
           "slot": 7,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG8",
-          "album_order": 888,
+          "album_order": 908,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Luke Shaw",
+          "name": "Dan Burn",
           "slot": 8,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG9",
-          "album_order": 889,
+          "album_order": 909,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Declan Rice",
+          "name": "Jordan Henderson",
           "slot": 9,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG10",
-          "album_order": 890,
+          "album_order": 910,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Jude Bellingham",
+          "name": "Declan Rice",
           "slot": 10,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG11",
-          "album_order": 891,
+          "album_order": 911,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Kobbie Mainoo",
+          "name": "Jude Bellingham",
           "slot": 11,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG12",
-          "album_order": 892,
+          "album_order": 912,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Phil Foden",
+          "name": "Cole Palmer",
           "slot": 12,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG13",
-          "album_order": 893,
+          "album_order": 913,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Team Photo",
@@ -9226,47 +9433,47 @@
         },
         {
           "id": "ENG14",
-          "album_order": 894,
+          "album_order": 914,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Conor Gallagher",
+          "name": "Morgan Rogers",
           "slot": 14,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG15",
-          "album_order": 895,
+          "album_order": 915,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Bukayo Saka",
+          "name": "Anthony Gordon",
           "slot": 15,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG16",
-          "album_order": 896,
+          "album_order": 916,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Marcus Rashford",
+          "name": "Phil Foden",
           "slot": 16,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG17",
-          "album_order": 897,
+          "album_order": 917,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Anthony Gordon",
+          "name": "Bukayo Saka",
           "slot": 17,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG18",
-          "album_order": 898,
+          "album_order": 918,
           "team_code": "ENG",
           "team_name": "England",
           "name": "Harry Kane",
@@ -9276,20 +9483,641 @@
         },
         {
           "id": "ENG19",
-          "album_order": 899,
+          "album_order": 919,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Ollie Watkins",
+          "name": "Marcus Rashford",
           "slot": 19,
           "type": "player",
           "foil": false
         },
         {
           "id": "ENG20",
-          "album_order": 900,
+          "album_order": 920,
           "team_code": "ENG",
           "team_name": "England",
-          "name": "Cole Palmer",
+          "name": "Ollie Watkins",
+          "slot": 20,
+          "type": "player",
+          "foil": false
+        }
+      ]
+    },
+    {
+      "code": "CRO",
+      "name": "Croatia",
+      "flag_colors": ["#FF0000", "#FFFFFF", "#0000FF"],
+      "stickers": [
+        {
+          "id": "CRO1",
+          "album_order": 921,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Team Logo",
+          "slot": 1,
+          "type": "team_logo",
+          "foil": true
+        },
+        {
+          "id": "CRO2",
+          "album_order": 922,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Dominik Livaković",
+          "slot": 2,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO3",
+          "album_order": 923,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Duje Caleta-Car",
+          "slot": 3,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO4",
+          "album_order": 924,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Josko Gvardiol",
+          "slot": 4,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO5",
+          "album_order": 925,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Josip Stanišić",
+          "slot": 5,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO6",
+          "album_order": 926,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Luka Vušković",
+          "slot": 6,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO7",
+          "album_order": 927,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Josip Sutalo",
+          "slot": 7,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO8",
+          "album_order": 928,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Kristijan Jakic",
+          "slot": 8,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO9",
+          "album_order": 929,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Luka Modrić",
+          "slot": 9,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO10",
+          "album_order": 930,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Mateo Kovacic",
+          "slot": 10,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO11",
+          "album_order": 931,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Martin Baturina",
+          "slot": 11,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO12",
+          "album_order": 932,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Lovro Majer",
+          "slot": 12,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO13",
+          "album_order": 933,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Team Photo",
+          "slot": 13,
+          "type": "team_photo",
+          "foil": false
+        },
+        {
+          "id": "CRO14",
+          "album_order": 934,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Mario Pasalic",
+          "slot": 14,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO15",
+          "album_order": 935,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Petar Sucic",
+          "slot": 15,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO16",
+          "album_order": 936,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Ivan Perišić",
+          "slot": 16,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO17",
+          "album_order": 937,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Marco Pasalic",
+          "slot": 17,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO18",
+          "album_order": 938,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Ante Budimir",
+          "slot": 18,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO19",
+          "album_order": 939,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Andrej Kramarić",
+          "slot": 19,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "CRO20",
+          "album_order": 940,
+          "team_code": "CRO",
+          "team_name": "Croatia",
+          "name": "Franjo Ivanovic",
+          "slot": 20,
+          "type": "player",
+          "foil": false
+        }
+      ]
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "flag_colors": ["#006B3F", "#FCD116", "#CE1126"],
+      "stickers": [
+        {
+          "id": "GHA1",
+          "album_order": 941,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Team Logo",
+          "slot": 1,
+          "type": "team_logo",
+          "foil": true
+        },
+        {
+          "id": "GHA2",
+          "album_order": 942,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Lawrence Ati Zigi",
+          "slot": 2,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA3",
+          "album_order": 943,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Tariq Lamptey",
+          "slot": 3,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA4",
+          "album_order": 944,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Mohammed Salisu",
+          "slot": 4,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA5",
+          "album_order": 945,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Alidu Seidu",
+          "slot": 5,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA6",
+          "album_order": 946,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Alexander Djiku",
+          "slot": 6,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA7",
+          "album_order": 947,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Gideon Mensah",
+          "slot": 7,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA8",
+          "album_order": 948,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Caleb Yirenkyi",
+          "slot": 8,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA9",
+          "album_order": 949,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Abdul Issahaku Fatawu",
+          "slot": 9,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA10",
+          "album_order": 950,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Thomas Partey",
+          "slot": 10,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA11",
+          "album_order": 951,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Salis Abdul Samed",
+          "slot": 11,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA12",
+          "album_order": 952,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Kamaldeen Sulemana",
+          "slot": 12,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA13",
+          "album_order": 953,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Team Photo",
+          "slot": 13,
+          "type": "team_photo",
+          "foil": false
+        },
+        {
+          "id": "GHA14",
+          "album_order": 954,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Mohammed Kudus",
+          "slot": 14,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA15",
+          "album_order": 955,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Inaki Williams",
+          "slot": 15,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA16",
+          "album_order": 956,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Jordan Ayew",
+          "slot": 16,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA17",
+          "album_order": 957,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Andrew Ayew",
+          "slot": 17,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA18",
+          "album_order": 958,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Joseph Paintsil",
+          "slot": 18,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA19",
+          "album_order": 959,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Osman Bukari",
+          "slot": 19,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "GHA20",
+          "album_order": 960,
+          "team_code": "GHA",
+          "team_name": "Ghana",
+          "name": "Ernest Nuamah",
+          "slot": 20,
+          "type": "player",
+          "foil": false
+        }
+      ]
+    },
+    {
+      "code": "PAN",
+      "name": "Panama",
+      "flag_colors": ["#DA121A", "#FFFFFF", "#002FA7"],
+      "stickers": [
+        {
+          "id": "PAN1",
+          "album_order": 961,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Team Logo",
+          "slot": 1,
+          "type": "team_logo",
+          "foil": true
+        },
+        {
+          "id": "PAN2",
+          "album_order": 962,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Orlando Mosquera",
+          "slot": 2,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN3",
+          "album_order": 963,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Michael Amir Murillo",
+          "slot": 3,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN4",
+          "album_order": 964,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Andrés Andrade",
+          "slot": 4,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN5",
+          "album_order": 965,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Fidel Escobar",
+          "slot": 5,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN6",
+          "album_order": 966,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Aníbal Godoy",
+          "slot": 6,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN7",
+          "album_order": 967,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Cristian Martínez",
+          "slot": 7,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN8",
+          "album_order": 968,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Adalberto Carrasquilla",
+          "slot": 8,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN9",
+          "album_order": 969,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Jose Cordoba",
+          "slot": 9,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN10",
+          "album_order": 970,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "José Fajardo",
+          "slot": 10,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN11",
+          "album_order": 971,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Ismael Díaz",
+          "slot": 11,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN12",
+          "album_order": 972,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Jose Luis Rodriguez",
+          "slot": 12,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN13",
+          "album_order": 973,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Team Photo",
+          "slot": 13,
+          "type": "team_photo",
+          "foil": false
+        },
+        {
+          "id": "PAN14",
+          "album_order": 974,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Édgar Bárcenas",
+          "slot": 14,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN15",
+          "album_order": 975,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Alberto Quintero",
+          "slot": 15,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN16",
+          "album_order": 976,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Roderick Miller",
+          "slot": 16,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN17",
+          "album_order": 977,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Cecilio Waterman",
+          "slot": 17,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN18",
+          "album_order": 978,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Dario Escobar",
+          "slot": 18,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN19",
+          "album_order": 979,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Luis Mejía",
+          "slot": 19,
+          "type": "player",
+          "foil": false
+        },
+        {
+          "id": "PAN20",
+          "album_order": 980,
+          "team_code": "PAN",
+          "team_name": "Panama",
+          "name": "Eric Davis",
           "slot": 20,
           "type": "player",
           "foil": false

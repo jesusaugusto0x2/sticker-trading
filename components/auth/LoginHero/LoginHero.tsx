@@ -1,6 +1,53 @@
 import styles from './LoginHero.module.css';
 import { Badge, Typography } from '@/components/ui';
 import { StickerCard } from '@/components/stickers';
+import type { Sticker } from '@/lib/schemas/sticker';
+
+const DEMO_STICKERS: Array<{
+  sticker: Sticker;
+  flagColors: string[];
+  className: string;
+}> = [
+  {
+    sticker: {
+      id: '42',
+      album_order: 42,
+      team_code: 'arg',
+      team_name: 'Argentina',
+      name: 'L. Messi',
+      type: 'player',
+      foil: false,
+    },
+    flagColors: ['#74ACDF', '#FFFFFF'],
+    className: styles.cardOne,
+  },
+  {
+    sticker: {
+      id: '87',
+      album_order: 87,
+      team_code: 'bra',
+      team_name: 'Brasil',
+      name: 'V. Jr.',
+      type: 'player',
+      foil: false,
+    },
+    flagColors: ['#009C3B', '#FFDF00'],
+    className: styles.cardTwo,
+  },
+  {
+    sticker: {
+      id: '113',
+      album_order: 113,
+      team_code: 'mex',
+      team_name: 'México',
+      name: 'H. Reyes',
+      type: 'player',
+      foil: false,
+    },
+    flagColors: ['#006847', '#CE1126'],
+    className: styles.cardThree,
+  },
+];
 
 export function LoginHero() {
   return (
@@ -10,7 +57,9 @@ export function LoginHero() {
           <div className={styles.logoIcon}>R</div>
           <span className={styles.logoText}>repes26</span>
         </div>
-        <Badge variant="ink" dot>MUNDIAL 2026 · BETA</Badge>
+        <Badge variant="ink" dot>
+          MUNDIAL 2026 · BETA
+        </Badge>
       </header>
 
       <div className={styles.body}>
@@ -24,30 +73,17 @@ export function LoginHero() {
         </Typography>
 
         <div className={styles.cards}>
-          <StickerCard
-            initials="LM"
-            number="#42"
-            name="L. Messi"
-            team="Argentina"
-            countryCode="arg"
-            className={styles.cardOne}
-          />
-          <StickerCard
-            initials="VJ"
-            number="#87"
-            name="V. Jr."
-            team="Brasil"
-            countryCode="bra"
-            className={styles.cardTwo}
-          />
-          <StickerCard
-            initials="HR"
-            number="#113"
-            name="H. Reyes"
-            team="México"
-            countryCode="mex"
-            className={styles.cardThree}
-          />
+          {DEMO_STICKERS.map(({ sticker, flagColors, className }) => (
+            <div key={sticker.id} className={className}>
+              <StickerCard
+                sticker={sticker}
+                isChecked={false}
+                onToggle={() => undefined}
+                accent="green"
+                flagColors={flagColors}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
