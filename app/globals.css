@@ -11,7 +11,9 @@
 /* fonts are loaded via next/font/google in app/layout.tsx */
 
 /* ─── Reset ─────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -33,7 +35,10 @@ body {
   overflow-x: hidden;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -49,122 +54,214 @@ a {
   text-decoration: none;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-
   /* ── Colors · Brand ──────────────────────────────────────── */
-  --color-green:    #00B86B;   /* primary action / CTAs          */
-  --color-coral:    #FF5A36;   /* faltantes / warnings           */
-  --color-yellow:   #FFD23F;   /* HOT tag / highlights           */
-  --color-purple:   #7B61FF;   /* matches accent                 */
+  --color-green: #00b86b; /* primary action / CTAs          */
+  --color-coral: #ff5a36; /* faltantes / warnings           */
+  --color-yellow: #ffd23f; /* HOT tag / highlights           */
+  --color-purple: #7b61ff; /* matches accent                 */
 
   /* ── Colors · Neutrals ───────────────────────────────────── */
-  --color-ink:      #0F1419;   /* primary text & borders         */
-  --color-ink-70:   #0F1419B3;
-  --color-ink-55:   #0F14198C;
-  --color-ink-40:   #0F141966;
-  --color-ink-25:   #0F141940;
-  --color-ink-15:   #0F141926;
-  --color-ink-10:   #0F14191A;
-  --color-ink-08:   #0F141914;
+  --color-ink: #0f1419; /* primary text & borders         */
+  --color-ink-70: #0f1419b3;
+  --color-ink-55: #0f14198c;
+  --color-ink-40: #0f141966;
+  --color-ink-25: #0f141940;
+  --color-ink-15: #0f141926;
+  --color-ink-10: #0f14191a;
+  --color-ink-08: #0f141914;
 
-  --color-bg:       #FAFAF7;   /* warm off-white app background  */
-  --color-surface:  #FFFFFF;   /* cards / elevated surfaces      */
-  --color-muted:    #F0EDE5;   /* subtle backdrops               */
+  --color-bg: #fafaf7; /* warm off-white app background  */
+  --color-surface: #ffffff; /* cards / elevated surfaces      */
+  --color-muted: #f0ede5; /* subtle backdrops               */
 
   /* ── Colors · Semantic states ───────────────────────────── */
-  --color-success:    #00B86B;   /* same as brand green            */
-  --color-warning:    #FFB020;   /* amber warning                  */
-  --color-danger:     #E5484D;   /* red error — different from coral */
-  --color-info:       #3E7BFA;   /* blue info                      */
+  --color-success: #00b86b; /* same as brand green            */
+  --color-warning: #ffb020; /* amber warning                  */
+  --color-danger: #e5484d; /* red error — different from coral */
+  --color-info: #3e7bfa; /* blue info                      */
 
   /* ── Colors · State backgrounds (subtle) ────────────────── */
-  --color-success-bg: #00B86B1A;
-  --color-warning-bg: #FFB0201A;
-  --color-danger-bg:  #E5484D1A;
-  --color-info-bg:    #3E7BFA1A;
+  --color-success-bg: #00b86b1a;
+  --color-warning-bg: #ffb0201a;
+  --color-danger-bg: #e5484d1a;
+  --color-info-bg: #3e7bfa1a;
 
   /* ── Colors · External brands ───────────────────────────── */
-  --color-whatsapp:    #25D366;
-  --color-instagram-1: #FEDA75;
-  --color-instagram-2: #FA7E1E;
-  --color-instagram-3: #D62976;
-  --color-instagram-4: #962FBF;
+  --color-whatsapp: #25d366;
+  --color-instagram-1: #feda75;
+  --color-instagram-2: #fa7e1e;
+  --color-instagram-3: #d62976;
+  --color-instagram-4: #962fbf;
 
   /* ── Colors · Country flag pairs ────────────────────────── */
-  --flag-arg-1: #74ACDF;  --flag-arg-2: #FFFFFF;
-  --flag-bra-1: #FFDF00;  --flag-bra-2: #009C3B;
-  --flag-mex-1: #006847;  --flag-mex-2: #CE1126;
-  --flag-usa-1: #3C3B6E;  --flag-usa-2: #B22234;
-  --flag-can-1: #D52B1E;  --flag-can-2: #FFFFFF;
-  --flag-col-1: #FCD116;  --flag-col-2: #003893;
-  --flag-uru-1: #7CB9E8;  --flag-uru-2: #FFFFFF;
-  --flag-chl-1: #0039A6;  --flag-chl-2: #D52B1E;
-  --flag-esp-1: #AA151B;  --flag-esp-2: #F1BF00;
-  --flag-fra-1: #0055A4;  --flag-fra-2: #EF4135;
-  --flag-ger-1: #000000;  --flag-ger-2: #DD0000;
-  --flag-por-1: #046A38;  --flag-por-2: #DA291C;
-  --flag-ita-1: #0066CC;  --flag-ita-2: #FFFFFF;
-  --flag-eng-1: #FFFFFF;  --flag-eng-2: #CE1124;
-  --flag-jpn-1: #BC002D;  --flag-jpn-2: #FFFFFF;
-  --flag-kor-1: #003478;  --flag-kor-2: #C60C30;
-  --flag-mar-1: #C1272D;  --flag-mar-2: #006233;
-  --flag-ned-1: #FF6B00;  --flag-ned-2: #21468B;
+  --flag-arg-1: #74acdf;
+  --flag-arg-2: #ffffff;
+  --flag-bra-1: #ffdf00;
+  --flag-bra-2: #009c3b;
+  --flag-mex-1: #006847;
+  --flag-mex-2: #ce1126;
+  --flag-usa-1: #3c3b6e;
+  --flag-usa-2: #b22234;
+  --flag-can-1: #d52b1e;
+  --flag-can-2: #ffffff;
+  --flag-col-1: #fcd116;
+  --flag-col-2: #003893;
+  --flag-uru-1: #7cb9e8;
+  --flag-uru-2: #ffffff;
+  --flag-chl-1: #0039a6;
+  --flag-chl-2: #d52b1e;
+  --flag-esp-1: #aa151b;
+  --flag-esp-2: #f1bf00;
+  --flag-fra-1: #0055a4;
+  --flag-fra-2: #ef4135;
+  --flag-ger-1: #000000;
+  --flag-ger-2: #dd0000;
+  --flag-por-1: #046a38;
+  --flag-por-2: #da291c;
+  --flag-ita-1: #0066cc;
+  --flag-ita-2: #ffffff;
+  --flag-eng-1: #ffffff;
+  --flag-eng-2: #ce1124;
+  --flag-jpn-1: #bc002d;
+  --flag-jpn-2: #ffffff;
+  --flag-kor-1: #003478;
+  --flag-kor-2: #c60c30;
+  --flag-mar-1: #c1272d;
+  --flag-mar-2: #006233;
+  --flag-ned-1: #ff6b00;
+  --flag-ned-2: #21468b;
+  --flag-alg-1: #006233;
+  --flag-alg-2: #ffffff;
+  --flag-alg-3: #d21034;
+  --flag-aus-1: #00008b;
+  --flag-aus-2: #ffffff;
+  --flag-aus-3: #ff0000;
+  --flag-aut-1: #ed2939;
+  --flag-aut-2: #ffffff;
+  --flag-bel-1: #000000;
+  --flag-bel-2: #fae042;
+  --flag-bel-3: #ef3340;
+  --flag-bih-1: #002395;
+  --flag-bih-2: #ffcd00;
+  --flag-civ-1: #f77f00;
+  --flag-civ-2: #ffffff;
+  --flag-civ-3: #009a44;
+  --flag-cpv-1: #003893;
+  --flag-cpv-2: #cf2027;
+  --flag-cpv-3: #f7d116;
+  --flag-cuw-1: #002b7f;
+  --flag-cuw-2: #f9e814;
+  --flag-cuw-3: #ffffff;
+  --flag-cze-1: #d7141a;
+  --flag-cze-2: #ffffff;
+  --flag-cze-3: #11457e;
+  --flag-ecu-1: #ffd100;
+  --flag-ecu-2: #003893;
+  --flag-ecu-3: #ef3340;
+  --flag-egy-1: #ce1126;
+  --flag-egy-2: #ffffff;
+  --flag-egy-3: #000000;
+  --flag-hai-1: #00209f;
+  --flag-hai-2: #d21034;
+  --flag-irn-1: #239f40;
+  --flag-irn-2: #ffffff;
+  --flag-irn-3: #da0000;
+  --flag-irq-1: #ce1126;
+  --flag-irq-2: #ffffff;
+  --flag-irq-3: #000000;
+  --flag-jor-1: #007a3d;
+  --flag-jor-2: #ffffff;
+  --flag-jor-3: #ce1126;
+  --flag-ksa-1: #006c35;
+  --flag-ksa-2: #ffffff;
+  --flag-nor-1: #ef2b2d;
+  --flag-nor-2: #ffffff;
+  --flag-nor-3: #002868;
+  --flag-nzl-1: #00247d;
+  --flag-nzl-2: #ffffff;
+  --flag-nzl-3: #cc142b;
+  --flag-par-1: #d52b1e;
+  --flag-par-2: #ffffff;
+  --flag-par-3: #009900;
+  --flag-qat-1: #8d1b3d;
+  --flag-qat-2: #ffffff;
+  --flag-rsa-1: #007a4d;
+  --flag-rsa-2: #ffb612;
+  --flag-rsa-3: #de3831;
+  --flag-sco-1: #003f87;
+  --flag-sco-2: #ffffff;
+  --flag-sen-1: #00853f;
+  --flag-sen-2: #fdef42;
+  --flag-sen-3: #e31b23;
+  --flag-sui-1: #ff0000;
+  --flag-sui-2: #ffffff;
+  --flag-swe-1: #006aa7;
+  --flag-swe-2: #fecc02;
+  --flag-tun-1: #e70013;
+  --flag-tun-2: #ffffff;
+  --flag-tur-1: #e30a17;
+  --flag-tur-2: #ffffff;
+  --flag-ven-1: #cf142b;
+  --flag-ven-2: #00247d;
+  --flag-ven-3: #009e60;
 
   /* ── Typography · Families ───────────────────────────────── */
   /* --font-display and --font-body are injected by next/font via html className */
 
   /* ── Typography · Scale ──────────────────────────────────── */
-  --text-2xs:  10px;  /* nav labels, micro caps              */
-  --text-xs:   11px;  /* eyebrows, captions                  */
-  --text-sm:   12px;  /* labels, secondary info              */
-  --text-md:   13px;  /* chips, tags                         */
-  --text-base: 14px;  /* body text                           */
-  --text-lg:   15px;  /* inputs, prominent body              */
-  --text-xl:   17px;  /* row titles                          */
-  --text-2xl:  20px;  /* section titles                      */
-  --text-3xl:  26px;  /* big numbers (stats)                 */
-  --text-4xl:  32px;  /* page titles                         */
-  --text-5xl:  44px;  /* hero display                        */
+  --text-2xs: 10px; /* nav labels, micro caps              */
+  --text-xs: 11px; /* eyebrows, captions                  */
+  --text-sm: 12px; /* labels, secondary info              */
+  --text-md: 13px; /* chips, tags                         */
+  --text-base: 14px; /* body text                           */
+  --text-lg: 15px; /* inputs, prominent body              */
+  --text-xl: 17px; /* row titles                          */
+  --text-2xl: 20px; /* section titles                      */
+  --text-3xl: 26px; /* big numbers (stats)                 */
+  --text-4xl: 32px; /* page titles                         */
+  --text-5xl: 44px; /* hero display                        */
 
   /* ── Typography extended scale ──────────────────────────── */
-  --text-title:    18px;  /* between xl (17) and 2xl (20)    */
-  --text-heading:  28px;  /* between 3xl (26) and 4xl (32)   */
-  --text-hero:     40px;  /* between 4xl (32) and 5xl (44)   */
-  --text-6xl:      56px;  /* display / hero headline         */
+  --text-title: 18px; /* between xl (17) and 2xl (20)    */
+  --text-heading: 28px; /* between 3xl (26) and 4xl (32)   */
+  --text-hero: 40px; /* between 4xl (32) and 5xl (44)   */
+  --text-6xl: 56px; /* display / hero headline         */
 
   /* ── Typography · Weights ────────────────────────────────── */
-  --weight-regular:   400;
-  --weight-medium:    500;
-  --weight-semibold:  600;
-  --weight-bold:      700;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
   --weight-extrabold: 800;
-  --weight-black:     900;
+  --weight-black: 900;
 
   /* ── Typography · Tracking ───────────────────────────────── */
-  --tracking-tight:   -0.04em;  /* big display numbers          */
-  --tracking-snug:    -0.03em;  /* h1 headings                  */
-  --tracking-mild:    -0.01em;  /* row titles                   */
-  --tracking-normal:   0;
-  --tracking-wide:     0.04em;  /* nav labels                   */
-  --tracking-wider:    0.06em;  /* eyebrows                     */
-  --tracking-widest:   0.08em;  /* uppercase chips              */
+  --tracking-tight: -0.04em; /* big display numbers          */
+  --tracking-snug: -0.03em; /* h1 headings                  */
+  --tracking-mild: -0.01em; /* row titles                   */
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em; /* nav labels                   */
+  --tracking-wider: 0.06em; /* eyebrows                     */
+  --tracking-widest: 0.08em; /* uppercase chips              */
 
   /* ── Spacing (4px base) ──────────────────────────────────── */
-  --space-1:  2px;
-  --space-2:  4px;
-  --space-3:  6px;
-  --space-4:  8px;
-  --space-5:  10px;
-  --space-6:  12px;
-  --space-7:  14px;
-  --space-8:  16px;
-  --space-9:  18px;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-7: 14px;
+  --space-8: 16px;
+  --space-9: 18px;
   --space-10: 20px;
   --space-12: 24px;
   --space-14: 28px;
@@ -173,77 +270,94 @@ img, svg {
   --space-24: 48px;
 
   /* ── Border Radius ───────────────────────────────────────── */
-  --radius-xs:   6px;
-  --radius-sm:   8px;
-  --radius-md:   10px;
-  --radius-lg:   12px;
-  --radius-xl:   14px;
-  --radius-2xl:  16px;
-  --radius-3xl:  18px;
-  --radius-4xl:  20px;
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-3xl: 18px;
+  --radius-4xl: 20px;
   --radius-full: 9999px;
 
   /* ── Borders ─────────────────────────────────────────────── */
-  --border-hair:  1px solid var(--color-ink);
-  --border-thin:  1.5px solid var(--color-ink);
+  --border-hair: 1px solid var(--color-ink);
+  --border-thin: 1.5px solid var(--color-ink);
   --border-thick: 2px solid var(--color-ink);
   --border-muted: 1px solid var(--color-ink-10);
 
   /* ── Shadows · Neo-brutalist (brand signature) ───────────── */
-  --shadow-sm:        2px 2px 0 var(--color-ink);
-  --shadow-md:        3px 3px 0 var(--color-ink);
-  --shadow-lg:        4px 4px 0 var(--color-ink);
-  --shadow-green-sm:  2px 2px 0 var(--color-green);
-  --shadow-green-md:  3px 3px 0 var(--color-green);
-  --shadow-green-lg:  4px 4px 0 var(--color-green);
-  --shadow-coral-md:  3px 3px 0 var(--color-coral);
-  --shadow-coral-lg:  4px 4px 0 var(--color-coral);
+  --shadow-sm: 2px 2px 0 var(--color-ink);
+  --shadow-md: 3px 3px 0 var(--color-ink);
+  --shadow-lg: 4px 4px 0 var(--color-ink);
+  --shadow-green-sm: 2px 2px 0 var(--color-green);
+  --shadow-green-md: 3px 3px 0 var(--color-green);
+  --shadow-green-lg: 4px 4px 0 var(--color-green);
+  --shadow-coral-md: 3px 3px 0 var(--color-coral);
+  --shadow-coral-lg: 4px 4px 0 var(--color-coral);
   --shadow-yellow-md: 3px 3px 0 var(--color-yellow);
   --shadow-yellow-lg: 4px 4px 0 var(--color-yellow);
   --shadow-purple-md: 3px 3px 0 var(--color-purple);
   --shadow-purple-lg: 4px 4px 0 var(--color-purple);
 
   /* ── Shadows · Soft (modals, overlays) ───────────────────── */
-  --shadow-soft-sm: 0 1px 3px rgba(0,0,0,0.07), 0 3px 10px rgba(0,0,0,0.06);
-  --shadow-soft-md: 0 4px 12px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
-  --shadow-soft-lg: 0 12px 32px rgba(0,0,0,0.12), 0 24px 48px rgba(0,0,0,0.08);
+  --shadow-soft-sm:
+    0 1px 3px rgba(0, 0, 0, 0.07), 0 3px 10px rgba(0, 0, 0, 0.06);
+  --shadow-soft-md:
+    0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-soft-lg:
+    0 12px 32px rgba(0, 0, 0, 0.12), 0 24px 48px rgba(0, 0, 0, 0.08);
 
   /* ── Component sizes ─────────────────────────────────────── */
-  --hit-min:       44px;   /* iOS minimum touch target         */
-  --hit-cozy:      48px;   /* comfortable touch target         */
-  --hit-comfy:     56px;   /* large touch target               */
+  --hit-min: 44px; /* iOS minimum touch target         */
+  --hit-cozy: 48px; /* comfortable touch target         */
+  --hit-comfy: 56px; /* large touch target               */
 
   --checkbox-size: 28px;
-  --flag-sm:       28px;
-  --flag-md:       36px;
-  --flag-lg:       48px;
-  --avatar-md:     48px;
-  --avatar-lg:     64px;
-  --icon-btn:      36px;
-  --bottom-nav:    64px;   /* height of bottom nav bar         */
-  --top-bar:       56px;   /* height of top bar                */
+  --flag-sm: 28px;
+  --flag-md: 36px;
+  --flag-lg: 48px;
+  --avatar-md: 48px;
+  --avatar-lg: 64px;
+  --icon-btn: 36px;
+  --bottom-nav: 64px; /* height of bottom nav bar         */
+  --top-bar: 56px; /* height of top bar                */
 
   /* ── Motion ──────────────────────────────────────────────── */
-  --ease-out:    cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-snap:   cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast:  120ms;
-  --duration-base:  200ms;
-  --duration-slow:  300ms;
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
 
   /* ── Z-index ─────────────────────────────────────────────── */
-  --z-base:       1;
-  --z-sticky:     5;
+  --z-base: 1;
+  --z-sticky: 5;
   --z-bottom-nav: 10;
-  --z-overlay:    50;
-  --z-modal:      80;
-  --z-toast:      100;
+  --z-overlay: 50;
+  --z-modal: 80;
+  --z-toast: 100;
 
   /* ── Gradients ───────────────────────────────────────────── */
-  --gradient-progress:  linear-gradient(90deg, var(--color-green), var(--color-yellow));
-  --gradient-avatar:    linear-gradient(135deg, var(--color-green), var(--color-coral));
-  --gradient-instagram: linear-gradient(135deg, var(--color-instagram-1), var(--color-instagram-2) 25%, var(--color-instagram-3) 60%, var(--color-instagram-4) 90%);
-  --gradient-bg:        radial-gradient(ellipse at top, #f0ede5 0%, #e6e1d3 100%);
+  --gradient-progress: linear-gradient(
+    90deg,
+    var(--color-green),
+    var(--color-yellow)
+  );
+  --gradient-avatar: linear-gradient(
+    135deg,
+    var(--color-green),
+    var(--color-coral)
+  );
+  --gradient-instagram: linear-gradient(
+    135deg,
+    var(--color-instagram-1),
+    var(--color-instagram-2) 25%,
+    var(--color-instagram-3) 60%,
+    var(--color-instagram-4) 90%
+  );
+  --gradient-bg: radial-gradient(ellipse at top, #f0ede5 0%, #e6e1d3 100%);
 }
 
 /* ─── Utility Classes ───────────────────────────────────────── */
@@ -294,8 +408,9 @@ img, svg {
   border-radius: var(--radius-full);
   border: var(--border-thick);
   box-shadow: var(--shadow-md);
-  transition: transform var(--duration-fast) var(--ease-out),
-              box-shadow var(--duration-fast) var(--ease-out);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .btn-primary:active {
@@ -319,9 +434,17 @@ img, svg {
   scrollbar-color: var(--color-ink-15) transparent;
 }
 
-*::-webkit-scrollbar { width: 6px; height: 6px; }
-*::-webkit-scrollbar-thumb { background: var(--color-ink-15); border-radius: var(--radius-full); }
-*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-ink-15);
+  border-radius: var(--radius-full);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
 
 /* Safe area for mobile bottom nav */
 .page-content {
