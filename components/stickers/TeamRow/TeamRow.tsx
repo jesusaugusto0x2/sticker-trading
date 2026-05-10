@@ -26,6 +26,8 @@ const ACCENT_VARS: Record<'green' | 'coral', React.CSSProperties> = {
 export function TeamRow({
   team,
   checkedIds,
+  disabledIds,
+  disabledLabel,
   onToggle,
   accent,
   isExpanded,
@@ -105,6 +107,8 @@ export function TeamRow({
                 title="INTRODUCCIÓN"
                 stickers={introStickers}
                 checkedIds={checkedIds}
+                disabledIds={disabledIds}
+                disabledLabel={disabledLabel}
                 onToggle={onToggle}
                 onClear={() => handleClearSection(introStickers)}
                 accent={accent}
@@ -116,6 +120,8 @@ export function TeamRow({
                 title="ESPECIALES"
                 stickers={specialStickers}
                 checkedIds={checkedIds}
+                disabledIds={disabledIds}
+                disabledLabel={disabledLabel}
                 onToggle={onToggle}
                 onClear={() => handleClearSection(specialStickers)}
                 accent={accent}
@@ -127,6 +133,8 @@ export function TeamRow({
                 title={playerSectionTitle}
                 stickers={playerStickers}
                 checkedIds={checkedIds}
+                disabledIds={disabledIds}
+                disabledLabel={disabledLabel}
                 onToggle={onToggle}
                 onClear={() => handleClearSection(playerStickers)}
                 accent={accent}

@@ -9,6 +9,8 @@ import type { StickerGridProps } from './StickerGrid.types';
 export function StickerGrid({
   stickers,
   checkedIds,
+  disabledIds,
+  disabledLabel,
   onToggle,
   accent,
   flagColors,
@@ -20,6 +22,8 @@ export function StickerGrid({
           key={sticker.id}
           sticker={sticker}
           isChecked={checkedIds.has(sticker.id)}
+          isDisabled={disabledIds.has(sticker.id)}
+          disabledLabel={disabledLabel}
           onToggle={onToggle}
           accent={accent}
           flagColors={flagColors}

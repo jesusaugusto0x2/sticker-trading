@@ -10,13 +10,16 @@ export function StickerSection({
   title,
   stickers,
   checkedIds,
+  disabledIds,
+  disabledLabel,
   onToggle,
   onClear,
   accent,
   flagColors,
 }: StickerSectionProps) {
   const accentStyle = {
-    '--accent-color': accent === 'coral' ? 'var(--color-coral)' : 'var(--color-green)',
+    '--accent-color':
+      accent === 'coral' ? 'var(--color-coral)' : 'var(--color-green)',
   } as React.CSSProperties;
 
   return (
@@ -30,6 +33,8 @@ export function StickerSection({
       <StickerGrid
         stickers={stickers}
         checkedIds={checkedIds}
+        disabledIds={disabledIds}
+        disabledLabel={disabledLabel}
         onToggle={onToggle}
         accent={accent}
         flagColors={flagColors}

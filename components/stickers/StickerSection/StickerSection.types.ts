@@ -4,6 +4,8 @@ export interface StickerSectionProps {
   title: string;
   stickers: Sticker[];
   checkedIds: Set<string>;
+  disabledIds: Set<string>;
+  disabledLabel?: string;
   onToggle: (stickerId: string, checked: boolean) => void;
   onClear: () => void;
   accent: 'green' | 'coral';

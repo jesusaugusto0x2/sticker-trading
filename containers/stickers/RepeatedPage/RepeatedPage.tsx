@@ -20,6 +20,7 @@ const allTeams = stickersData.teams as Team[];
 
 export function RepeatedPage() {
   const [checkedIds, setCheckedIds] = useState<Set<string>>(new Set());
+  const [disabledIds, setDisabledIds] = useState<Set<string>>(new Set());
   const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const { user, loading } = useCurrentUser();
@@ -37,11 +38,13 @@ export function RepeatedPage() {
   useEffect(() => {
     if (!user) return;
 
-    fetch('/api/stickers/repeated')
-      .then((res) => res.json())
-      .then(({ stickerIds }) => {
-        setCheckedIds(new Set(stickerIds ?? []));
-      });
+    Promise.all([
+      fetch('/api/stickers/repeated').then((r) => r.json()),
+      fetch('/api/stickers/missing').then((r) => r.json()),
+    ]).then(([repeated, missing]) => {
+      setCheckedIds(new Set(repeated.stickerIds ?? []));
+      setDisabledIds(new Set(missing.stickerIds ?? []));
+    });
   }, [user]);
 
   const handleToggle = (stickerId: string, checked: boolean) => {
@@ -91,6 +94,8 @@ export function RepeatedPage() {
         <TeamRow
           team={introTeam}
           checkedIds={checkedIds}
+          disabledIds={disabledIds}
+          disabledLabel="Ya marcado como faltante"
           onToggle={handleToggle}
           accent="green"
           isExpanded={expandedTeam === 'intro'}
@@ -101,6 +106,8 @@ export function RepeatedPage() {
             key={team.code}
             team={team}
             checkedIds={checkedIds}
+            disabledIds={disabledIds}
+            disabledLabel="Ya marcado como faltante"
             onToggle={handleToggle}
             accent="green"
             isExpanded={expandedTeam === team.code}
