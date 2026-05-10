@@ -21,6 +21,7 @@
 - `assets/icons/` → custom brand SVG icons (Google, Apple, WhatsApp, Instagram)
 - `lib/` → utilities and clients (supabase.ts)
 - `lib/data/` → static JSON data (stickers.json, venezuela.json)
+- `lib/schemas/` → Zod schemas organized by domain
 
 ### Smart vs Dumb components
 
@@ -134,6 +135,18 @@ All in `assets/icons/`:
 - `app/(app)/` pages → bottom nav on mobile, sidebar on desktop
 - Use `@media (--bp-md)` syntax — requires `postcss-custom-media` (already configured)
 - Breakpoints defined in `globals.css`: `--bp-sm` (480px), `--bp-md` (768px), `--bp-lg` (1024px), `--bp-xl` (1280px)
+
+## Schemas (Zod)
+
+- Live in `lib/schemas/` organized by domain
+- `lib/schemas/auth/` → `loginInputSchema`, `onboardingInputSchema`
+- `lib/schemas/user/` → `profileSchema` (entity), `updateProfileInputSchema`
+- Each domain folder has an `index.ts` that re-exports everything
+- Naming convention:
+  - Form/API input schemas: `[domain]InputSchema` → type `[Domain]Input` (e.g. `loginInputSchema` → `LoginInput`)
+  - DB entity schemas: `[entity]Schema` → type `[Entity]` (e.g. `profileSchema` → `Profile`)
+- Never define types manually if a schema already exists for that shape — always use `z.infer<typeof schema>`
+- Import always from the domain index: `import { type LoginInput } from '@/lib/schemas/auth'`
 
 ## Design tokens
 

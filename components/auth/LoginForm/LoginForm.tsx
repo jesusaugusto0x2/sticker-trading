@@ -1,14 +1,14 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoginInput, loginInputSchema } from '@/lib/schemas/auth';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 import { Badge, Button, Card, Input, Typography } from '@/components/ui';
 import { GoogleIcon } from '@/assets/icons';
 import styles from './LoginForm.module.css';
-import type { LoginFormProps, LoginFormData } from './LoginForm.types';
-
-export type { LoginFormProps, LoginFormData } from './LoginForm.types';
+import { LoginFormProps } from './LoginForm.types';
 
 export function LoginForm({
   onGoogleLogin,
@@ -20,7 +20,7 @@ export function LoginForm({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormData>();
+  } = useForm<LoginInput>({ resolver: zodResolver(loginInputSchema) });
 
   return (
     <div className={styles.form}>
@@ -67,7 +67,7 @@ export function LoginForm({
             leftIcon={<Mail size={18} />}
             state={errors.email ? 'error' : 'default'}
             errorMessage={errors.email?.message}
-            {...register('email', { required: 'El correo es requerido' })}
+            {...register('email')}
           />
 
           <div>
@@ -84,10 +84,7 @@ export function LoginForm({
               placeholder="••••••••"
               state={errors.password ? 'error' : 'default'}
               errorMessage={errors.password?.message}
-              {...register('password', {
-                required: 'La contraseña es requerida',
-                minLength: { value: 6, message: 'Mínimo 6 caracteres' },
-              })}
+              {...register('password')}
             />
           </div>
         </div>

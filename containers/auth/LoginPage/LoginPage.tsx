@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase';
 import { AuthLayout } from '@/components/auth/AuthLayout/AuthLayout';
 import { LoginHero } from '@/components/auth/LoginHero/LoginHero';
 import { LoginForm } from '@/components/auth/LoginForm/LoginForm';
-import type { LoginFormData } from '@/components/auth/LoginForm/LoginForm';
+import { LoginInput } from '@/lib/schemas/auth';
 
 export function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,7 @@ export function LoginPage() {
     setIsLoading(false);
   };
 
-  const handleEmailLogin = async ({ email, password }: LoginFormData) => {
+  const handleEmailLogin = async ({ email, password }: LoginInput) => {
     setIsLoading(true);
     setError(null);
     const { error: authError } = await supabase.auth.signInWithPassword({
