@@ -2,9 +2,8 @@
 
 import styles from './LoginHero.module.css';
 import { Badge, Typography } from '@/components/ui';
-import { StickerCard } from '@/components/stickers';
+import { StickerCardDisplay } from '@/components/stickers/StickerCardDisplay/StickerCardDisplay';
 import type { Sticker } from '@/lib/schemas/sticker';
-
 const DEMO_STICKERS: Array<{
   sticker: Sticker;
   flagColors: string[];
@@ -76,14 +75,13 @@ export function LoginHero() {
 
         <div className={styles.cards}>
           {DEMO_STICKERS.map(({ sticker, flagColors, className }) => (
-            <div key={sticker.id} className={className}>
-              <StickerCard
-                sticker={sticker}
-                state="missing"
-                onStateChange={() => undefined}
-                flagColors={flagColors}
-              />
-            </div>
+            <StickerCardDisplay
+              key={sticker.id}
+              sticker={sticker}
+              state="missing"
+              flagColors={flagColors}
+              className={className}
+            />
           ))}
         </div>
       </div>

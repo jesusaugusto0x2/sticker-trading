@@ -27,7 +27,7 @@ export function OnboardingPage() {
       const { error: apiError } = await res.json();
       setError(apiError ?? 'Error al guardar el perfil');
     } else {
-      router.push('/repes');
+      router.push('/stickers');
     }
 
     setIsLoading(false);
