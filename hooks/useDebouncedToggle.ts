@@ -1,28 +1,30 @@
 'use client';
 
 import { useRef, useCallback } from 'react';
+import type { StickerState } from '@/lib/schemas/sticker';
 
-export type ToggleChange = { stickerId: string; checked: boolean };
+export type { StickerState };
+export type StateChange = { stickerId: string; state: StickerState };
 
 export function useDebouncedToggle(
-  onFlush: (changes: ToggleChange[]) => Promise<void>,
+  onFlush: (changes: StateChange[]) => Promise<void>,
   delay = 800,
-): (stickerId: string, checked: boolean) => void {
+): (stickerId: string, state: StickerState) => void {
   const onFlushRef = useRef(onFlush);
   onFlushRef.current = onFlush;
 
-  const pendingRef = useRef<Map<string, boolean>>(new Map());
+  const pendingRef = useRef<Map<string, StickerState>>(new Map());
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   return useCallback(
-    (stickerId: string, checked: boolean) => {
-      pendingRef.current.set(stickerId, checked);
+    (stickerId: string, state: StickerState) => {
+      pendingRef.current.set(stickerId, state);
 
       if (timerRef.current) clearTimeout(timerRef.current);
 
       timerRef.current = setTimeout(() => {
-        const changes: ToggleChange[] = Array.from(pendingRef.current.entries()).map(
-          ([id, c]) => ({ stickerId: id, checked: c }),
+        const changes: StateChange[] = Array.from(pendingRef.current.entries()).map(
+          ([id, s]) => ({ stickerId: id, state: s }),
         );
         pendingRef.current.clear();
         onFlushRef.current(changes);

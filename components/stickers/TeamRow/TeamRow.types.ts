@@ -1,11 +1,9 @@
-import type { Team } from '@/lib/schemas/sticker';
+import type { Team, StickerState } from '@/lib/schemas/sticker';
 
 export interface TeamRowProps {
   team: Team;
-  checkedIds: Set<string>;
-  disabledIds: Set<string>;
-  disabledLabel?: string;
-  onToggle: (stickerId: string, checked: boolean) => void;
+  statesMap: Map<string, 'placed' | 'repeated'>;
+  onStateChange: (stickerId: string, forcedState?: StickerState) => void;
   accent: 'green' | 'coral';
   isExpanded: boolean;
   onToggleExpand: (teamCode: string) => void;

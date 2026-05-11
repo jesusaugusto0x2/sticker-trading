@@ -1,6 +1,5 @@
 'use client';
 
-import { Checkbox } from '@/components/ui';
 import styles from './StickerCard.module.css';
 
 export type { StickerCardProps } from './StickerCard.types';
@@ -8,15 +7,13 @@ import type { StickerCardProps } from './StickerCard.types';
 
 const FOIL_GRADIENT = 'linear-gradient(135deg, #C9A84C, #F5E6A3)';
 
-export function StickerCard({
-  sticker,
-  isChecked,
-  isDisabled = false,
-  disabledLabel,
-  onToggle,
-  accent,
-  flagColors,
-}: StickerCardProps) {
+const STATE_LABELS: Record<'missing' | 'placed' | 'repeated', string> = {
+  missing: 'FALTANTE',
+  placed: 'COLOCADO',
+  repeated: 'REPETIDO',
+};
+
+export function StickerCard({ sticker, state, onStateChange, flagColors }: StickerCardProps) {
   const gradient =
     sticker.foil || sticker.type === 'intro'
       ? FOIL_GRADIENT
@@ -27,30 +24,32 @@ export function StickerCard({
   const badgeLabel =
     sticker.slot != null ? String(sticker.slot) : String(sticker.album_order);
 
-  const handleClick = () => {
-    if (isDisabled) return;
-    onToggle(sticker.id, !isChecked);
-  };
+  const cardClass = [
+    styles.card,
+    state === 'missing' ? styles.cardMissing : '',
+    state === 'repeated' ? styles.cardRepeated : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
-  const desktopClass = [
-    styles.desktopCard,
-    isChecked ? styles.desktopCardChecked : '',
-    isDisabled ? styles.desktopCardDisabled : '',
+  const labelClass = [
+    styles.stateLabel,
+    state === 'missing' ? styles.stateLabelMissing : '',
+    state === 'repeated' ? styles.stateLabelRepeated : '',
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
     <div
-      className={desktopClass}
-      onClick={handleClick}
+      className={cardClass}
+      onClick={onStateChange}
       role="button"
-      tabIndex={isDisabled ? -1 : 0}
-      aria-disabled={isDisabled}
+      tabIndex={0}
       onKeyDown={(e) => {
-        if (!isDisabled && (e.key === 'Enter' || e.key === ' ')) {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          handleClick();
+          onStateChange();
         }
       }}
     >
@@ -59,19 +58,9 @@ export function StickerCard({
       </div>
       <div className={styles.info}>
         <p className={styles.playerName}>{sticker.name}</p>
-        <p className={styles.stickerCode}>
-          #{sticker.id}
-          {isDisabled && disabledLabel && (
-            <span className={styles.disabledCaption}> · {disabledLabel}</span>
-          )}
-        </p>
+        <p className={styles.stickerCode}>#{sticker.id}</p>
       </div>
-      <Checkbox
-        accent={accent}
-        checked={isChecked}
-        onChange={handleClick}
-        disabled={isDisabled}
-      />
+      <span className={labelClass}>{STATE_LABELS[state]}</span>
     </div>
   );
 }

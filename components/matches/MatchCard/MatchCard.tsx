@@ -11,20 +11,20 @@ const HOT_THRESHOLD = 5;
 
 const AVATAR_COLORS = ['#E8845C', '#5C9E85', '#7B8EC4', '#C4845C', '#8E6BC4'];
 
-function getAvatarColor(nombre: string): string {
-  return AVATAR_COLORS[nombre.charCodeAt(0) % AVATAR_COLORS.length];
+function getAvatarColor(name: string): string {
+  return AVATAR_COLORS[name.charCodeAt(0) % AVATAR_COLORS.length];
 }
 
-function getInitials(nombre: string): string {
-  const parts = nombre.trim().split(/\s+/);
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
   if (parts.length >= 2)
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  return nombre.slice(0, 2).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
 }
 
 export function MatchCard({ match }: MatchCardProps) {
   const {
-    nombre,
+    name,
     country_name,
     city_name,
     phone_prefix,
@@ -53,14 +53,14 @@ export function MatchCard({ match }: MatchCardProps) {
       <div className={styles.header}>
         <div
           className={styles.avatar}
-          style={{ background: getAvatarColor(nombre) }}
+          style={{ background: getAvatarColor(name) }}
         >
-          {getInitials(nombre)}
+          {getInitials(name)}
         </div>
 
         <div className={styles.userInfo}>
           <div className={styles.nameRow}>
-            <p className={styles.name}>{nombre}</p>
+            <p className={styles.name}>{name}</p>
             {isHot && <span className={styles.hotBadge}>🔥 HOT</span>}
           </div>
           <p className={styles.location}>

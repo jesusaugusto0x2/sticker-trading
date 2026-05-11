@@ -79,9 +79,8 @@ export function LoginHero() {
             <div key={sticker.id} className={className}>
               <StickerCard
                 sticker={sticker}
-                isChecked={false}
-                onToggle={() => undefined}
-                accent="green"
+                state="missing"
+                onStateChange={() => undefined}
                 flagColors={flagColors}
               />
             </div>

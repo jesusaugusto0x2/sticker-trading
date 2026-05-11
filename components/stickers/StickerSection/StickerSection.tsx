@@ -9,10 +9,8 @@ import type { StickerSectionProps } from './StickerSection.types';
 export function StickerSection({
   title,
   stickers,
-  checkedIds,
-  disabledIds,
-  disabledLabel,
-  onToggle,
+  statesMap,
+  onStateChange,
   onClear,
   accent,
   flagColors,
@@ -32,10 +30,8 @@ export function StickerSection({
       </div>
       <StickerGrid
         stickers={stickers}
-        checkedIds={checkedIds}
-        disabledIds={disabledIds}
-        disabledLabel={disabledLabel}
-        onToggle={onToggle}
+        statesMap={statesMap}
+        onStateChange={onStateChange}
         accent={accent}
         flagColors={flagColors}
       />

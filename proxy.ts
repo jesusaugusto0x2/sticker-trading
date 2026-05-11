@@ -21,18 +21,18 @@ export async function proxy(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('nombre')
+    .select('name')
     .eq('user_id', user.id)
     .single();
 
-  const profileComplete = !!profile?.nombre;
+  const profileComplete = !!profile?.name;
 
   if (!profileComplete && pathname !== '/onboarding') {
     return NextResponse.redirect(new URL('/onboarding', request.url));
   }
 
   if (profileComplete && (pathname === '/onboarding' || pathname === '/' || isPublic)) {
-    return NextResponse.redirect(new URL('/repes', request.url));
+    return NextResponse.redirect(new URL('/stickers', request.url));
   }
 
   return response;

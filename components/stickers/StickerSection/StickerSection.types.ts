@@ -1,12 +1,10 @@
-import type { Sticker } from '@/lib/schemas/sticker';
+import type { Sticker, StickerState } from '@/lib/schemas/sticker';
 
 export interface StickerSectionProps {
   title: string;
   stickers: Sticker[];
-  checkedIds: Set<string>;
-  disabledIds: Set<string>;
-  disabledLabel?: string;
-  onToggle: (stickerId: string, checked: boolean) => void;
+  statesMap: Map<string, 'placed' | 'repeated'>;
+  onStateChange: (stickerId: string, forcedState?: StickerState) => void;
   onClear: () => void;
   accent: 'green' | 'coral';
   flagColors?: string[];

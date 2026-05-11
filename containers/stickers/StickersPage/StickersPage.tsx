@@ -8,7 +8,7 @@ import type { StickerState } from '@/lib/schemas/sticker';
 import { Input, Typography } from '@/components/ui';
 import { TeamRow } from '@/components/stickers/TeamRow/TeamRow';
 import type { Team } from '@/lib/schemas/sticker';
-import styles from './MissingPage.module.css';
+import styles from './StickersPage.module.css';
 
 const introTeam: Team = {
   code: 'intro',
@@ -29,7 +29,7 @@ const cycleState = (current: StickerState): StickerState => {
   return null;
 };
 
-export function MissingPage() {
+export function StickersPage() {
   const [statesMap, setStatesMap] = useState<Map<string, 'placed' | 'repeated'>>(new Map());
   const [loading, setLoading] = useState(true);
   const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
@@ -82,17 +82,25 @@ export function MissingPage() {
     team.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
   );
 
-  const missingCount = totalStickerCount - statesMap.size;
-
   if (loadingUser || loading) return null;
+
+  const placedCount = [...statesMap.values()].filter((v) => v === 'placed').length;
+  const repeatedCount = [...statesMap.values()].filter((v) => v === 'repeated').length;
+  const missingCount = totalStickerCount - statesMap.size;
 
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <Typography variant="h1">Mis faltantes</Typography>
+        <Typography variant="h1">Mi álbum</Typography>
         <div className={styles.counter}>
-          <span className={styles.counterNumber}>{missingCount}</span>
-          <span className={styles.counterLabel}>faltantes en total</span>
+          <span className={styles.counterNumberCoral}>{missingCount}</span>
+          <span className={styles.counterLabel}>faltantes</span>
+          <span className={styles.counterSeparator}>·</span>
+          <span className={styles.counterNumberInk}>{placedCount}</span>
+          <span className={styles.counterLabel}>pegados</span>
+          <span className={styles.counterSeparator}>·</span>
+          <span className={styles.counterNumberGreen}>{repeatedCount}</span>
+          <span className={styles.counterLabel}>repetidos</span>
         </div>
         <Typography variant="body-sm" color="muted">
           Click una vez para colocar, dos veces para marcar como repetido.
@@ -115,10 +123,9 @@ export function MissingPage() {
           team={introTeam}
           statesMap={statesMap}
           onStateChange={handleStateChange}
-          accent="coral"
+          accent="green"
           isExpanded={expandedTeam === 'intro'}
           onToggleExpand={handleToggleExpand}
-          playerSectionTitle="MARCA TUS CROMOS"
         />
         {filteredTeams.map((team) => (
           <TeamRow
@@ -126,10 +133,9 @@ export function MissingPage() {
             team={team}
             statesMap={statesMap}
             onStateChange={handleStateChange}
-            accent="coral"
+            accent="green"
             isExpanded={expandedTeam === team.code}
             onToggleExpand={handleToggleExpand}
-            playerSectionTitle="MARCA TUS CROMOS"
           />
         ))}
       </div>

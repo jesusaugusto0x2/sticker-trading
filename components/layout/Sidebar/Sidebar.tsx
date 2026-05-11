@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutGrid, Heart, Sparkles, User } from 'lucide-react';
+import { BookOpen, Sparkles, User } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
@@ -11,8 +11,7 @@ interface SidebarProps {
 }
 
 const NAV_ITEMS = [
-  { href: '/repes', label: 'Mis repes', icon: LayoutGrid },
-  { href: '/missing', label: 'Faltantes', icon: Heart },
+  { href: '/stickers', label: 'Mi álbum', icon: BookOpen },
   { href: '/matches', label: 'Matches', icon: Sparkles },
   { href: '/perfil', label: 'Perfil', icon: User },
 ];

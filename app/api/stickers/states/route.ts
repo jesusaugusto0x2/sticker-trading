@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createSupabaseServerClient } from '@/lib/supabase-server';
+import type { StickerState } from '@/lib/schemas/sticker';
 
 export async function GET() {
   const supabase = await createSupabaseServerClient();
@@ -12,15 +13,15 @@ export async function GET() {
   }
 
   const { data, error } = await supabase
-    .from('user_missing_stickers')
-    .select('sticker_id')
+    .from('user_sticker_states')
+    .select('sticker_id, state')
     .eq('user_id', user.id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ stickerIds: data.map((r) => r.sticker_id) });
+  return NextResponse.json({ states: data ?? [] });
 }
 
 export async function PATCH(request: Request) {
@@ -33,46 +34,43 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { changes } = await request.json();
+  const { changes } = await request.json() as {
+    changes: { stickerId: string; state: StickerState }[];
+  };
 
   if (!Array.isArray(changes) || changes.length === 0) {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
   }
 
-  const toAdd = changes
-    .filter((c) => c.checked)
+  const toUpsert = changes
+    .filter((c) => c.state !== null)
     .map((c) => ({
       user_id: user.id,
       sticker_id: c.stickerId,
+      state: c.state,
+      updated_at: new Date().toISOString(),
     }));
 
-  const toRemove = changes.filter((c) => !c.checked).map((c) => c.stickerId);
+  const toDelete = changes.filter((c) => c.state === null).map((c) => c.stickerId);
 
-  const [addResult, removeResult] = await Promise.all([
-    toAdd.length > 0
-      ? supabase.from('user_missing_stickers').upsert(toAdd)
+  const [upsertResult, deleteResult] = await Promise.all([
+    toUpsert.length > 0
+      ? supabase.from('user_sticker_states').upsert(toUpsert)
       : null,
-    toRemove.length > 0
+    toDelete.length > 0
       ? supabase
-          .from('user_missing_stickers')
+          .from('user_sticker_states')
           .delete()
           .eq('user_id', user.id)
-          .in('sticker_id', toRemove)
+          .in('sticker_id', toDelete)
       : null,
   ]);
 
-  if (addResult?.error) {
-    return NextResponse.json(
-      { error: addResult.error.message },
-      { status: 500 }
-    );
+  if (upsertResult?.error) {
+    return NextResponse.json({ error: upsertResult.error.message }, { status: 500 });
   }
-
-  if (removeResult?.error) {
-    return NextResponse.json(
-      { error: removeResult.error.message },
-      { status: 500 }
-    );
+  if (deleteResult?.error) {
+    return NextResponse.json({ error: deleteResult.error.message }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });

@@ -6,26 +6,15 @@ import styles from './StickerGrid.module.css';
 export type { StickerGridProps } from './StickerGrid.types';
 import type { StickerGridProps } from './StickerGrid.types';
 
-export function StickerGrid({
-  stickers,
-  checkedIds,
-  disabledIds,
-  disabledLabel,
-  onToggle,
-  accent,
-  flagColors,
-}: StickerGridProps) {
+export function StickerGrid({ stickers, statesMap, onStateChange, flagColors }: StickerGridProps) {
   return (
     <div className={styles.grid}>
       {stickers.map((sticker) => (
         <StickerCard
           key={sticker.id}
           sticker={sticker}
-          isChecked={checkedIds.has(sticker.id)}
-          isDisabled={disabledIds.has(sticker.id)}
-          disabledLabel={disabledLabel}
-          onToggle={onToggle}
-          accent={accent}
+          state={statesMap.get(sticker.id) ?? 'missing'}
+          onStateChange={() => onStateChange(sticker.id)}
           flagColors={flagColors}
         />
       ))}

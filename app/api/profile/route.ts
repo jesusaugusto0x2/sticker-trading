@@ -15,7 +15,7 @@ export async function PUT(request: Request) {
 
   const { error } = await supabase.from('profiles').upsert({
     user_id: user.id,
-    nombre: body.nombre,
+    name: body.name,
     country_code: body.country_code ?? '',
     country_name: body.country_name,
     state_name: body.state_name,

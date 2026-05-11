@@ -44,7 +44,7 @@ export function OnboardingForm({
   } = useForm<OnboardingInput>({
     resolver: zodResolver(onboardingInputSchema),
     defaultValues: {
-      nombre: defaultName,
+      name: defaultName,
       phone_prefix: venezuelaData.dial_code,
     },
   });
@@ -92,9 +92,9 @@ export function OnboardingForm({
             label="Tu nombre"
             placeholder="Nombre"
             leftIcon={<User size={18} />}
-            state={errors.nombre ? 'error' : 'default'}
-            errorMessage={errors.nombre?.message}
-            {...register('nombre')}
+            state={errors.name ? 'error' : 'default'}
+            errorMessage={errors.name?.message}
+            {...register('name')}
           />
 
           <Select

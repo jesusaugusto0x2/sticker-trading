@@ -25,18 +25,16 @@ const ACCENT_VARS: Record<'green' | 'coral', React.CSSProperties> = {
 
 export function TeamRow({
   team,
-  checkedIds,
-  disabledIds,
-  disabledLabel,
-  onToggle,
+  statesMap,
+  onStateChange,
   accent,
   isExpanded,
   onToggleExpand,
-  playerSectionTitle = 'MARCA TUS REPETIDOS',
+  playerSectionTitle = 'MARCA TUS CROMOS',
 }: TeamRowProps) {
   const total = team.stickers.length;
-  const checkedCount = team.stickers.filter((s) => checkedIds.has(s.id)).length;
-  const filledDots = total > 0 ? Math.round((checkedCount / total) * TOTAL_DOTS) : 0;
+  const hasCount = team.stickers.filter((s) => statesMap.has(s.id)).length;
+  const filledDots = total > 0 ? Math.round((hasCount / total) * TOTAL_DOTS) : 0;
 
   const specialStickers = team.stickers.filter(
     (s) => s.type === 'team_logo' || s.type === 'team_photo',
@@ -46,7 +44,7 @@ export function TeamRow({
 
   const handleClearSection = (sectionStickers: Sticker[]) => {
     sectionStickers.forEach((s) => {
-      if (checkedIds.has(s.id)) onToggle(s.id, false);
+      if (statesMap.has(s.id)) onStateChange(s.id, null);
     });
   };
 
@@ -78,8 +76,8 @@ export function TeamRow({
 
         <div className={styles.teamInfo}>
           <p className={styles.teamName}>{team.name}</p>
-          <p className={`${styles.counter}${checkedCount > 0 ? ` ${styles.counterActive}` : ''}`}>
-            {checkedCount} / {total} repes
+          <p className={`${styles.counter}${hasCount > 0 ? ` ${styles.counterActive}` : ''}`}>
+            {hasCount} / {total}
           </p>
         </div>
 
@@ -106,10 +104,8 @@ export function TeamRow({
               <StickerSection
                 title="INTRODUCCIÓN"
                 stickers={introStickers}
-                checkedIds={checkedIds}
-                disabledIds={disabledIds}
-                disabledLabel={disabledLabel}
-                onToggle={onToggle}
+                statesMap={statesMap}
+                onStateChange={onStateChange}
                 onClear={() => handleClearSection(introStickers)}
                 accent={accent}
                 flagColors={team.flag_colors}
@@ -119,10 +115,8 @@ export function TeamRow({
               <StickerSection
                 title="ESPECIALES"
                 stickers={specialStickers}
-                checkedIds={checkedIds}
-                disabledIds={disabledIds}
-                disabledLabel={disabledLabel}
-                onToggle={onToggle}
+                statesMap={statesMap}
+                onStateChange={onStateChange}
                 onClear={() => handleClearSection(specialStickers)}
                 accent={accent}
                 flagColors={team.flag_colors}
@@ -132,10 +126,8 @@ export function TeamRow({
               <StickerSection
                 title={playerSectionTitle}
                 stickers={playerStickers}
-                checkedIds={checkedIds}
-                disabledIds={disabledIds}
-                disabledLabel={disabledLabel}
-                onToggle={onToggle}
+                statesMap={statesMap}
+                onStateChange={onStateChange}
                 onClear={() => handleClearSection(playerStickers)}
                 accent={accent}
                 flagColors={team.flag_colors}
