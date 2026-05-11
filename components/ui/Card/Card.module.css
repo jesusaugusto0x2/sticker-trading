@@ -35,6 +35,11 @@
 .accentPurple {
   box-shadow: var(--shadow-purple-md);
 }
+.accentInk {
+  background: var(--color-ink);
+  border-color: transparent;
+  box-shadow: none;
+}
 
 /* ─── Border modifier ────────────────────────────────────────── */
 /* must come after accent classes so box-shadow: none takes precedence */

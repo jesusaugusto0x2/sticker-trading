@@ -19,6 +19,7 @@ const accentClass: Record<CardAccent, string> = {
   coral: styles.accentCoral,
   yellow: styles.accentYellow,
   purple: styles.accentPurple,
+  ink: styles.accentInk,
 };
 
 const paddingClass: Record<CardPadding, string> = {

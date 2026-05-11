@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type CardAccent = 'default' | 'green' | 'coral' | 'yellow' | 'purple';
+export type CardAccent = 'default' | 'green' | 'coral' | 'yellow' | 'purple' | 'ink';
 export type CardPadding = 'none' | 'sm' | 'md' | 'lg';
 export type CardBorder = 'solid' | 'dashed';
 

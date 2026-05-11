@@ -2,6 +2,7 @@
 
 import { WhatsAppIcon } from '@/assets/icons/WhatsAppIcon';
 import { InstagramIcon } from '@/assets/icons/InstagramIcon';
+import { Card } from '@/components/ui';
 import styles from './MatchCard.module.css';
 
 export type { MatchCardProps } from './MatchCard.types';
@@ -49,7 +50,7 @@ export function MatchCard({ match }: MatchCardProps) {
     : undefined;
 
   return (
-    <div className={styles.card}>
+    <Card padding="none" className={styles.inner}>
       <div className={styles.header}>
         <div
           className={styles.avatar}
@@ -120,6 +121,6 @@ export function MatchCard({ match }: MatchCardProps) {
           </button>
         )}
       </div>
-    </div>
+    </Card>
   );
 }

@@ -1,0 +1,103 @@
+/* ─── Layout override ────────────────────────────────────────── */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ─── Top row ─────────────────────────────────────────────────── */
+.top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background: var(--color-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarInitials {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.location {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: color-mix(in srgb, var(--color-white) 55%, transparent);
+}
+
+/* ─── Progress ───────────────────────────────────────────────── */
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.progressLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--color-white) 55%, transparent);
+}
+
+.progressPct {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-black);
+  color: var(--color-green);
+}
+
+.progressTrack {
+  height: 8px;
+  background: color-mix(in srgb, var(--color-white) 12%, transparent);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-green);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+.progressSub {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: color-mix(in srgb, var(--color-white) 40%, transparent);
+}

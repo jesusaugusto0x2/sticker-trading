@@ -1,0 +1,12 @@
+.page {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.logout {
+  align-self: flex-start;
+  color: var(--color-ink-40);
+  gap: var(--space-2);
+}

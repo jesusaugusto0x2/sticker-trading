@@ -1,9 +1,5 @@
-/* ─── Card ───────────────────────────────────────────────────── */
-.card {
-  background: var(--color-surface);
-  border: var(--border-thin);
-  border-radius: var(--radius-3xl);
-  box-shadow: var(--shadow-md);
+/* ─── Inner layout ───────────────────────────────────────────── */
+.inner {
   padding: var(--space-6);
   display: flex;
   flex-direction: column;

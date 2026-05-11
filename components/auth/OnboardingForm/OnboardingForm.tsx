@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { User, Globe, MapPin, Building2, MessageCircle } from 'lucide-react';
 import { onboardingInputSchema } from '@/lib/schemas/auth';
 import { Badge, Button, Input, Select, Typography } from '@/components/ui';
+import { PhonePrefixSelector } from '@/components/common/PhonePrefixSelector/PhonePrefixSelector';
 import { InstagramIcon } from '@/assets/icons';
 import venezuelaData from '@/lib/data/venezuela.json';
 import styles from './OnboardingForm.module.css';
@@ -24,9 +25,6 @@ const countryOptions = [
     value: venezuelaData.name,
     label: `${venezuelaData.flag} ${venezuelaData.name}`,
   },
-];
-const prefixOptions = [
-  { value: venezuelaData.dial_code, label: venezuelaData.dial_code },
 ];
 
 export function OnboardingForm({
@@ -144,9 +142,7 @@ export function OnboardingForm({
 
           <div className={styles.phoneGroup}>
             <div className={styles.prefixWrapper}>
-              <Select
-                label="Prefijo telf."
-                options={prefixOptions}
+              <PhonePrefixSelector
                 state={errors.phone_prefix ? 'error' : 'default'}
                 {...register('phone_prefix')}
               />
