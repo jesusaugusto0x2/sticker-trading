@@ -41,7 +41,7 @@ export function MatchesPage() {
         <div className={styles.empty}>
           <p className={styles.emptyTitle}>Sin matches por ahora</p>
           <p className={styles.emptySubtitle}>
-            Marcá tus repetidos y faltantes para encontrar personas con quién
+            Marca tus cromos en el álbum para encontrar personas con quién
             intercambiar.
           </p>
         </div>

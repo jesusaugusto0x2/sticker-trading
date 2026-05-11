@@ -26,7 +26,7 @@ export function RegisterForm({
     <div className={styles.form}>
       <div className={styles.mobileLogo}>
         <div className={styles.mobileLogoIcon}>R</div>
-        <span className={styles.mobileLogoText}>repes26</span>
+        <span className={styles.mobileLogoText}>cromos26</span>
       </div>
 
       <Badge dot className={styles.badgeMargin}>
@@ -38,7 +38,7 @@ export function RegisterForm({
       </h1>
 
       <Typography variant="body-lg" color="muted" className={styles.subtitle}>
-        Empieza a intercambiar tus repes.
+        Empieza a intercambiar tus cromos.
       </Typography>
 
       <form onSubmit={handleSubmit(onSubmit)}>

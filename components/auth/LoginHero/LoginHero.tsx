@@ -56,7 +56,7 @@ export function LoginHero() {
       <header className={styles.header}>
         <div className={styles.logo}>
           <div className={styles.logoIcon}>R</div>
-          <span className={styles.logoText}>repes26</span>
+          <span className={styles.logoText}>cromos26</span>
         </div>
         <Badge variant="ink" dot>
           MUNDIAL 2026 · BETA
@@ -65,7 +65,7 @@ export function LoginHero() {
 
       <div className={styles.body}>
         <h1 className={styles.headline}>
-          Cambia tus <span className={styles.headlineAccent}>repes</span>
+          Cambia tus <span className={styles.headlineAccent}>cromos</span>
           {'⚽'}
         </h1>
         <Typography variant="body-lg" color="white" className={styles.subtitle}>
@@ -88,7 +88,7 @@ export function LoginHero() {
 
       <footer className={styles.footer}>
         <Typography variant="caption" color="white">
-          © 2026 Repes 26 · No afiliado a Panini
+          © 2026 Cromos 26 · No afiliado a Panini
         </Typography>
       </footer>
     </div>

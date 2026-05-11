@@ -12,10 +12,10 @@ export default function CheckEmailPage() {
           <MailIcon size={32} />
         </div>
         <h1 className={styles.headline}>
-          Revisá tu <span className={styles.headlineAccent}>correo</span>
+          Revisa tu <span className={styles.headlineAccent}>correo</span>
         </h1>
         <p className={styles.subtitle}>
-          Te enviamos un enlace de confirmación. Hacé clic en él para activar tu
+          Te enviamos un enlace de confirmación. Haz clic en él para activar tu
           cuenta y continuar.
         </p>
         <Button href="/onboarding" variant="primary" fullWidth>

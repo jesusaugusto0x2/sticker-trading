@@ -38,7 +38,7 @@ export function LoginPage() {
     }
 
     setIsLoading(false);
-    router.push('/repes');
+    router.push('/stickers');
   };
 
   return (

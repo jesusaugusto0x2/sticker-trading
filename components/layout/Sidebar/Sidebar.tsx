@@ -32,7 +32,7 @@ export function Sidebar({ userName, userCity }: SidebarProps) {
     <div className={styles.sidebar}>
       <div className={styles.logo}>
         <div className={styles.logoIcon}>R</div>
-        <span className={styles.logoText}>repes26</span>
+        <span className={styles.logoText}>cromos26</span>
       </div>
 
       <p className={styles.sectionLabel}>MI ÁLBUM</p>
@@ -57,7 +57,7 @@ export function Sidebar({ userName, userCity }: SidebarProps) {
       </nav>
 
       <div className={styles.betaBanner}>
-        Estás probando v0.4. Reporta bugs en @repes26
+        Estás probando v0.4. Reporta bugs en @cromos26
       </div>
 
       <div className={styles.userRow}>

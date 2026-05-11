@@ -26,7 +26,7 @@ export function LoginForm({
     <div className={styles.form}>
       <div className={styles.mobileLogo}>
         <div className={styles.mobileLogoIcon}>R</div>
-        <span className={styles.mobileLogoText}>repes26</span>
+        <span className={styles.mobileLogoText}>cromos26</span>
       </div>
 
       <Badge dot className={styles.badgeMargin}>
@@ -38,7 +38,7 @@ export function LoginForm({
       </h1>
 
       <Typography variant="body-lg" color="muted" className={styles.subtitle}>
-        Recupera tus repes y matches donde los dejaste.
+        Recupera tus cromos y matches donde los dejaste.
       </Typography>
 
       <Button
