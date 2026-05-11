@@ -151,6 +151,7 @@ export function OnboardingForm({
               <Input
                 label="WhatsApp"
                 placeholder="4141234567"
+                type="tel"
                 leftIcon={<MessageCircle size={18} />}
                 state={errors.phone_number ? 'error' : 'default'}
                 errorMessage={errors.phone_number?.message}

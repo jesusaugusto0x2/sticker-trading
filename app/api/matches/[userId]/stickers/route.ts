@@ -3,7 +3,7 @@ import { createSupabaseServerClient } from '@/lib/supabase-server';
 
 export async function GET(
   _request: Request,
-  { params }: { params: Promise<{ userId: string }> },
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   const supabase = await createSupabaseServerClient();
   const {
@@ -27,8 +27,12 @@ export async function GET(
       .eq('user_id', targetId),
   ]);
 
-  const myMap = new Map((myResult.data ?? []).map((s) => [s.sticker_id, s.state]));
-  const theirMap = new Map((theirResult.data ?? []).map((s) => [s.sticker_id, s.state]));
+  const myMap = new Map(
+    (myResult.data ?? []).map((s) => [s.sticker_id, s.state])
+  );
+  const theirMap = new Map(
+    (theirResult.data ?? []).map((s) => [s.sticker_id, s.state])
+  );
 
   // Stickers they can give me: they have repeated + I have no state
   const receives = (theirResult.data ?? [])
