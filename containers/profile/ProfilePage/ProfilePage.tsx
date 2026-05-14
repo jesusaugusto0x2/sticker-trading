@@ -15,7 +15,7 @@ const totalStickerCount =
   (stickersData.intro as unknown[]).length +
   (stickersData.teams as { stickers: unknown[] }[]).reduce(
     (acc, t) => acc + t.stickers.length,
-    0,
+    0
   );
 
 interface ProfileData {
@@ -68,7 +68,7 @@ export function ProfilePage() {
 
   return (
     <div className={styles.page}>
-      <Typography variant="h1">Mi perfil</Typography>
+      <Typography variant="h1">Mi Perfil</Typography>
 
       <ProfileHeroCard
         name={profile.name}

@@ -7,6 +7,7 @@ import { useCurrentUser, useDebounce, useDebouncedToggle } from '@/hooks';
 import type { StickerState } from '@/lib/schemas/sticker';
 import { Input, Typography } from '@/components/ui';
 import { TeamRow } from '@/components/stickers/TeamRow/TeamRow';
+import { TradeListButton } from '@/containers/shared/TradeListButton/TradeListButton';
 import type { Team } from '@/lib/schemas/sticker';
 import styles from './StickersPage.module.css';
 
@@ -30,7 +31,9 @@ const cycleState = (current: StickerState): StickerState => {
 };
 
 export function StickersPage() {
-  const [statesMap, setStatesMap] = useState<Map<string, 'placed' | 'repeated'>>(new Map());
+  const [statesMap, setStatesMap] = useState<
+    Map<string, 'placed' | 'repeated'>
+  >(new Map());
   const [loading, setLoading] = useState(true);
   const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -52,9 +55,17 @@ export function StickersPage() {
       .then((r) => r.json())
       .then(({ states }) => {
         const map = new Map<string, 'placed' | 'repeated'>();
-        (states ?? []).forEach(({ sticker_id, state }: { sticker_id: string; state: 'placed' | 'repeated' }) => {
-          map.set(sticker_id, state);
-        });
+        (states ?? []).forEach(
+          ({
+            sticker_id,
+            state,
+          }: {
+            sticker_id: string;
+            state: 'placed' | 'repeated';
+          }) => {
+            map.set(sticker_id, state);
+          }
+        );
         setStatesMap(map);
         setLoading(false);
       });
@@ -62,7 +73,8 @@ export function StickersPage() {
 
   const handleStateChange = (stickerId: string, forcedState?: StickerState) => {
     const current = statesMap.get(stickerId) ?? null;
-    const newState = forcedState !== undefined ? forcedState : cycleState(current);
+    const newState =
+      forcedState !== undefined ? forcedState : cycleState(current);
 
     setStatesMap((prev) => {
       const next = new Map(prev);
@@ -79,28 +91,33 @@ export function StickersPage() {
   };
 
   const filteredTeams = allTeams.filter((team) =>
-    team.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
+    team.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   if (loadingUser || loading) return null;
 
-  const placedCount = [...statesMap.values()].filter((v) => v === 'placed').length;
-  const repeatedCount = [...statesMap.values()].filter((v) => v === 'repeated').length;
-  const missingCount = totalStickerCount - statesMap.size;
+  const repeatedCount = [...statesMap.values()].filter(
+    (v) => v === 'repeated'
+  ).length;
+  const collectedCount = statesMap.size;
+  const missingCount = totalStickerCount - collectedCount;
 
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <Typography variant="h1">Mi álbum</Typography>
+        <div className={styles.headerTop}>
+          <Typography variant="h1">Mi Álbum</Typography>
+          <TradeListButton />
+        </div>
         <div className={styles.counter}>
-          <span className={styles.counterNumberCoral}>{missingCount}</span>
-          <span className={styles.counterLabel}>faltantes</span>
-          <span className={styles.counterSeparator}>·</span>
-          <span className={styles.counterNumberInk}>{placedCount}</span>
-          <span className={styles.counterLabel}>pegados</span>
-          <span className={styles.counterSeparator}>·</span>
-          <span className={styles.counterNumberGreen}>{repeatedCount}</span>
-          <span className={styles.counterLabel}>repetidos</span>
+          <Typography variant="display" color="coral" as="span">{missingCount}</Typography>
+          <Typography variant="title" as="span">faltantes</Typography>
+          <Typography variant="title" color="muted" as="span">·</Typography>
+          <Typography variant="display" as="span">{collectedCount}</Typography>
+          <Typography variant="title" as="span">pegados</Typography>
+          <Typography variant="title" color="muted" as="span">·</Typography>
+          <Typography variant="display" color="green" as="span">{repeatedCount}</Typography>
+          <Typography variant="title" as="span">repetidos</Typography>
         </div>
         <Typography variant="body-sm" color="muted">
           Click una vez para colocar, dos veces para marcar como repetido.

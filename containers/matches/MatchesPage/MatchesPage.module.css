@@ -1,10 +1,13 @@
-.page {
-  max-width: 1100px;
-}
-
 /* ─── Header ─────────────────────────────────────────────────── */
 .header {
   margin-bottom: var(--space-10);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
 }
 
 .counter {
@@ -14,26 +17,15 @@
   margin-top: var(--space-2);
 }
 
-.counterNumber {
-  font-family: var(--font-display);
-  font-size: var(--text-4xl);
-  font-weight: var(--weight-black);
-  color: var(--color-green);
-  line-height: 1;
-}
-
-.counterLabel {
-  font-family: var(--font-body);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-semibold);
-  color: var(--color-ink);
-}
-
 /* ─── Grid ───────────────────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: var(--space-6);
+}
+
+.cardExpanded {
+  grid-column: 1 / -1;
 }
 
 /* ─── Empty state ────────────────────────────────────────────── */
@@ -47,17 +39,6 @@
   text-align: center;
 }
 
-.emptyTitle {
-  font-family: var(--font-body);
-  font-size: var(--text-title);
-  font-weight: var(--weight-bold);
-  color: var(--color-ink);
-}
-
 .emptySubtitle {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--weight-medium);
-  color: var(--color-ink-40);
   max-width: 360px;
 }
