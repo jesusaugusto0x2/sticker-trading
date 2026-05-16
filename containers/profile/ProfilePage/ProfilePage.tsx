@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { LogOut } from 'lucide-react';
+import { LogOut, Link2, Check, ExternalLink } from 'lucide-react';
 import stickersData from '@/lib/data/stickers.json';
 import { supabase } from '@/lib/supabase';
+import { generateSlug } from '@/lib/utils/slug';
 import { Button, Typography } from '@/components/ui';
 import { ProfileHeroCard } from '@/components/profile/ProfileHeroCard/ProfileHeroCard';
 import { ContactCard } from '@/components/profile/ContactCard/ContactCard';
@@ -33,13 +34,19 @@ interface ProfileData {
 export function ProfilePage() {
   const router = useRouter();
   const [profile, setProfile] = useState<ProfileData | null>(null);
+  const [userSlug, setUserSlug] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/profile')
-      .then((r) => r.json())
-      .then((data) => setProfile(data));
+    Promise.all([
+      fetch('/api/profile').then((r) => r.json()),
+      supabase.auth.getUser(),
+    ]).then(([data, { data: { user } }]) => {
+      setProfile(data);
+      if (user) setUserSlug(generateSlug(data.name, user.id));
+    });
   }, []);
 
   const handleSave = async (data: ContactCardSaveData) => {
@@ -57,6 +64,13 @@ export function ProfilePage() {
       setProfile((prev) => (prev ? { ...prev, ...data } : prev));
     }
     setSaving(false);
+  };
+
+  const handleCopy = () => {
+    if (!userSlug) return;
+    navigator.clipboard.writeText(`${window.location.origin}/u/${userSlug}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleLogout = async () => {
@@ -79,6 +93,37 @@ export function ProfilePage() {
         repeatedCount={profile.repeated_count}
         totalCount={totalStickerCount}
       />
+
+      {userSlug && (
+        <div className={styles.shareCard}>
+          <div className={styles.shareCardInfo}>
+            <Typography variant="label">Tu página pública</Typography>
+            <Typography variant="caption" color="muted" className={styles.shareUrl}>
+              cromos26.xyz/u/{userSlug}
+            </Typography>
+          </div>
+          <div className={styles.shareActions}>
+            <Button
+              variant="ghost"
+              onClick={handleCopy}
+              className={styles.shareBtn}
+              title="Copiar enlace"
+            >
+              {copied ? <Check size={16} /> : <Link2 size={16} />}
+              {copied ? 'Copiado' : 'Copiar'}
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => window.open(`/u/${userSlug}`, '_blank', 'noopener,noreferrer')}
+              className={styles.shareBtn}
+              title="Abrir página pública"
+            >
+              <ExternalLink size={16} />
+              Abrir
+            </Button>
+          </div>
+        </div>
+      )}
 
       <ContactCard
         phonePrefix={profile.phone_prefix}

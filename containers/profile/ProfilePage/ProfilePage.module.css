@@ -4,6 +4,45 @@
   gap: var(--space-6);
 }
 
+.shareCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-ink-10);
+  border-radius: var(--radius-xl);
+}
+
+.shareCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.shareUrl {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shareActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.shareBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  min-height: var(--hit-min);
+}
+
 .logout {
   align-self: flex-start;
   color: var(--color-ink-40);

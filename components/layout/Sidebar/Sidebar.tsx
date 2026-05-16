@@ -1,13 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BookOpen, Sparkles, User } from 'lucide-react';
+import { BookOpen, Sparkles, User, Link2, Check } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
   userName: string;
   userCity: string;
+  userSlug?: string;
 }
 
 const NAV_ITEMS = [
@@ -25,8 +27,16 @@ function getAvatarInitials(name: string): string {
   return name.slice(0, 2).toUpperCase();
 }
 
-export function Sidebar({ userName, userCity }: SidebarProps) {
+export function Sidebar({ userName, userCity, userSlug }: SidebarProps) {
   const pathname = usePathname();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    if (!userSlug) return;
+    navigator.clipboard.writeText(`${window.location.origin}/u/${userSlug}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className={styles.sidebar}>
@@ -66,6 +76,19 @@ export function Sidebar({ userName, userCity }: SidebarProps) {
           <p className={styles.userName}>{userName || 'Usuario'}</p>
           <p className={styles.userCity}>{userCity}</p>
         </div>
+        {userSlug && (
+          <button
+            className={styles.shareButton}
+            onClick={handleCopy}
+            title={copied ? '¡Copiado!' : 'Compartir mi perfil'}
+          >
+            {copied ? (
+              <Check size={16} color="var(--color-green)" />
+            ) : (
+              <Link2 size={16} />
+            )}
+          </button>
+        )}
       </div>
     </div>
   );

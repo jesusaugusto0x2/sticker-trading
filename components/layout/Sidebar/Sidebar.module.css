@@ -165,3 +165,24 @@
   font-size: var(--text-xs);
   color: var(--color-ink-55);
 }
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--hit-min);
+  height: var(--hit-min);
+  border-radius: var(--radius-lg);
+  border: none;
+  background: transparent;
+  color: var(--color-ink-40);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.shareButton:hover {
+  background: var(--color-muted);
+  color: var(--color-ink);
+}
