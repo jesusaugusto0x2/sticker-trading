@@ -7,10 +7,9 @@ import styles from './TeamRow.module.css';
 
 export type { TeamRowProps } from './TeamRow.types';
 import type { TeamRowProps } from './TeamRow.types';
+import { FOIL_GRADIENT } from '@/constants';
 
 const TOTAL_DOTS = 5;
-
-const FOIL_GRADIENT = 'linear-gradient(135deg, #C9A84C, #F5E6A3)';
 
 const ACCENT_VARS: Record<'green' | 'coral', React.CSSProperties> = {
   green: {

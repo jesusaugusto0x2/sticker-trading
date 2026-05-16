@@ -1,0 +1,58 @@
+/* ─── Card ───────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-thin);
+  border-color: var(--color-ink-10);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  min-height: var(--hit-min);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.available {
+  border-color: var(--color-green);
+  background: var(--color-success-bg);
+}
+
+.wanted {
+  border-color: var(--color-coral);
+  background: var(--color-danger-bg);
+}
+
+/* ─── Flag icon ──────────────────────────────────────────────── */
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Content ────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.playerName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: var(--weight-bold);
+}
+
+.statusLabel {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  margin-top: var(--space-1);
+}

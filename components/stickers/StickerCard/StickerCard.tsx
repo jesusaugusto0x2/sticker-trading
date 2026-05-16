@@ -4,14 +4,7 @@ import styles from './StickerCard.module.css';
 
 export type { StickerCardProps } from './StickerCard.types';
 import type { StickerCardProps } from './StickerCard.types';
-
-const FOIL_GRADIENT = 'linear-gradient(135deg, #C9A84C, #F5E6A3)';
-
-const STATE_LABELS: Record<'missing' | 'placed' | 'repeated', string> = {
-  missing: 'FALTANTE',
-  placed: 'COLOCADO',
-  repeated: 'REPETIDO',
-};
+import { FOIL_GRADIENT, STATE_LABELS } from '@/constants';
 
 export function StickerCard({ sticker, state, onStateChange, flagColors }: StickerCardProps) {
   const gradient =

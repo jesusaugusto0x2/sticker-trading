@@ -1,14 +1,7 @@
 import styles from './StickerCardDisplay.module.css';
 export type { StickerCardDisplayProps } from './StickerCardDisplay.types';
 import type { StickerCardDisplayProps } from './StickerCardDisplay.types';
-
-const FOIL_GRADIENT = 'linear-gradient(135deg, #C9A84C, #F5E6A3)';
-
-const STATE_LABELS: Record<'missing' | 'placed' | 'repeated', string> = {
-  missing: 'FALTANTE',
-  placed: 'COLOCADO',
-  repeated: 'REPETIDO',
-};
+import { FOIL_GRADIENT, STATE_LABELS } from '@/constants';
 
 export function StickerCardDisplay({
   sticker,

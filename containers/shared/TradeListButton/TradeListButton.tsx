@@ -3,65 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui';
 import stickersData from '@/lib/data/stickers.json';
-
-const FIFA_TO_ISO: Record<string, string> = {
-  MEX: 'MX',
-  RSA: 'ZA',
-  KOR: 'KR',
-  CZE: 'CZ',
-  CAN: 'CA',
-  BIH: 'BA',
-  QAT: 'QA',
-  SUI: 'CH',
-  BRA: 'BR',
-  MAR: 'MA',
-  HAI: 'HT',
-  SCO: 'GB',
-  USA: 'US',
-  PAR: 'PY',
-  AUS: 'AU',
-  TUR: 'TR',
-  GER: 'DE',
-  CUW: 'CW',
-  CIV: 'CI',
-  ECU: 'EC',
-  NED: 'NL',
-  JPN: 'JP',
-  SWE: 'SE',
-  TUN: 'TN',
-  BEL: 'BE',
-  EGY: 'EG',
-  IRN: 'IR',
-  NZL: 'NZ',
-  ESP: 'ES',
-  CPV: 'CV',
-  KSA: 'SA',
-  URU: 'UY',
-  FRA: 'FR',
-  SEN: 'SN',
-  IRQ: 'IQ',
-  NOR: 'NO',
-  ARG: 'AR',
-  ALG: 'DZ',
-  AUT: 'AT',
-  JOR: 'JO',
-  POR: 'PT',
-  COD: 'CD',
-  UZB: 'UZ',
-  COL: 'CO',
-  ENG: 'GB',
-  CRO: 'HR',
-  GHA: 'GH',
-  PAN: 'PA',
-};
-
-function flagEmoji(teamCode: string): string {
-  const iso = FIFA_TO_ISO[teamCode];
-  if (!iso) return '';
-  return [...iso]
-    .map((c) => String.fromCodePoint(c.charCodeAt(0) + 127397))
-    .join('');
-}
+import { toFlagEmoji } from '@/constants';
 
 const STICKER_TO_TEAM = new Map<string, { code: string; name: string }>();
 for (const team of stickersData.teams) {
@@ -115,7 +57,7 @@ export function TradeListButton() {
       lines.push('📋 Me faltan:');
       lines.push('');
       for (const [code, ids] of missing) {
-        lines.push(`${flagEmoji(code)} ${teamNames.get(code)}`);
+        lines.push(`${toFlagEmoji(code)} ${teamNames.get(code)}`);
         lines.push(ids.map((id) => id.slice(code.length)).join(', '));
         lines.push('');
       }
@@ -127,7 +69,7 @@ export function TradeListButton() {
       lines.push('🔄 Tengo repetidos:');
       lines.push('');
       for (const [code, ids] of repeated) {
-        lines.push(`${flagEmoji(code)} ${teamNames.get(code)}`);
+        lines.push(`${toFlagEmoji(code)} ${teamNames.get(code)}`);
         lines.push(ids.map((id) => id.slice(code.length)).join(', '));
         lines.push('');
       }

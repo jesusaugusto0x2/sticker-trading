@@ -1,0 +1,177 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-8);
+  flex: 1;
+}
+
+/* ─── Loading / Not found ────────────────────────────────────── */
+.loading,
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  min-height: 60dvh;
+  text-align: center;
+}
+
+/* ─── Teams grid ─────────────────────────────────────────────── */
+.teams {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (--bp-md) {
+  .teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Team row ───────────────────────────────────────────────── */
+.teamRow {
+  background: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition:
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.teamRowExpanded {
+  grid-column: 1 / -1;
+  border-color: var(--color-green);
+  box-shadow: var(--shadow-green-md);
+}
+
+.teamHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  cursor: pointer;
+  user-select: none;
+  min-height: var(--hit-comfy);
+}
+
+.teamHeader:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: -2px;
+}
+
+.flagBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: var(--border-thin);
+  flex-shrink: 0;
+}
+
+.teamInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.teamName {
+  font-family: var(--font-body);
+  font-size: var(--text-title);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.teamMeta {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+}
+
+.metaAvailable {
+  color: var(--color-green);
+}
+
+.metaWanted {
+  color: var(--color-coral);
+}
+
+.chevron {
+  color: var(--color-ink-40);
+  flex-shrink: 0;
+}
+
+/* ─── Stickers inside expanded team ──────────────────────────── */
+.teamContent {
+  border-top: 1px solid var(--color-ink-10);
+  padding: var(--space-4) var(--space-5);
+}
+
+.stickersGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+@media (--bp-md) {
+  .stickersGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Bottom sticky ──────────────────────────────────────────── */
+.bottomSpacer {
+  height: 80px;
+}
+
+.bottomSticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-5) var(--space-8);
+  background: var(--color-surface);
+  border-top: var(--border-muted);
+  box-shadow: 0 -4px 24px rgba(15, 20, 25, 0.08);
+}
+
+.selectionCount {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+@media (--bp-sm) {
+  .bottomSticky {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .bottomSpacer {
+    height: 110px;
+  }
+}
