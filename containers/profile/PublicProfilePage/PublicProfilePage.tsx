@@ -10,7 +10,6 @@ import {
   APP_URL,
   FOIL_GRADIENT,
   TOTAL_STICKERS,
-  toFlagEmoji,
 } from '@/constants';
 import { PublicProfileHeader } from '@/components/profile/PublicProfileHeader/PublicProfileHeader';
 import { GuestBanner } from '@/components/profile/GuestBanner/GuestBanner';
@@ -169,18 +168,11 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
         byTeam.get(info.teamName)!.push(`${info.name} #${id}`);
       }
       return [...byTeam.entries()]
-        .map(([team, stickers]) => {
-          const teamEntry = allTeams.find((t) => t.name === team);
-          const flag =
-            teamEntry?.code && teamEntry.code !== 'intro'
-              ? toFlagEmoji(teamEntry.code)
-              : '📋';
-          return `${flag} ${team}: ${stickers.join(', ')}`;
-        })
+        .map(([team, stickers]) => `- ${team}: ${stickers.join(', ')}`)
         .join('\n');
     };
 
-    let message = `Hola ${profile.name}! Vi tu perfil en repes26 👋\n\n`;
+    let message = `Hola ${profile.name}! Vi tu perfil para intercambiar cromos del Mundial 👋\n\n`;
 
     if (selectedAvailable.size > 0) {
       message += `Me interesan tus repetidas:\n${buildLines(selectedAvailable)}\n`;

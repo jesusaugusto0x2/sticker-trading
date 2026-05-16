@@ -110,14 +110,20 @@ export function StickersPage() {
           <TradeListButton />
         </div>
         <div className={styles.counter}>
-          <Typography variant="display" color="coral" as="span">{missingCount}</Typography>
-          <Typography variant="title" as="span">faltantes</Typography>
-          <Typography variant="title" color="muted" as="span">·</Typography>
-          <Typography variant="display" as="span">{collectedCount}</Typography>
-          <Typography variant="title" as="span">pegados</Typography>
-          <Typography variant="title" color="muted" as="span">·</Typography>
-          <Typography variant="display" color="green" as="span">{repeatedCount}</Typography>
-          <Typography variant="title" as="span">repetidos</Typography>
+          <div className={styles.stat}>
+            <Typography variant="display" color="coral" as="span">{missingCount}</Typography>
+            <Typography variant="title" as="span">faltantes</Typography>
+          </div>
+          <Typography variant="title" color="muted" as="span" className={styles.dot}>·</Typography>
+          <div className={styles.stat}>
+            <Typography variant="display" as="span">{collectedCount}</Typography>
+            <Typography variant="title" as="span">pegados</Typography>
+          </div>
+          <Typography variant="title" color="muted" as="span" className={styles.dot}>·</Typography>
+          <div className={styles.stat}>
+            <Typography variant="display" color="green" as="span">{repeatedCount}</Typography>
+            <Typography variant="title" as="span">repetidos</Typography>
+          </div>
         </div>
         <Typography variant="body-sm" color="muted">
           Click una vez para colocar, dos veces para marcar como repetido.
