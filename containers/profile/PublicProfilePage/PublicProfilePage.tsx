@@ -6,7 +6,12 @@ import { supabase } from '@/lib/supabase';
 import stickersData from '@/lib/data/stickers.json';
 import { extractUserId } from '@/lib/utils/slug';
 import { useDebounce } from '@/hooks';
-import { FOIL_GRADIENT, TOTAL_STICKERS, toFlagEmoji } from '@/constants';
+import {
+  APP_URL,
+  FOIL_GRADIENT,
+  TOTAL_STICKERS,
+  toFlagEmoji,
+} from '@/constants';
 import { PublicProfileHeader } from '@/components/profile/PublicProfileHeader/PublicProfileHeader';
 import { GuestBanner } from '@/components/profile/GuestBanner/GuestBanner';
 import { StickerStatusRow } from '@/components/profile/StickerStatusRow/StickerStatusRow';
@@ -187,7 +192,7 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
       message += `Me gustaría hacer un intercambio de cromos contigo.\n`;
     }
 
-    message += `\n¿Hacemos el cambio?\nsticker-trading.xyz/u/${slug}`;
+    message += `\n¿Hacemos el cambio?\n${APP_URL}/u/${slug}`;
 
     const phone =
       `${profile.phone_prefix ?? ''}${profile.phone_number ?? ''}`.replace(

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BookOpen, Sparkles, User, Link2, Check } from 'lucide-react';
+import { APP_URL } from '@/constants';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
@@ -33,7 +34,7 @@ export function Sidebar({ userName, userCity, userSlug }: SidebarProps) {
 
   const handleCopy = () => {
     if (!userSlug) return;
-    navigator.clipboard.writeText(`${window.location.origin}/u/${userSlug}`);
+    navigator.clipboard.writeText(`${APP_URL}/u/${userSlug}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

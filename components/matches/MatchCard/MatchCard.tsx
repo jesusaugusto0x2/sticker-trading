@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import { WhatsAppIcon } from '@/assets/icons/WhatsAppIcon';
 import { InstagramIcon } from '@/assets/icons/InstagramIcon';
 import { Button, Card, Typography } from '@/components/ui';
+import { generateSlug } from '@/lib/utils/slug';
+import { APP_URL } from '@/constants';
 import styles from './MatchCard.module.css';
 
 export type { MatchCardProps } from './MatchCard.types';
@@ -143,6 +145,15 @@ export function MatchCard({ match, isExpanded, onToggle }: MatchCardProps) {
           <div className={styles.nameRow}>
             <Typography variant="title">{name}</Typography>
             {isHot && <span className={styles.hotBadge}>🔥 HOT</span>}
+            <a
+              href={`${APP_URL}/u/${generateSlug(name, user_id)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.profileLink}
+              title="Ver perfil público"
+            >
+              <ExternalLink size={14} />
+            </a>
           </div>
           <Typography
             variant="caption"

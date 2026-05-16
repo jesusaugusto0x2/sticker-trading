@@ -6,6 +6,7 @@ import { LogOut, Link2, Check, ExternalLink } from 'lucide-react';
 import stickersData from '@/lib/data/stickers.json';
 import { supabase } from '@/lib/supabase';
 import { generateSlug } from '@/lib/utils/slug';
+import { APP_URL } from '@/constants';
 import { Button, Typography } from '@/components/ui';
 import { ProfileHeroCard } from '@/components/profile/ProfileHeroCard/ProfileHeroCard';
 import { ContactCard } from '@/components/profile/ContactCard/ContactCard';
@@ -68,7 +69,7 @@ export function ProfilePage() {
 
   const handleCopy = () => {
     if (!userSlug) return;
-    navigator.clipboard.writeText(`${window.location.origin}/u/${userSlug}`);
+    navigator.clipboard.writeText(`${APP_URL}/u/${userSlug}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -99,7 +100,7 @@ export function ProfilePage() {
           <div className={styles.shareCardInfo}>
             <Typography variant="label">Tu página pública</Typography>
             <Typography variant="caption" color="muted" className={styles.shareUrl}>
-              cromos26.xyz/u/{userSlug}
+              {APP_URL.replace(/^https?:\/\//, '')}/u/{userSlug}
             </Typography>
           </div>
           <div className={styles.shareActions}>

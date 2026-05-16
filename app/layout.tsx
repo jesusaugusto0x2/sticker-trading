@@ -16,8 +16,10 @@ const inter = Inter({
   display: 'swap',
 });
 
+const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sticker-trading.vercel.app'),
+  metadataBase: new URL(appUrl),
   title: {
     default: 'Cromos Mundial 2026',
     template: '%s · Cromos Mundial 2026',
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Cromos Mundial 2026',
     description:
       'Encuentra fans con los cromos que te faltan y ofrece tus repetidos. Intercambia fácil para completar tu álbum del Mundial 2026.',
-    url: 'https://sticker-trading.vercel.app',
+    url: appUrl,
     siteName: 'Cromos Mundial 2026',
     locale: 'es_419',
     type: 'website',

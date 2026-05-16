@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Share2, Check } from 'lucide-react';
 import { useCurrentUser } from '@/hooks';
 import { generateSlug } from '@/lib/utils/slug';
+import { APP_URL } from '@/constants';
 import { Sidebar } from '@/components/layout/Sidebar/Sidebar';
 import { BottomNav } from '@/components/layout/BottomNav/BottomNav';
 import styles from './AppLayout.module.css';
@@ -22,7 +23,7 @@ export function AppLayout({ children }: AppLayoutProps) {
 
   const handleShare = () => {
     if (!userSlug) return;
-    navigator.clipboard.writeText(`${window.location.origin}/u/${userSlug}`);
+    navigator.clipboard.writeText(`${APP_URL}/u/${userSlug}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
