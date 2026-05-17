@@ -128,7 +128,8 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
     if (!debouncedSearch.trim()) return relevant;
     const q = normalizeText(debouncedSearch.trim());
     return relevant.filter(
-      (t) => normalizeText(t.name).includes(q) || t.code.toLowerCase().includes(q)
+      (t) =>
+        normalizeText(t.name).includes(q) || t.code.toLowerCase().includes(q)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allTeams, repeatedIds, placedIds, debouncedSearch]);

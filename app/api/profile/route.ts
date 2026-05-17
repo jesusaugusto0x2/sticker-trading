@@ -31,7 +31,7 @@ export async function GET() {
   const placed_count = states.filter((s) => s.state === 'placed').length;
   const repeated_count = states.filter((s) => s.state === 'repeated').length;
 
-  return NextResponse.json({ ...profileResult.data, placed_count, repeated_count });
+  return NextResponse.json({ ...profileResult.data, user_id: user.id, placed_count, repeated_count });
 }
 
 export async function PATCH(request: Request) {
