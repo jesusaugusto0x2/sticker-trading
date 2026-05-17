@@ -6,5 +6,6 @@ export interface StickerStatusRowProps {
   status: StickerStatus;
   flagColors?: string[];
   checked?: boolean;
+  canOffer?: boolean;
   onToggle?: (id: string) => void;
 }

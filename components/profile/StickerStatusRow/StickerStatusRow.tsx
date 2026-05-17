@@ -18,6 +18,7 @@ export function StickerStatusRow({
   status,
   flagColors,
   checked,
+  canOffer,
   onToggle,
 }: StickerStatusRowProps) {
   const isSelectable = status !== 'neutral';
@@ -56,8 +57,14 @@ export function StickerStatusRow({
           </Typography>
         )}
         {status === 'wanted' && (
-          <Typography variant="caption" color="coral" as="span" className={styles.statusLabel}>
-            LA BUSCA
+          <Typography
+            variant="caption"
+            color="coral"
+            weight={canOffer ? 'bold' : undefined}
+            as="span"
+            className={styles.statusLabel}
+          >
+            {canOffer ? 'LA BUSCA · PUEDES INTERCAMBIARLA' : 'LA BUSCA'}
           </Typography>
         )}
       </div>

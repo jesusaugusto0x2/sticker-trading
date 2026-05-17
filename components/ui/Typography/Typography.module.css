@@ -77,12 +77,21 @@
 .colorCoral {
   color: var(--color-coral);
 }
+.colorYellow {
+  color: var(--color-yellow);
+}
 .colorDanger {
   color: var(--color-danger);
 }
 .colorWhite {
   color: var(--color-white);
 }
+
+/* ─── Weights ────────────────────────────────────────────────── */
+.weightSemibold { font-weight: var(--weight-semibold); }
+.weightBold     { font-weight: var(--weight-bold); }
+.weightExtrabold { font-weight: var(--weight-extrabold); }
+.weightBlack    { font-weight: var(--weight-black); }
 
 /* ─── Truncate ───────────────────────────────────────────────── */
 .truncate {

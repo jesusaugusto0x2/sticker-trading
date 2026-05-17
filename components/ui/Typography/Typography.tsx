@@ -3,12 +3,14 @@ import type {
   TypographyProps,
   TypographyVariant,
   TypographyAs,
+  TypographyWeight,
 } from './Typography.types';
 
 export type {
   TypographyProps,
   TypographyVariant,
   TypographyColor,
+  TypographyWeight,
   TypographyAs,
 } from './Typography.types';
 
@@ -39,13 +41,22 @@ const colorClass = {
   muted: styles.colorMuted,
   green: styles.colorGreen,
   coral: styles.colorCoral,
+  yellow: styles.colorYellow,
   danger: styles.colorDanger,
   white: styles.colorWhite,
+};
+
+const weightClass: Record<TypographyWeight, string> = {
+  semibold: styles.weightSemibold,
+  bold: styles.weightBold,
+  extrabold: styles.weightExtrabold,
+  black: styles.weightBlack,
 };
 
 export function Typography({
   variant,
   color = 'default',
+  weight,
   as,
   truncate = false,
   className,
@@ -58,6 +69,7 @@ export function Typography({
   const classNames = [
     variantClass[variant],
     colorClass[color],
+    weight ? weightClass[weight] : '',
     truncate ? styles.truncate : '',
     className ?? '',
   ]

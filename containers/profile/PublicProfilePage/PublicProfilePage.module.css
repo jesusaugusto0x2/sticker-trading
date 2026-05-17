@@ -113,6 +113,10 @@
   color: var(--color-coral);
 }
 
+.metaMatch {
+  color: var(--color-yellow);
+}
+
 .chevron {
   color: var(--color-ink-40);
   flex-shrink: 0;

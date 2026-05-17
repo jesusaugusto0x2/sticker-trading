@@ -13,7 +13,7 @@ import styles from './StickersPage.module.css';
 
 const introTeam: Team = {
   code: 'intro',
-  name: 'Introduction',
+  name: 'FIFA World Cup',
   flag_colors: [],
   stickers: stickersData.intro as Team['stickers'],
 };
@@ -90,8 +90,9 @@ export function StickersPage() {
     setExpandedTeam((prev) => (prev === teamCode ? null : teamCode));
   };
 
+  const q = debouncedSearch.toLowerCase();
   const filteredTeams = allTeams.filter((team) =>
-    team.name.toLowerCase().includes(debouncedSearch.toLowerCase())
+    team.name.toLowerCase().includes(q) || team.code.toLowerCase().includes(q)
   );
 
   if (loadingUser || loading) return null;

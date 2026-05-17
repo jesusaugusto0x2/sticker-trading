@@ -6,11 +6,7 @@ import { supabase } from '@/lib/supabase';
 import stickersData from '@/lib/data/stickers.json';
 import { extractUserId } from '@/lib/utils/slug';
 import { useDebounce } from '@/hooks';
-import {
-  APP_URL,
-  FOIL_GRADIENT,
-  TOTAL_STICKERS,
-} from '@/constants';
+import { APP_URL, FOIL_GRADIENT, TOTAL_STICKERS } from '@/constants';
 import { PublicProfileHeader } from '@/components/profile/PublicProfileHeader/PublicProfileHeader';
 import { GuestBanner } from '@/components/profile/GuestBanner/GuestBanner';
 import { StickerStatusRow } from '@/components/profile/StickerStatusRow/StickerStatusRow';
@@ -35,7 +31,11 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [repeatedIds, setRepeatedIds] = useState<Set<string>>(new Set());
   const [placedIds, setPlacedIds] = useState<Set<string>>(new Set());
+  const [viewerRepeatedIds, setViewerRepeatedIds] = useState<Set<string>>(
+    new Set()
+  );
   const [isGuest, setIsGuest] = useState(true);
+  const [isOwnProfile, setIsOwnProfile] = useState(false);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [search, setSearch] = useState('');
@@ -83,6 +83,22 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
       setRepeatedIds(repeated);
       setPlacedIds(placed);
       setIsGuest(!authData.user);
+      setIsOwnProfile(authData.user?.id === profileData.user_id);
+
+      if (authData.user && authData.user.id !== profileData.user_id) {
+        const { data: viewerStates } = await supabase
+          .from('user_sticker_states')
+          .select('sticker_id, state')
+          .eq('user_id', authData.user.id);
+        setViewerRepeatedIds(
+          new Set<string>(
+            viewerStates
+              ?.filter((s) => s.state === 'repeated')
+              .map((s) => s.sticker_id) ?? []
+          )
+        );
+      }
+
       setLoading(false);
     }
 
@@ -98,7 +114,7 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
   const allTeams: Team[] = useMemo(() => {
     const introTeam: Team = {
       code: 'intro',
-      name: 'Introducción',
+      name: 'FIFA World Cup',
       flag_colors: [],
       stickers: stickersData.intro as Team['stickers'],
     };
@@ -111,7 +127,9 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
     );
     if (!debouncedSearch.trim()) return relevant;
     const q = normalizeText(debouncedSearch.trim());
-    return relevant.filter((t) => normalizeText(t.name).includes(q));
+    return relevant.filter(
+      (t) => normalizeText(t.name).includes(q) || t.code.toLowerCase().includes(q)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allTeams, repeatedIds, placedIds, debouncedSearch]);
 
@@ -258,6 +276,12 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
             const wantedInTeam = team.stickers.filter(
               (s) => !placedIds.has(s.id)
             ).length;
+            const canOfferInTeam =
+              !isGuest && !isOwnProfile
+                ? team.stickers.filter(
+                    (s) => !placedIds.has(s.id) && viewerRepeatedIds.has(s.id)
+                  ).length
+                : 0;
 
             const badgeGradient =
               team.code === 'intro' || team.flag_colors.length === 0
@@ -305,6 +329,14 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
                           {wantedInTeam} busca
                         </span>
                       )}
+                      {canOfferInTeam > 0 &&
+                        (availableInTeam > 0 || wantedInTeam > 0) &&
+                        ' · '}
+                      {canOfferInTeam > 0 && (
+                        <span className={styles.metaMatch}>
+                          {canOfferInTeam} puedes intercambiar
+                        </span>
+                      )}
                     </p>
                   </div>
                   <span className={styles.chevron}>
@@ -328,6 +360,12 @@ export function PublicProfilePage({ slug }: PublicProfilePageProps) {
                             name={sticker.name}
                             status={status}
                             flagColors={team.flag_colors}
+                            canOffer={
+                              !isGuest &&
+                              !isOwnProfile &&
+                              status === 'wanted' &&
+                              viewerRepeatedIds.has(sticker.id)
+                            }
                             checked={
                               status === 'available'
                                 ? selectedAvailable.has(sticker.id)

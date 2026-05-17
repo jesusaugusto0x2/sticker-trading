@@ -15,8 +15,15 @@ export type TypographyColor =
   | 'muted'
   | 'green'
   | 'coral'
+  | 'yellow'
   | 'danger'
   | 'white';
+
+export type TypographyWeight =
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black';
 
 export type TypographyAs =
   | 'h1'
@@ -36,6 +43,7 @@ export interface TypographyProps extends Omit<
 > {
   variant: TypographyVariant;
   color?: TypographyColor;
+  weight?: TypographyWeight;
   as?: TypographyAs;
   truncate?: boolean;
   className?: string;
